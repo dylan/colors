@@ -28,3 +28,5 @@ rgb2.red
 rgb2.green
 rgb2.blue
 
+rgb2.hsl.hue
+
