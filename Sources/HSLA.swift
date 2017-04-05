@@ -35,8 +35,13 @@ public struct HSLA: Color {
     public init() {}
     
     public init(_ color: Color) {
+        self = color.hsla
     }
 
-    public init(_ red: Int, _ green: Int, _ blue: Int) {
+    public init(_ hue: CGFloat, _ saturation: CGFloat, _ lightness: CGFloat, _ alpha: CGFloat) {
+        self.hue        = hue.truncatingRemainder(dividingBy: 360) / 360
+        self.saturation = clamp(saturation, to: 1.0).cgFloat
+        self.lightness  = clamp(lightness, to: 1.0).cgFloat
+        self.alpha      = clamp(alpha, to: 1.0).cgFloat
     }
 }

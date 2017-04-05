@@ -34,6 +34,7 @@ public struct HSB: Color {
     public init() {}
     
     public init(_ color: Color) {
+        self = color.hsb
     }
 
     public init(_ red: Int, _ green: Int, _ blue: Int) {

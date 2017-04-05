@@ -35,8 +35,8 @@ public struct HSBA: Color {
     public init() {}
 
     public init(_ color: Color) {
+        self = color.hsba
     }
 
-    public init(_ red: Int, _ green: Int, _ blue: Int) {
-    }
+    public init(_ red: Int, _ green: Int, _ blue: Int) {}
 }

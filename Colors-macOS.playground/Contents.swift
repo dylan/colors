@@ -11,7 +11,20 @@ let c: Double = 3.141521
 let d = a / b
 let e = c + b
 
-let hsl = HSL(255, 0, 0)
-let rgb = RGB(255, 0, 0)
+//let rgb = RGB(255, 0, 0)
+let rgb = RGB(0, 1.0, 0)
+let hsl = HSL(rgb)
+let rgb2 = RGB(hsl)
 
-let rgba = RGBA(from: hsl)
+rgb.red
+rgb.green
+rgb.blue
+
+hsl.hue
+hsl.saturation
+hsl.lightness
+
+rgb2.red
+rgb2.green
+rgb2.blue
+

@@ -14,12 +14,12 @@ import Foundation
 #endif
 
 public struct RGB: Color {
-    public var rgb:  RGB  { return self       }
-    public var rgba: RGBA { return RGBA(self) }
-    public var hsl:  HSL  { return HSL(self)  }
-    public var hsla: HSLA { return HSLA(self) }
-    public var hsb:  HSB  { return HSB(self)  }
-    public var hsba: HSBA { return HSBA(self) }
+    public var rgb:  RGB  { return self         }
+    public var rgba: RGBA { return toRGBA()     }
+    public var hsl:  HSL  { return toHSL()      }
+    public var hsla: HSLA { return toHSL().hsla }
+    public var hsb:  HSB  { return HSB(self)    }
+    public var hsba: HSBA { return HSBA(self)   }
 
     #if os(iOS) || os(tvOS) || os(watchOS)
     public var osColor: UIColor { return UIColor() }
@@ -34,15 +34,52 @@ public struct RGB: Color {
     public init() {}
     
     public init(_ color: Color) {
-        let color  = color.rgb
-        self.red   = color.red
-        self.green = color.green
-        self.blue  = color.blue
+        self = color.rgb
     }
 
     public init(_ red: Int, _ green: Int, _ blue: Int) {
-        self.red   = CGFloat(clamp(red, to: 255))   / 255.0
-        self.green = CGFloat(clamp(green, to: 255)) / 255.0
-        self.blue  = CGFloat(clamp(blue, to: 255))  / 255.0
+        self.red   = clamp(red, to: 255).cgFloat   / 255.0
+        self.green = clamp(green, to: 255).cgFloat / 255.0
+        self.blue  = clamp(blue, to: 255).cgFloat  / 255.0
+    }
+
+    public init(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat) {
+        self.red   = clamp(red,   to: 1.0).cgFloat
+        self.green = clamp(green, to: 1.0).cgFloat
+        self.blue  = clamp(blue,  to: 1.0).cgFloat
+    }
+
+    fileprivate func toHSL() -> HSL {
+        let maxComponent = max(red, blue, green)
+        let minComponent = min(red, blue, green)
+        let halfRange    = (maxComponent + minComponent) / 2
+        let delta        = maxComponent - minComponent
+
+        var hue         = halfRange
+        var saturation  = halfRange
+        let lightness   = halfRange
+
+        if maxComponent == minComponent {
+            hue = 0
+            saturation = 0
+        } else {
+            saturation = lightness > 0.5 ? delta / (2 - maxComponent - minComponent) : delta / (maxComponent + minComponent)
+
+            if maxComponent == red {
+                hue = (green - blue) / delta + (green < blue ? 6 : 0)
+            }
+            if maxComponent == green {
+                hue = (blue - red) / delta + 2
+            }
+            if maxComponent == blue {
+                hue = (red - green) / delta + 4
+            }
+            hue /= 6
+        }
+        return HSL(hue * 360, saturation, lightness)
+    }
+
+    fileprivate func toRGBA() -> RGBA {
+        return RGBA(self.red, self.blue, self.green, 1.0)
     }
 }

@@ -14,7 +14,7 @@ import Foundation
 #endif
 
 public struct RGBA: Color {
-    public var rgb:  RGB  { return RGB(self)  }
+    public var rgb:  RGB  { return toRGB()  }
     public var rgba: RGBA { return self       }
     public var hsl:  HSL  { return HSL(self)  }
     public var hsla: HSLA { return HSLA(self) }
@@ -35,15 +35,24 @@ public struct RGBA: Color {
     public init() {}
     
     public init(_ color: Color) {
-        let color  = color.rgb
-        self.red   = color.red
-        self.green = color.green
-        self.blue  = color.blue
+        self = color.rgba
     }
 
-    public init(_ red: Int, _ green: Int, _ blue: Int) {
-        self.red   = CGFloat(clamp(red, to: 255))   / 255.0
-        self.green = CGFloat(clamp(green, to: 255)) / 255.0
-        self.blue  = CGFloat(clamp(blue, to: 255))  / 255.0
+    public init(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Int) {
+        self.red   = clamp(red, to: 255).cgFloat   / 255.0
+        self.green = clamp(green, to: 255).cgFloat / 255.0
+        self.blue  = clamp(blue, to: 255).cgFloat  / 255.0
+        self.alpha = clamp(alpha, to: 255).cgFloat / 255.0
+    }
+
+    public init(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat, _ alpha: CGFloat) {
+        self.red   = clamp(red,   to: 1.0).cgFloat
+        self.green = clamp(green, to: 1.0).cgFloat
+        self.blue  = clamp(blue,  to: 1.0).cgFloat
+        self.alpha = clamp(alpha,  to: 1.0).cgFloat
+    }
+
+    fileprivate func toRGB() -> RGB {
+        return RGB(self.red, self.blue, self.green)
     }
 }
