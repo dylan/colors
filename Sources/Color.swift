@@ -40,9 +40,9 @@ public struct Color {
     }
 
     public init(red: Double, green: Double, blue: Double, alpha: Double) {
-        self.red   = clamp(red, to: 1.0)
+        self.red   = clamp(red,   to: 1.0)
         self.green = clamp(green, to: 1.0)
-        self.blue  = clamp(blue, to: 1.0)
+        self.blue  = clamp(blue,  to: 1.0)
         self.alpha = clamp(alpha, to: 1.0)
     }
 
@@ -76,7 +76,7 @@ public struct Color {
     }
 
     /// From https://www.w3.org/TR/2011/REC-css3-color-20110607/#hsl-color
-    fileprivate static func hslToRGB(hue: Int, saturation: Double, lightness: Double) -> (r: Double, g: Double, b: Double) {
+    fileprivate static func hslToRGB(hue: Int, saturation: Double, lightness: Double) -> RGBTuple {
 
         var hue = Double(mod(hue, to: 360) / 360.0)
 
@@ -102,8 +102,8 @@ public struct Color {
             return m1
         }
 
-        return (r: hueToRgb(m1: m1, m2: m2, hue: hue + 1 / 3),
-                g: hueToRgb(m1: m1, m2: m2, hue: hue),
-                b: hueToRgb(m1: m1, m2: m2, hue: hue - 1 / 3))
+        return (r: hueToRgb(m1: m1, m2: m2, hue: hue + 1 / 3).cgFloat,
+                g: hueToRgb(m1: m1, m2: m2, hue: hue).cgFloat,
+                b: hueToRgb(m1: m1, m2: m2, hue: hue - 1 / 3).cgFloat)
     }
 }
