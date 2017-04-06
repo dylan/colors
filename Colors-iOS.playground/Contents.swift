@@ -1,6 +1,6 @@
 //: Playground - noun: a place where people can play
 
-import AppKit
+import UIKit
 import Colors
 
 let firstColor = RGB.X11.lightGoldenrodYellow
@@ -15,7 +15,7 @@ dump(white)
 
 let colors: [RGB] = [RGB.W3C.green, hsl.rgb, hsla.rgb, hsb.rgb, hsba.rgb]
 colors.osColors()
-colors.nsColors()
+colors.uiColors()
 
 firstColor.rgba.redComponent
 firstColor.rgba.greenComponent

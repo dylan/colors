@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Colors-iOS.playground">
+   </FileRef>
+   <FileRef
       location = "group:Colors-macOS.playground">
    </FileRef>
    <FileRef
