@@ -83,6 +83,13 @@
 		FC12C2F31E95215300AC1E7F /* HSBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC12C2EE1E95215300AC1E7F /* HSBA.swift */; };
 		FC12C2F41E95215300AC1E7F /* HSBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC12C2EE1E95215300AC1E7F /* HSBA.swift */; };
 		FC12C2F51E95215300AC1E7F /* HSBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC12C2EE1E95215300AC1E7F /* HSBA.swift */; };
+		FC54314F1E9659DC00F0D291 /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54314E1E9659DC00F0D291 /* Conversions.swift */; };
+		FC5431501E9659DC00F0D291 /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54314E1E9659DC00F0D291 /* Conversions.swift */; };
+		FC5431511E9659DC00F0D291 /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54314E1E9659DC00F0D291 /* Conversions.swift */; };
+		FC5431521E9659DC00F0D291 /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54314E1E9659DC00F0D291 /* Conversions.swift */; };
+		FC5431531E9659DC00F0D291 /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54314E1E9659DC00F0D291 /* Conversions.swift */; };
+		FC5431541E9659DC00F0D291 /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54314E1E9659DC00F0D291 /* Conversions.swift */; };
+		FC5431551E9659DC00F0D291 /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54314E1E9659DC00F0D291 /* Conversions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +138,7 @@
 		FC12C2DE1E95210C00AC1E7F /* HSLA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSLA.swift; sourceTree = "<group>"; };
 		FC12C2E61E95212C00AC1E7F /* HSB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSB.swift; sourceTree = "<group>"; };
 		FC12C2EE1E95215300AC1E7F /* HSBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBA.swift; sourceTree = "<group>"; };
+		FC54314E1E9659DC00F0D291 /* Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +260,7 @@
 				FC12C2DE1E95210C00AC1E7F /* HSLA.swift */,
 				FC12C2E61E95212C00AC1E7F /* HSB.swift */,
 				FC12C2EE1E95215300AC1E7F /* HSBA.swift */,
+				FC54314E1E9659DC00F0D291 /* Conversions.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -536,6 +545,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC54314F1E9659DC00F0D291 /* Conversions.swift in Sources */,
 				FC12C2C71E95208C00AC1E7F /* RGB.swift in Sources */,
 				FC12C2D71E9520D600AC1E7F /* HSL.swift in Sources */,
 				FC12C2A31E9500BD00AC1E7F /* Types.swift in Sources */,
@@ -562,6 +572,7 @@
 				FC12C2DB1E9520D600AC1E7F /* HSL.swift in Sources */,
 				FC12C2CB1E95208C00AC1E7F /* RGB.swift in Sources */,
 				FC0DFE271E942DCE00716946 /* Math.swift in Sources */,
+				FC5431531E9659DC00F0D291 /* Conversions.swift in Sources */,
 				FC12C2BA1E9504FE00AC1E7F /* Color+UIColor.swift in Sources */,
 				FC12C2D31E9520B600AC1E7F /* RGBA.swift in Sources */,
 			);
@@ -571,6 +582,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC5431511E9659DC00F0D291 /* Conversions.swift in Sources */,
 				FC12C2C91E95208C00AC1E7F /* RGB.swift in Sources */,
 				FC12C2D91E9520D600AC1E7F /* HSL.swift in Sources */,
 				FC12C2A51E9500BD00AC1E7F /* Types.swift in Sources */,
@@ -588,6 +600,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC5431521E9659DC00F0D291 /* Conversions.swift in Sources */,
 				FC12C2CA1E95208C00AC1E7F /* RGB.swift in Sources */,
 				FC12C2DA1E9520D600AC1E7F /* HSL.swift in Sources */,
 				FC12C2A61E9500BD00AC1E7F /* Types.swift in Sources */,
@@ -605,6 +618,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC5431501E9659DC00F0D291 /* Conversions.swift in Sources */,
 				FC12C2C81E95208C00AC1E7F /* RGB.swift in Sources */,
 				FC12C2D81E9520D600AC1E7F /* HSL.swift in Sources */,
 				FC12C2A01E94FF9200AC1E7F /* Color+NSColor.swift in Sources */,
@@ -631,6 +645,7 @@
 				FC12C2DC1E9520D600AC1E7F /* HSL.swift in Sources */,
 				FC12C2CC1E95208C00AC1E7F /* RGB.swift in Sources */,
 				FC12C2AB1E9502ED00AC1E7F /* Color.swift in Sources */,
+				FC5431541E9659DC00F0D291 /* Conversions.swift in Sources */,
 				FC12C2A81E9500BD00AC1E7F /* Types.swift in Sources */,
 				FC12C2D41E9520B600AC1E7F /* RGBA.swift in Sources */,
 			);
@@ -649,6 +664,7 @@
 				FC12C2DD1E9520D600AC1E7F /* HSL.swift in Sources */,
 				FC12C2CD1E95208C00AC1E7F /* RGB.swift in Sources */,
 				FC0DFE291E942DCE00716946 /* Math.swift in Sources */,
+				FC5431551E9659DC00F0D291 /* Conversions.swift in Sources */,
 				FC12C2BC1E9504FE00AC1E7F /* Color+UIColor.swift in Sources */,
 				FC12C2D51E9520B600AC1E7F /* RGBA.swift in Sources */,
 			);

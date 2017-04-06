@@ -13,18 +13,22 @@ import UIKit
 import AppKit
 #endif
 
-public struct HSLA: Color {
-    public var rgb:  RGB  { return RGB(self)  }
-    public var rgba: RGBA { return RGBA(self) }
-    public var hsl:  HSL  { return HSL(self)  }
-    public var hsla: HSLA { return self       }
-    public var hsb:  HSB  { return HSB(self)  }
-    public var hsba: HSBA { return HSBA(self) }
+public struct HSLA: Color, Alpha {
+    public var rgb:  RGB  { return Colors.rgb(from: self)  }
+    public var rgba: RGBA { return Colors.rgba(from: self) }
+    public var hsl:  HSL  { return Colors.hsl(from: self)  }
+    public var hsla: HSLA { return self }
+    public var hsb:  HSB  { return Colors.hsb(from: self)  }
+    public var hsba: HSBA { return Colors.hsba(from: self) }
 
     #if os(iOS) || os(tvOS) || os(watchOS)
-    public var osColor: UIColor { return UIColor() }
+    public var osColor: UIColor {
+        return UIColor(red: rgba.red, green: rgba.green, blue: rgba.blue, alpha: self.alpha)
+    }
     #elseif os(macOS)
-    public var osColor: NSColor { return NSColor() }
+    public var osColor: NSColor {
+        return NSColor(red: rgba.red, green: rgba.green, blue: rgba.blue, alpha: self.alpha)
+    }
     #endif
 
     public var hue:        CGFloat = 0
@@ -36,6 +40,9 @@ public struct HSLA: Color {
     
     public init(_ color: Color) {
         self = color.hsla
+        if let alphaColor = color as? Alpha {
+            self.alpha = alphaColor.alpha
+        }
     }
 
     public init(_ hue: CGFloat, _ saturation: CGFloat, _ lightness: CGFloat, _ alpha: CGFloat) {

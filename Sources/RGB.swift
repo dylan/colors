@@ -14,17 +14,18 @@ import Foundation
 #endif
 
 public struct RGB: Color {
-    public var rgb:  RGB  { return self         }
-    public var rgba: RGBA { return toRGBA()     }
-    public var hsl:  HSL  { return toHSL()      }
-    public var hsla: HSLA { return toHSL().hsla }
-    public var hsb:  HSB  { return HSB(self)    }
-    public var hsba: HSBA { return HSBA(self)   }
+
+    public var rgb:  RGB  { return self  }
+    public var rgba: RGBA { return Colors.rgba(from: self) }
+    public var hsl:  HSL  { return Colors.hsl(from: self)  }
+    public var hsla: HSLA { return Colors.hsla(from: self) }
+    public var hsb:  HSB  { return Colors.hsb(from: self)  }
+    public var hsba: HSBA { return Colors.hsba(from: self) }
 
     #if os(iOS) || os(tvOS) || os(watchOS)
-    public var osColor: UIColor { return UIColor() }
+    public var osColor: UIColor { return UIColor(red: red, green: green, blue: blue, alpha: 1.0) }
     #elseif os(macOS)
-    public var osColor: NSColor { return NSColor() }
+    public var osColor: NSColor { return NSColor(red: red, green: green, blue: blue, alpha: 1.0) }
     #endif
 
     public var red:   CGFloat = 0
@@ -80,6 +81,15 @@ public struct RGB: Color {
     }
 
     fileprivate func toRGBA() -> RGBA {
-        return RGBA(self.red, self.blue, self.green, 1.0)
+        return RGBA(self.red, self.green, self.blue, 1.0)
+    }
+
+    fileprivate func toHSBA() -> HSBA {
+        var result = HSBA(0,
+                          osColor.saturationComponent,
+                          osColor.brightnessComponent,
+                          osColor.alphaComponent)
+        result.hue = osColor.hueComponent
+        return result
     }
 }

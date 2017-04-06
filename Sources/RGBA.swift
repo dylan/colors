@@ -13,29 +13,43 @@ import Foundation
     import AppKit
 #endif
 
-public struct RGBA: Color {
-    public var rgb:  RGB  { return toRGB()  }
-    public var rgba: RGBA { return self       }
-    public var hsl:  HSL  { return HSL(self)  }
-    public var hsla: HSLA { return HSLA(self) }
-    public var hsb:  HSB  { return HSB(self)  }
-    public var hsba: HSBA { return HSBA(self) }
+public struct RGBA: Color, Alpha {
+
+    public var rgb:  RGB  { return Colors.rgb(from: self)  }
+    public var rgba: RGBA { return self }
+    public var hsl:  HSL  { return Colors.hsl(from: self)  }
+    public var hsla: HSLA { return Colors.hsla(from: self) }
+    public var hsb:  HSB  { return Colors.hsb(from: self)  }
+    public var hsba: HSBA { return Colors.hsba(from: self) }
 
     #if os(iOS) || os(tvOS) || os(watchOS)
-    public var osColor: UIColor { return UIColor() }
+    public var osColor: UIColor {
+        return UIColor(red: red,
+                       green: green,
+                       blue: blue,
+                       alpha: alpha)
+    }
     #elseif os(macOS)
-    public var osColor: NSColor { return NSColor() }
+    public var osColor: NSColor {
+        return NSColor(red: red,
+                       green: green,
+                       blue: blue,
+                       alpha: alpha)
+    }
     #endif
 
     public var red:   CGFloat = 0
     public var green: CGFloat = 0
     public var blue:  CGFloat = 0
-    public var alpha:  CGFloat = 0
+    public var alpha: CGFloat = 0
 
     public init() {}
     
     public init(_ color: Color) {
         self = color.rgba
+        if let alphaColor = color as? Alpha {
+            self.alpha = alphaColor.alpha
+        }
     }
 
     public init(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Int) {

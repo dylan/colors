@@ -29,3 +29,7 @@ public protocol Color {
 
     init(_ color: Color)
 }
+
+public protocol Alpha {
+    var alpha: CGFloat { get }
+}
