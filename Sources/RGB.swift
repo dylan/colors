@@ -24,15 +24,15 @@ public struct RGB: Color {
 
     public var osColor: OSColor {
         #if os(iOS) || os(tvOS) || os(watchOS)
-        return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+        return UIColor(red: redComponent, green: greenComponent, blue: blueComponent, alpha: 1.0)
         #elseif os(macOS)
-        return NSColor(red: red, green: green, blue: blue, alpha: 1.0)
+        return NSColor(red: redComponent, green: greenComponent, blue: blueComponent, alpha: 1.0)
         #endif
     }
 
-    public var red:   CGFloat = 0
-    public var green: CGFloat = 0
-    public var blue:  CGFloat = 0
+    public var redComponent:   CGFloat = 0
+    public var greenComponent: CGFloat = 0
+    public var blueComponent:  CGFloat = 0
 
     public init() {}
     
@@ -41,20 +41,20 @@ public struct RGB: Color {
     }
 
     public init(_ red: Int, _ green: Int, _ blue: Int) {
-        self.red   = clamp(red, to: 255).cgFloat   / 255.0
-        self.green = clamp(green, to: 255).cgFloat / 255.0
-        self.blue  = clamp(blue, to: 255).cgFloat  / 255.0
+        self.redComponent   = clamp(red, to: 255).cgFloat   / 255.0
+        self.greenComponent = clamp(green, to: 255).cgFloat / 255.0
+        self.blueComponent  = clamp(blue, to: 255).cgFloat  / 255.0
     }
 
     public init(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat) {
-        self.red   = clamp(red,   to: 1.0).cgFloat
-        self.green = clamp(green, to: 1.0).cgFloat
-        self.blue  = clamp(blue,  to: 1.0).cgFloat
+        self.redComponent   = clamp(red,   to: 1.0).cgFloat
+        self.greenComponent = clamp(green, to: 1.0).cgFloat
+        self.blueComponent  = clamp(blue,  to: 1.0).cgFloat
     }
 
     fileprivate func toHSL() -> HSL {
-        let maxComponent = max(red, blue, green)
-        let minComponent = min(red, blue, green)
+        let maxComponent = max(redComponent, blueComponent, greenComponent)
+        let minComponent = min(redComponent, blueComponent, greenComponent)
         let halfRange    = (maxComponent + minComponent) / 2
         let delta        = maxComponent - minComponent
 
@@ -68,14 +68,14 @@ public struct RGB: Color {
         } else {
             saturation = lightness > 0.5 ? delta / (2 - maxComponent - minComponent) : delta / (maxComponent + minComponent)
 
-            if maxComponent == red {
-                hue = (green - blue) / delta + (green < blue ? 6 : 0)
+            if maxComponent == redComponent {
+                hue = (greenComponent - blueComponent) / delta + (greenComponent < blueComponent ? 6 : 0)
             }
-            if maxComponent == green {
-                hue = (blue - red) / delta + 2
+            if maxComponent == greenComponent {
+                hue = (blueComponent - redComponent) / delta + 2
             }
-            if maxComponent == blue {
-                hue = (red - green) / delta + 4
+            if maxComponent == blueComponent {
+                hue = (redComponent - greenComponent) / delta + 4
             }
             hue /= 6
         }
@@ -83,7 +83,7 @@ public struct RGB: Color {
     }
 
     fileprivate func toRGBA() -> RGBA {
-        return RGBA(self.red, self.green, self.blue, 1.0)
+        return RGBA(self.redComponent, self.greenComponent, self.blueComponent, 1.0)
     }
 
     fileprivate func toHSBA() -> HSBA {
@@ -91,7 +91,7 @@ public struct RGB: Color {
                           osColor.saturationComponent,
                           osColor.brightnessComponent,
                           osColor.alphaComponent)
-        result.hue = osColor.hueComponent
+        result.hueComponent = osColor.hueComponent
         return result
     }
 }

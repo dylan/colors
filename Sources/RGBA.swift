@@ -24,39 +24,39 @@ public struct RGBA: Color, Alpha {
 
     public var osColor: OSColor {
         #if os(iOS) || os(tvOS) || os(watchOS)
-        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
+        return UIColor(red: self.redComponent, green: self.greenComponent, blue: self.blueComponent, alpha: self.alphaComponent)
         #elseif os(macOS)
-        return NSColor(red: red, green: green, blue: blue, alpha: alpha)
+        return NSColor(red: self.redComponent, green: self.greenComponent, blue: self.blueComponent, alpha: self.alphaComponent)
         #endif
     }
 
 
-    public var red:   CGFloat = 0
-    public var green: CGFloat = 0
-    public var blue:  CGFloat = 0
-    public var alpha: CGFloat = 0
+    public var redComponent:   CGFloat = 0
+    public var greenComponent: CGFloat = 0
+    public var blueComponent:  CGFloat = 0
+    public var alphaComponent: CGFloat = 0
 
     public init() {}
     
     public init(_ color: Color) {
         self = color.rgba
         if let alphaColor = color as? Alpha {
-            self.alpha = alphaColor.alpha
+            self.alphaComponent = alphaColor.alphaComponent
         }
     }
 
     public init(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Int) {
-        self.red   = clamp(red, to: 255).cgFloat   / 255.0
-        self.green = clamp(green, to: 255).cgFloat / 255.0
-        self.blue  = clamp(blue, to: 255).cgFloat  / 255.0
-        self.alpha = clamp(alpha, to: 255).cgFloat / 255.0
+        self.redComponent   = clamp(red, to: 255).cgFloat   / 255.0
+        self.greenComponent = clamp(green, to: 255).cgFloat / 255.0
+        self.blueComponent  = clamp(blue, to: 255).cgFloat  / 255.0
+        self.alphaComponent = clamp(alpha, to: 255).cgFloat / 255.0
     }
 
     public init(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat, _ alpha: CGFloat) {
-        self.red   = clamp(red,   to: 1.0).cgFloat
-        self.green = clamp(green, to: 1.0).cgFloat
-        self.blue  = clamp(blue,  to: 1.0).cgFloat
-        self.alpha = clamp(alpha,  to: 1.0).cgFloat
+        self.redComponent   = clamp(red,   to: 1.0).cgFloat
+        self.greenComponent = clamp(green, to: 1.0).cgFloat
+        self.blueComponent  = clamp(blue,  to: 1.0).cgFloat
+        self.alphaComponent = clamp(alpha,  to: 1.0).cgFloat
     }
 
     public init(_ red: Double, _ green: Double, _ blue: Double, _ alpha: Double) {
@@ -64,6 +64,6 @@ public struct RGBA: Color, Alpha {
     }
 
     fileprivate func toRGB() -> RGB {
-        return RGB(self.red, self.blue, self.green)
+        return RGB(self.redComponent, self.blueComponent, self.greenComponent)
     }
 }

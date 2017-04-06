@@ -6,69 +6,78 @@ import Colors
 
 let rgbInt = RGB(0, 0, 0)
 
-let green = RGB(0, 255, 0)
-let hsl   = HSL(green)
-let hsla  = HSLA(hsl)
-let hsb   = HSB(hsla)
-let hsba  = HSBA(hsb)
+extension RGB {
+    // Standard colors
+    public static var black: RGB { return RGB(0,0,0)       }
+    public static var red:   RGB { return RGB(255,0,0)     }
+    public static var green: RGB { return RGB(0,255,0)     }
+    public static var blue:  RGB { return RGB(0,0,255)     }
+    public static var white: RGB { return RGB(255,255,255) }
+}
 
-let colors: [Color] = [green, hsl, hsla, hsb, hsba]
+let firstColor = RGB.black
+let hsl        = HSL(firstColor)
+let hsla       = HSLA(hsl)
+let hsb        = HSB(hsla)
+let hsba       = HSBA(hsb)
+
+let colors: [RGB] = [RGB.green, hsl.rgb, hsla.rgb, hsb.rgb, hsba.rgb]
 colors.osColors()
 colors.nsColors()
 
-green.rgba.red
-green.rgba.green
-green.rgba.blue
-green.rgba.alpha
+firstColor.rgba.redComponent
+firstColor.rgba.greenComponent
+firstColor.rgba.blueComponent
+firstColor.rgba.alphaComponent
 
-hsl.hue
-hsl.saturation
-hsl.lightness
+hsl.hueComponent
+hsl.saturationComponent
+hsl.lightnessComponent
 
-hsla.hue
-hsla.saturation
-hsla.lightness
-hsla.alpha
+hsla.hueComponent
+hsla.saturationComponent
+hsla.lightnessComponent
+hsla.alphaComponent
 
-hsb.hue
-hsb.saturation
-hsb.brightness
+hsb.hueComponent
+hsb.saturationComponent
+hsb.brightnessComponent
 
-hsba.hue
-hsba.saturation
-hsba.brightness
-hsba.alpha
+hsba.hueComponent
+hsba.saturationComponent
+hsba.brightnessComponent
+hsba.alphaComponent
 
-green.rgba.red
-green.rgba.green
-green.rgba.blue
-green.rgba.alpha
+firstColor.rgba.redComponent
+firstColor.rgba.greenComponent
+firstColor.rgba.blueComponent
+firstColor.rgba.alphaComponent
 
-green.rgba.hsl.hue
-green.rgba.hsl.saturation
-green.rgba.hsl.lightness
+firstColor.rgba.hsl.hueComponent
+firstColor.rgba.hsl.saturationComponent
+firstColor.rgba.hsl.lightnessComponent
 
-green.rgba.hsl.hsla.hue
-green.rgba.hsl.hsla.saturation
-green.rgba.hsl.hsla.lightness
+firstColor.rgba.hsl.hsla.hueComponent
+firstColor.rgba.hsl.hsla.saturationComponent
+firstColor.rgba.hsl.hsla.lightnessComponent
 
-green.rgba.hsl.hsla.hsb.hue
-green.rgba.hsl.hsla.hsb.saturation
-green.rgba.hsl.hsla.hsb.brightness
+firstColor.rgba.hsl.hsla.hsb.hueComponent
+firstColor.rgba.hsl.hsla.hsb.saturationComponent
+firstColor.rgba.hsl.hsla.hsb.brightnessComponent
 
-green.rgba.hsl.hsla.hsb.rgb.red
-green.rgba.hsl.hsla.hsb.rgb.green
-green.rgba.hsl.hsla.hsb.rgb.blue
+firstColor.rgba.hsl.hsla.hsb.rgb.redComponent
+firstColor.rgba.hsl.hsla.hsb.rgb.greenComponent
+firstColor.rgba.hsl.hsla.hsb.rgb.blueComponent
 
-green.rgba.hsl.hsla.hsb.hue
-green.rgba.hsl.hsla.hsb.saturation
-green.rgba.hsl.hsla.hsb.brightness
+firstColor.rgba.hsl.hsla.hsb.hueComponent
+firstColor.rgba.hsl.hsla.hsb.saturationComponent
+firstColor.rgba.hsl.hsla.hsb.brightnessComponent
 
-green.rgba.hsl.hsla.hsb.hsba.hue
-green.rgba.hsl.hsla.hsb.hsba.saturation
-green.rgba.hsl.hsla.hsb.hsba.brightness
-green.rgba.hsl.hsla.hsb.hsba.alpha
+firstColor.rgba.hsl.hsla.hsb.hsba.hueComponent
+firstColor.rgba.hsl.hsla.hsb.hsba.saturationComponent
+firstColor.rgba.hsl.hsla.hsb.hsba.brightnessComponent
+firstColor.rgba.hsl.hsla.hsb.hsba.alphaComponent
 
-green.rgba.hsl.hsla.hsb.hsba.rgb.red
-green.rgba.hsl.hsla.hsb.hsba.rgb.green
-green.rgba.hsl.hsla.hsb.hsba.rgb.blue
+firstColor.rgba.hsl.hsla.hsb.hsba.rgb.redComponent
+firstColor.rgba.hsl.hsla.hsb.hsba.rgb.greenComponent
+firstColor.rgba.hsl.hsla.hsb.hsba.rgb.blueComponent

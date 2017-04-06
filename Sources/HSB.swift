@@ -23,21 +23,21 @@ public struct HSB: Color {
 
     public var osColor: OSColor {
         #if os(iOS) || os(tvOS) || os(watchOS)
-        return UIColor(hue: self.hue * 360,
-                       saturation: self.saturation,
-                       brightness: self.brightness,
+        return UIColor(hue: self.hueComponent * 360,
+                       saturation: self.saturationComponent,
+                       brightness: self.brightnessComponent,
                        alpha: 1.0)
         #elseif os(macOS)
-        return NSColor(hue: self.hue,
-                       saturation: self.saturation,
-                       brightness: self.brightness,
+        return NSColor(hue: self.hueComponent,
+                       saturation: self.saturationComponent,
+                       brightness: self.brightnessComponent,
                        alpha: 1.0)
         #endif
     }
 
-    public var hue:        CGFloat = 0
-    public var saturation: CGFloat = 0
-    public var brightness: CGFloat = 0
+    public var hueComponent:        CGFloat = 0
+    public var saturationComponent: CGFloat = 0
+    public var brightnessComponent: CGFloat = 0
 
     public init() {}
     
@@ -46,8 +46,8 @@ public struct HSB: Color {
     }
 
     public init(_ hue: CGFloat, _ saturation: CGFloat, _ brightness: CGFloat) {
-        self.hue = hue.truncatingRemainder(dividingBy: 360) / 360
-        self.saturation  = clamp(saturation, to: 1.0).cgFloat
-        self.brightness  = clamp(brightness, to: 1.0).cgFloat
+        self.hueComponent = hue.truncatingRemainder(dividingBy: 360) / 360
+        self.saturationComponent  = clamp(saturation, to: 1.0).cgFloat
+        self.brightnessComponent  = clamp(brightness, to: 1.0).cgFloat
     }
 }

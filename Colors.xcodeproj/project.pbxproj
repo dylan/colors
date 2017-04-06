@@ -97,13 +97,6 @@
 		FCF717841E96A20E005FAC5C /* OSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7177F1E96A20E005FAC5C /* OSColor.swift */; };
 		FCF717851E96A20E005FAC5C /* OSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7177F1E96A20E005FAC5C /* OSColor.swift */; };
 		FCF717861E96A20E005FAC5C /* OSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7177F1E96A20E005FAC5C /* OSColor.swift */; };
-		FCF717881E96A67C005FAC5C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF717871E96A67C005FAC5C /* Colors.swift */; };
-		FCF717891E96A67C005FAC5C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF717871E96A67C005FAC5C /* Colors.swift */; };
-		FCF7178A1E96A67C005FAC5C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF717871E96A67C005FAC5C /* Colors.swift */; };
-		FCF7178B1E96A67C005FAC5C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF717871E96A67C005FAC5C /* Colors.swift */; };
-		FCF7178C1E96A67C005FAC5C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF717871E96A67C005FAC5C /* Colors.swift */; };
-		FCF7178D1E96A67C005FAC5C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF717871E96A67C005FAC5C /* Colors.swift */; };
-		FCF7178E1E96A67C005FAC5C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF717871E96A67C005FAC5C /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,7 +146,6 @@
 		FC54314E1E9659DC00F0D291 /* Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversions.swift; sourceTree = "<group>"; };
 		FCF717771E96A107005FAC5C /* Array+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Color.swift"; sourceTree = "<group>"; };
 		FCF7177F1E96A20E005FAC5C /* OSColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSColor.swift; sourceTree = "<group>"; };
-		FCF717871E96A67C005FAC5C /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,7 +268,6 @@
 				FC54314E1E9659DC00F0D291 /* Conversions.swift */,
 				FCF717771E96A107005FAC5C /* Array+Color.swift */,
 				FCF7177F1E96A20E005FAC5C /* OSColor.swift */,
-				FCF717871E96A67C005FAC5C /* Colors.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -569,7 +560,6 @@
 				52D6D9981BEFF375002C0205 /* Color.swift in Sources */,
 				FC12C2DF1E95210C00AC1E7F /* HSLA.swift in Sources */,
 				FC12C2E71E95212C00AC1E7F /* HSB.swift in Sources */,
-				FCF717881E96A67C005FAC5C /* Colors.swift in Sources */,
 				FC0DFE231E942DCE00716946 /* Math.swift in Sources */,
 				FCF717801E96A20E005FAC5C /* OSColor.swift in Sources */,
 				FCF717781E96A107005FAC5C /* Array+Color.swift in Sources */,
@@ -584,7 +574,6 @@
 				FC12C2A71E9500BD00AC1E7F /* Types.swift in Sources */,
 				FC12C2EB1E95212C00AC1E7F /* HSB.swift in Sources */,
 				FC12C2F31E95215300AC1E7F /* HSBA.swift in Sources */,
-				FCF7178C1E96A67C005FAC5C /* Colors.swift in Sources */,
 				FC12C2AA1E9502EC00AC1E7F /* Color.swift in Sources */,
 				FC12C2E31E95210C00AC1E7F /* HSLA.swift in Sources */,
 				52D6D99B1BEFF375002C0205 /* ColorsTests.swift in Sources */,
@@ -610,7 +599,6 @@
 				52D6D9EA1BEFFFA4002C0205 /* Color.swift in Sources */,
 				FC12C2E11E95210C00AC1E7F /* HSLA.swift in Sources */,
 				FC12C2E91E95212C00AC1E7F /* HSB.swift in Sources */,
-				FCF7178A1E96A67C005FAC5C /* Colors.swift in Sources */,
 				FC0DFE251E942DCE00716946 /* Math.swift in Sources */,
 				FCF717821E96A20E005FAC5C /* OSColor.swift in Sources */,
 				FCF7177A1E96A107005FAC5C /* Array+Color.swift in Sources */,
@@ -630,7 +618,6 @@
 				52D6DA091BF00081002C0205 /* Color.swift in Sources */,
 				FC12C2E21E95210C00AC1E7F /* HSLA.swift in Sources */,
 				FC12C2EA1E95212C00AC1E7F /* HSB.swift in Sources */,
-				FCF7178B1E96A67C005FAC5C /* Colors.swift in Sources */,
 				FC0DFE261E942DCE00716946 /* Math.swift in Sources */,
 				FCF717831E96A20E005FAC5C /* OSColor.swift in Sources */,
 				FCF7177B1E96A107005FAC5C /* Array+Color.swift in Sources */,
@@ -650,7 +637,6 @@
 				FC0DFE241E942DCE00716946 /* Math.swift in Sources */,
 				FC12C2E01E95210C00AC1E7F /* HSLA.swift in Sources */,
 				FC12C2E81E95212C00AC1E7F /* HSB.swift in Sources */,
-				FCF717891E96A67C005FAC5C /* Colors.swift in Sources */,
 				FC12C2A41E9500BD00AC1E7F /* Types.swift in Sources */,
 				FCF717811E96A20E005FAC5C /* OSColor.swift in Sources */,
 				FCF717791E96A107005FAC5C /* Array+Color.swift in Sources */,
@@ -665,7 +651,6 @@
 				FC12C2EC1E95212C00AC1E7F /* HSB.swift in Sources */,
 				FC12C2F41E95215300AC1E7F /* HSBA.swift in Sources */,
 				DD7502861C68FDDC006590AF /* ColorsTests.swift in Sources */,
-				FCF7178D1E96A67C005FAC5C /* Colors.swift in Sources */,
 				FC12C2E41E95210C00AC1E7F /* HSLA.swift in Sources */,
 				FC0DFE281E942DCE00716946 /* Math.swift in Sources */,
 				FC12C2DC1E9520D600AC1E7F /* HSL.swift in Sources */,
@@ -686,7 +671,6 @@
 				FC12C2A91E9500BD00AC1E7F /* Types.swift in Sources */,
 				FC12C2ED1E95212C00AC1E7F /* HSB.swift in Sources */,
 				FC12C2F51E95215300AC1E7F /* HSBA.swift in Sources */,
-				FCF7178E1E96A67C005FAC5C /* Colors.swift in Sources */,
 				FC12C2AC1E9502EE00AC1E7F /* Color.swift in Sources */,
 				FC12C2E51E95210C00AC1E7F /* HSLA.swift in Sources */,
 				DD75029A1C690CBE006590AF /* ColorsTests.swift in Sources */,

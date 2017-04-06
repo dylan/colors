@@ -23,37 +23,37 @@ public struct HSLA: Color, Alpha {
 
     public var osColor: OSColor {
         #if os(iOS) || os(tvOS) || os(watchOS)
-        return UIColor(red: rgba.red,
-                       green: rgba.green,
-                       blue: rgba.blue,
-                       alpha: self.alpha)
+        return UIColor(red: rgba.redComponent,
+                       green: rgba.greenComponent,
+                       blue: rgba.blueComponent,
+                       alpha: self.alphaComponent)
         #elseif os(macOS)
-        return NSColor(red: rgba.red,
-                       green: rgba.green,
-                       blue: rgba.blue,
-                       alpha: self.alpha)
+        return NSColor(red: rgba.redComponent,
+                       green: rgba.greenComponent,
+                       blue: rgba.blueComponent,
+                       alpha: self.alphaComponent)
         #endif
     }
 
 
-    public var hue:        CGFloat = 0
-    public var saturation: CGFloat = 0
-    public var lightness:  CGFloat = 0
-    public var alpha:      CGFloat = 0
+    public var hueComponent:        CGFloat = 0
+    public var saturationComponent: CGFloat = 0
+    public var lightnessComponent:  CGFloat = 0
+    public var alphaComponent:      CGFloat = 0
 
     public init() {}
     
     public init(_ color: Color) {
         self = color.hsla
         if let alphaColor = color as? Alpha {
-            self.alpha = alphaColor.alpha
+            self.alphaComponent = alphaColor.alphaComponent
         }
     }
 
     public init(_ hue: CGFloat, _ saturation: CGFloat, _ lightness: CGFloat, _ alpha: CGFloat) {
-        self.hue        = hue.truncatingRemainder(dividingBy: 360) / 360
-        self.saturation = clamp(saturation, to: 1.0).cgFloat
-        self.lightness  = clamp(lightness, to: 1.0).cgFloat
-        self.alpha      = clamp(alpha, to: 1.0).cgFloat
+        self.hueComponent        = hue.truncatingRemainder(dividingBy: 360) / 360
+        self.saturationComponent = clamp(saturation, to: 1.0).cgFloat
+        self.lightnessComponent  = clamp(lightness, to: 1.0).cgFloat
+        self.alphaComponent      = clamp(alpha, to: 1.0).cgFloat
     }
 }

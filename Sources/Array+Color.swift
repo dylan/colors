@@ -13,7 +13,7 @@ import UIKit
 import AppKit
 #endif
 
-extension Array where Element == Color {
+extension Array where Element: Color {
     public func osColors() -> [OSColor] {
         return self.map( { $0.osColor })
     }

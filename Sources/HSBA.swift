@@ -23,36 +23,36 @@ public struct HSBA: Color, Alpha {
 
     public var osColor: OSColor {
         #if os(iOS) || os(tvOS) || os(watchOS)
-        return UIColor(hue:         self.hue,
-                       saturation:  self.saturation,
-                       brightness:  self.brightness,
-                       alpha:       self.alpha)
+        return UIColor(hue:         self.hueComponent,
+                       saturation:  self.saturationComponent,
+                       brightness:  self.brightnessComponent,
+                       alpha:       self.alphaComponent)
         #elseif os(macOS)
-            return NSColor(hue:         self.hue,
-                           saturation:  self.saturation,
-                           brightness:  self.brightness,
-                           alpha:       self.alpha)
+            return NSColor(hue:         self.hueComponent,
+                           saturation:  self.saturationComponent,
+                           brightness:  self.brightnessComponent,
+                           alpha:       self.alphaComponent)
         #endif
     }
 
-    public var hue:        CGFloat = 0
-    public var saturation: CGFloat = 0
-    public var brightness: CGFloat = 0
-    public var alpha:      CGFloat = 0
+    public var hueComponent:        CGFloat = 0
+    public var saturationComponent: CGFloat = 0
+    public var brightnessComponent: CGFloat = 0
+    public var alphaComponent:      CGFloat = 0
 
     public init() {}
 
     public init(_ color: Color) {
         self = color.hsba
         if let alphaColor = color as? Alpha {
-            self.alpha = alphaColor.alpha
+            self.alphaComponent = alphaColor.alphaComponent
         }
     }
 
     public init(_ hue: CGFloat, _ saturation: CGFloat, _ brightness: CGFloat, _ alpha: CGFloat) {
-        self.hue        = hue.truncatingRemainder(dividingBy: 360) / 360
-        self.saturation = clamp(saturation, to: 1.0).cgFloat
-        self.brightness = clamp(brightness, to: 1.0).cgFloat
-        self.alpha      = clamp(alpha, to: 1.0).cgFloat
+        self.hueComponent        = hue.truncatingRemainder(dividingBy: 360) / 360
+        self.saturationComponent = clamp(saturation, to: 1.0).cgFloat
+        self.brightnessComponent = clamp(brightness, to: 1.0).cgFloat
+        self.alphaComponent      = clamp(alpha, to: 1.0).cgFloat
     }
 }

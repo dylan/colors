@@ -28,5 +28,5 @@ public protocol Color {
 }
 
 public protocol Alpha {
-    var alpha: CGFloat { get }
+    var alphaComponent: CGFloat { get }
 }
