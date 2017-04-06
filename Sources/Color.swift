@@ -21,13 +21,10 @@ public protocol Color {
     var hsb:  HSB  { get }
     var hsba: HSBA { get }
 
-    #if os(iOS) || os(tvOS) || os(watchOS)
-    var osColor: UIColor { get }
-    #elseif os(macOS)
-    var osColor: NSColor { get }
-    #endif
+    var osColor: OSColor { get }
 
     init(_ color: Color)
+
 }
 
 public protocol Alpha {

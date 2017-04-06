@@ -8,9 +8,9 @@
 
 import Foundation
 #if os(iOS) || os(tvOS) || os(watchOS)
-    import UIKit
+import UIKit
 #elseif os(macOS)
-    import AppKit
+import AppKit
 #endif
 
 public struct RGBA: Color, Alpha {
@@ -22,21 +22,14 @@ public struct RGBA: Color, Alpha {
     public var hsb:  HSB  { return Colors.hsb(from: self)  }
     public var hsba: HSBA { return Colors.hsba(from: self) }
 
-    #if os(iOS) || os(tvOS) || os(watchOS)
-    public var osColor: UIColor {
-        return UIColor(red: red,
-                       green: green,
-                       blue: blue,
-                       alpha: alpha)
+    public var osColor: OSColor {
+        #if os(iOS) || os(tvOS) || os(watchOS)
+        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
+        #elseif os(macOS)
+        return NSColor(red: red, green: green, blue: blue, alpha: alpha)
+        #endif
     }
-    #elseif os(macOS)
-    public var osColor: NSColor {
-        return NSColor(red: red,
-                       green: green,
-                       blue: blue,
-                       alpha: alpha)
-    }
-    #endif
+
 
     public var red:   CGFloat = 0
     public var green: CGFloat = 0
@@ -64,6 +57,10 @@ public struct RGBA: Color, Alpha {
         self.green = clamp(green, to: 1.0).cgFloat
         self.blue  = clamp(blue,  to: 1.0).cgFloat
         self.alpha = clamp(alpha,  to: 1.0).cgFloat
+    }
+
+    public init(_ red: Double, _ green: Double, _ blue: Double, _ alpha: Double) {
+        self.init(red, green, blue, alpha)
     }
 
     fileprivate func toRGB() -> RGB {

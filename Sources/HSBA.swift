@@ -8,9 +8,9 @@
 
 import Foundation
 #if os(iOS) || os(tvOS) || os(watchOS)
-    import UIKit
+import UIKit
 #elseif os(macOS)
-    import AppKit
+import AppKit
 #endif
 
 public struct HSBA: Color, Alpha {
@@ -21,21 +21,19 @@ public struct HSBA: Color, Alpha {
     public var hsb:  HSB  { return Colors.hsb(from: self)  }
     public var hsba: HSBA { return self }
 
-    #if os(iOS) || os(tvOS) || os(watchOS)
-    public var osColor: UIColor {
+    public var osColor: OSColor {
+        #if os(iOS) || os(tvOS) || os(watchOS)
         return UIColor(hue:         self.hue,
                        saturation:  self.saturation,
                        brightness:  self.brightness,
                        alpha:       self.alpha)
+        #elseif os(macOS)
+            return NSColor(hue:         self.hue,
+                           saturation:  self.saturation,
+                           brightness:  self.brightness,
+                           alpha:       self.alpha)
+        #endif
     }
-    #elseif os(macOS)
-    public var osColor: NSColor {
-        return NSColor(hue:         self.hue,
-                       saturation:  self.saturation,
-                       brightness:  self.brightness,
-                       alpha:       self.alpha)
-    }
-    #endif
 
     public var hue:        CGFloat = 0
     public var saturation: CGFloat = 0

@@ -21,15 +21,19 @@ public struct HSL: Color {
     public var hsb:  HSB  { return Colors.hsb(from: self)  }
     public var hsba: HSBA { return Colors.hsba(from: self) }
 
-    #if os(iOS) || os(tvOS) || os(watchOS)
-    public var osColor: UIColor {
-        return UIColor(red: self.rgba.red, green: self.rgba.green, blue: self.rgba.blue, alpha: 1.0)
+    public var osColor: OSColor {
+        #if os(iOS) || os(tvOS) || os(watchOS)
+        return UIColor(red: rgba.red,
+                       green: rgba.green,
+                       blue: rgba.blue,
+                       alpha: 1.0)
+        #elseif os(macOS)
+        return NSColor(red: rgba.red,
+                       green: rgba.green,
+                       blue: rgba.blue,
+                       alpha: 1.0)
+        #endif
     }
-    #elseif os(macOS)
-    public var osColor: NSColor {
-        return NSColor(red: self.rgba.red, green: self.rgba.green, blue: self.rgba.blue, alpha: 1.0)
-    }
-    #endif
 
     public var hue:        CGFloat = 0
     public var saturation: CGFloat = 0
