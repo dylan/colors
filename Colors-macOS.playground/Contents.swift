@@ -7,8 +7,8 @@ import Colors
 let rgbInt = RGB(0, 0, 0)
 
 
-dump(RGBA(0xff9acd32))
-dump(RGB(0xffffff))
+//dump(RGBA(0xff9acd32))
+//dump(RGB(0xffffff))
 
 
 
@@ -17,6 +17,10 @@ let hsl        = HSL(firstColor)
 let hsla       = HSLA(hsl)
 let hsb        = HSB(hsla)
 let hsba       = HSBA(hsb)
+
+let white = RGB.CGA.white
+dump(white)
+
 
 let colors: [RGB] = [RGB.W3C.green, hsl.rgb, hsla.rgb, hsb.rgb, hsba.rgb]
 colors.osColors()

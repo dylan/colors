@@ -9,6 +9,23 @@
 import Foundation
 
 extension RGB {
+    public enum CGA {
+        public static let black        = RGB(0x000000)
+        public static let blue         = RGB(0x0000aa)
+        public static let green        = RGB(0x00aa00)
+        public static let cyan         = RGB(0xaa0000)
+        public static let magenta      = RGB(0xaa00aa)
+        public static let brown        = RGB(0xaa5500)
+        public static let lightGray    = RGB(0xaaaaaa)
+        public static let gray         = RGB(0x555555)
+        public static let lightBlue    = RGB(0x5555ff)
+        public static let lightGreen   = RGB(0x55ff55)
+        public static let lightCyan    = RGB(0x55ffff)
+        public static let lightRed     = RGB(0xff5555)
+        public static let lightMagenta = RGB(0xff55ff)
+        public static let lightYellow  = RGB(0xffff55)
+        public static let white        = RGB(0xffffff)
+    }
     public enum W3C {
         public static let aliceblue            = RGB(0xf0f8ff)
         public static let antiquewhite         = RGB(0xfaebd7)
