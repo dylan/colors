@@ -40,6 +40,10 @@ public struct RGB: Color {
         self = color.rgb
     }
 
+    public init(_ rgbHex: Int) {
+        self.init((rgbHex >> 16) & 0xff, (rgbHex >> 8) & 0xff, rgbHex & 0xff)
+    }
+
     public init(_ red: Int, _ green: Int, _ blue: Int) {
         self.redComponent   = clamp(red, to: 255).cgFloat   / 255.0
         self.greenComponent = clamp(green, to: 255).cgFloat / 255.0

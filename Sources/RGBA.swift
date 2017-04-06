@@ -45,6 +45,10 @@ public struct RGBA: Color, Alpha {
         }
     }
 
+    public init(_ argbHex: Int) {
+        self.init((argbHex >> 16) & 0xff, (argbHex >> 8) & 0xff, argbHex & 0xff, (argbHex >> 24) & 0xff)
+    }
+
     public init(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Int) {
         self.redComponent   = clamp(red, to: 255).cgFloat   / 255.0
         self.greenComponent = clamp(green, to: 255).cgFloat / 255.0

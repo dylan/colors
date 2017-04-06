@@ -6,22 +6,19 @@ import Colors
 
 let rgbInt = RGB(0, 0, 0)
 
-extension RGB {
-    // Standard colors
-    public static var black: RGB { return RGB(0,0,0)       }
-    public static var red:   RGB { return RGB(255,0,0)     }
-    public static var green: RGB { return RGB(0,255,0)     }
-    public static var blue:  RGB { return RGB(0,0,255)     }
-    public static var white: RGB { return RGB(255,255,255) }
-}
 
-let firstColor = RGB.black
+dump(RGBA(0xff9acd32))
+dump(RGB(0xffffff))
+
+
+
+let firstColor = RGB.X11.lightGoldenrodYellow
 let hsl        = HSL(firstColor)
 let hsla       = HSLA(hsl)
 let hsb        = HSB(hsla)
 let hsba       = HSBA(hsb)
 
-let colors: [RGB] = [RGB.green, hsl.rgb, hsla.rgb, hsb.rgb, hsba.rgb]
+let colors: [RGB] = [RGB.W3C.green, hsl.rgb, hsla.rgb, hsb.rgb, hsba.rgb]
 colors.osColors()
 colors.nsColors()
 
