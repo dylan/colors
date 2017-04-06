@@ -16,45 +16,43 @@ import Foundation
 // MARK: - RGB
 
 internal func rgb(from rgba: RGBA) -> RGB {
-    return RGB(rgba.red, rgba.blue, rgba.green)
+    return RGB(rgba.red, rgba.green, rgba.blue)
 }
 
 internal func rgb(from hsl: HSL) -> RGB {
-    var r: CGFloat = 0
-    var g: CGFloat = 0
-    var b: CGFloat = 0
-    let hue        = hsl.hue
-    let saturation = hsl.saturation
-    let lightness  = hsl.lightness
+    var hue        = hsl.hue
+    var saturation = hsl.saturation
+    var lightness  = hsl.lightness
 
-    if saturation == 0 {
-        r = lightness
-        g = lightness
-        b = lightness
+    var m1: CGFloat = 0.0
+    var m2: CGFloat = 0.0
+
+    if lightness <= 0.5 {
+        m2 = lightness * (saturation + 1)
     } else {
-        func hueToRgb(m1: CGFloat, m2: CGFloat, hue: CGFloat) -> CGFloat {
-            var hue = hsl.hue
-            if hue < 0 { hue += 1 }
-            if hue > 1 { hue -= 1 }
-
-            if hue < 1 / 6 { return m1 + (m2 - m1) * hue * 6 }
-            if hue < 1 / 2 { return m2 }
-            if hue < 2 / 3 { return m1 + (m2 - m1) * (2 / 3 - hue) * 6 }
-            return m1
-        }
-        let m2: CGFloat = lightness < 0.5 ? lightness * (1 + saturation) : lightness + saturation - lightness * saturation
-
-        let m1: CGFloat = 2 * lightness - m2
-
-        r = hueToRgb(m1: m1, m2: m2, hue: hue + 1 / 3) * 255.0.cgFloat
-        g = hueToRgb(m1: m1, m2: m2, hue: hue) * 255.cgFloat
-        b = hueToRgb(m1: m1, m2: m2, hue: hue - 1 / 3) * 255.cgFloat
+        m2 = lightness + saturation - lightness * saturation
     }
+
+    m1 = lightness * 2 - m2
+
+    func hueToRgb(m1: CGFloat, m2: CGFloat, hue: CGFloat) -> CGFloat {
+        var hue = hue
+        if hue < 0 { hue += 1 }
+        if hue > 1 { hue -= 1 }
+
+        if hue * 6 < 1 { return m1 + (m2 - m1) * hue * 6 }
+        if hue * 2 < 1 { return m2 }
+        if hue * 3 < 2 { return m1 + (m2 - m1) * (2 / 3 - hue) * 6 }
+        return m1
+    }
+    let r = hueToRgb(m1: m1, m2: m2, hue: hue + 1.0 / 3.0)
+    let g = hueToRgb(m1: m1, m2: m2, hue: hue)
+    let b = hueToRgb(m1: m1, m2: m2, hue: hue - 1.0 / 3.0)
     return RGB(r, g, b)
 }
 
 internal func rgb(from hsla: HSLA) -> RGB {
-    return rgb(from: hsla.hsl)
+    return rgb(from: hsl(from: hsla))
 }
 
 internal func rgb(from hsb: HSB) -> RGB {
@@ -102,8 +100,8 @@ internal func hsl(from rgb: RGB) -> HSL {
     let green = rgb.green
     let blue  = rgb.blue
 
-    let maxComponent = max(red, blue, green)
-    let minComponent = min(red, blue, green)
+    let maxComponent = max(red, green, blue)
+    let minComponent = min(red, green, blue)
     let halfRange    = (maxComponent + minComponent) / 2
     let delta        = maxComponent - minComponent
 
@@ -128,7 +126,9 @@ internal func hsl(from rgb: RGB) -> HSL {
         }
         hue /= 6
     }
-    return HSL(hue * 360, saturation, lightness)
+    var result = HSL(0, saturation, lightness)
+    result.hue = hue
+    return result
 }
 
 internal func hsl(from rgba: RGBA) -> HSL {
@@ -241,5 +241,5 @@ internal func hsba(from hsla: HSLA) -> HSBA {
 }
 
 internal func hsba(from hsb: HSB) -> HSBA {
-    return hsba(from: rgb(from: hsb))
+    return hsba(from: rgba(from: hsb))
 }

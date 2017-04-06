@@ -23,17 +23,17 @@ public struct HSBA: Color, Alpha {
 
     #if os(iOS) || os(tvOS) || os(watchOS)
     public var osColor: UIColor {
-        return UIColor(hue: self.hue,
-                       saturation: self.saturation,
-                       brightness: self.brightness,
-                       alpha: self.alpha)
+        return UIColor(hue:         self.hue,
+                       saturation:  self.saturation,
+                       brightness:  self.brightness,
+                       alpha:       self.alpha)
     }
     #elseif os(macOS)
     public var osColor: NSColor {
-        return NSColor(hue: self.hue,
-                       saturation: self.saturation,
-                       brightness: self.brightness,
-                       alpha: self.alpha)
+        return NSColor(hue:         self.hue,
+                       saturation:  self.saturation,
+                       brightness:  self.brightness,
+                       alpha:       self.alpha)
     }
     #endif
 

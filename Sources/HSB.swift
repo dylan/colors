@@ -23,7 +23,7 @@ public struct HSB: Color {
 
     #if os(iOS) || os(tvOS) || os(watchOS)
     public var osColor: UIColor {
-        return UIColor(hue: self.hue, saturation: self.saturation, brightness: self.brightness, alpha: 1.0)
+        return UIColor(hue: self.hue * 360, saturation: self.saturation, brightness: self.brightness, alpha: 1.0)
     }
     #elseif os(macOS)
     public var osColor: NSColor {
