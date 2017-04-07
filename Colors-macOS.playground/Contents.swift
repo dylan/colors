@@ -28,10 +28,10 @@ let colors: [RGB] = [RGB.W3C.green, hsl.rgb, hsla.rgb, hsb.rgb, hsba.rgb]
 //RGB.white.toHex()
 
 let v1 = 0xffffff
-RGB.X11.white.rgbHex() == RGB(v1).rgbHex()
+RGB.X11.white.rgbHex == RGB(v1).rgbHex
 
 let v = 0xff00ffff
-RGBA(0, 255, 255, 255).argbHex() == RGBA.init(v).argbHex()
+RGBA(0, 255, 255, 255).argbHex == RGBA(v).argbHex
 
 colors.osColors()
 colors.nsColors()
