@@ -109,7 +109,8 @@ extension Color where Self == HSBA {
 
 extension Color {
 
-    public static func lerpedColor(from a: Color, through b: Color, at position: CGFloat) -> Self {
+    public static func sample(from a: Color, through b: Color, at position: CGFloat) -> Self {
+
         func lerp(from a: CGFloat, to b: CGFloat, percent: CGFloat) -> CGFloat {
             return (b - a) * percent + a
         }
@@ -125,9 +126,38 @@ extension Color {
         let lerpedValues = lerpValues(a: Self(a).components, b: Self(b).components, percent: position)
 
         return Self(lerpedValues)
-//        return Self(RGBA(r, g, b, a))
     }
 
+    public func sampleBetweenSelf(and color: Color, at position: CGFloat) -> Self {
+        return Self.sample(from: self, through: color, at: position)
+    }
+
+    public static func gradient(from a: Color, through b: Color, steps: Int) -> [Self] {
+        var result = [Self]()
+        for i in 0..<steps {
+            let color = a.sampleBetweenSelf(and: b, at: CGFloat(i) / CGFloat(steps - 1))
+            result.append(Self(color))
+        }
+        return result
+    }
+
+    public func gradient(to color: Color, steps: Int) -> [Self] {
+        return Self.gradient(from: self, through: color, steps: steps)
+    }
+
+    public static func gradient(from colors: [Color], steps: Int) -> [Self] {
+        var result = [Self]()
+        let dividingFactor = CGFloat(colors.count - 1) / CGFloat(steps - 1)
+        for i in 0..<steps {
+            let tmp = CGFloat(i) * dividingFactor
+            let priorIndex = Int(floor(tmp))
+            let nextIndex = Int(ceil(tmp))
+            let percent = tmp - CGFloat(priorIndex)
+            let color = Self(colors[priorIndex].sampleBetweenSelf(and: colors[nextIndex], at: percent))
+            result.append(color)
+        }
+        return result
+    }
 }
 
 public protocol Alpha {

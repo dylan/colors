@@ -9,11 +9,17 @@
 import Foundation
 
 extension RGB {
+    public static let black = RGB(0x000000)
+    public static let white = RGB(0xffffff)
+    public static let red   = RGB(0xff0000)
+    public static let green = RGB(0x00ff00)
+    public static let blue  = RGB(0x0000ff)
+    
     public enum CGA {
         public static let black        = RGB(0x000000)
         public static let blue         = RGB(0x0000aa)
         public static let green        = RGB(0x00aa00)
-        public static let cyan         = RGB(0xaa0000)
+        public static let cyan         = RGB(0x00aaaa)
         public static let magenta      = RGB(0xaa00aa)
         public static let brown        = RGB(0xaa5500)
         public static let lightGray    = RGB(0xaaaaaa)

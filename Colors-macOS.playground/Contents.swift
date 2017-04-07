@@ -10,14 +10,20 @@ let hsb        = HSB(hsla)
 let hsba       = HSBA(hsb)
 
 let white = RGB.CGA.white
-//dump(white)
 
 
-let gradientColors: [RGB] = [RGB.X11.black, RGB.X11.white]
 
-dump(RGB.lerpedColor(from: RGB.X11.black, through: RGB.X11.white.hsb, at: 0.5))
+//dump(RGB.sample(from: RGB.X11.black, through: RGB.X11.red, at: 0.33))
+//dump(HSL.sample(from: RGB.X11.black, through: RGB.X11.red, at: 0.33))
+//dump(HSB.sample(from: RGB.X11.black, through: RGB.X11.red, at: 0.33))
+//
+//dump(RGB.CGA.cyan.sampleBetweenSelf(and: RGB.W3C.red, at: 0.5))
+//dump(RGB.gradient(from: RGB.X11.red, through: RGB.X11.black, steps: 4))
 
 let colors: [RGB] = [RGB.W3C.green, hsl.rgb, hsla.rgb, hsb.rgb, hsba.rgb]
+
+//dump(RGB.gradient(from: [RGB.CGA.black, RGB.X11.white, RGB.CGA.black], steps: 5))
+
 colors.osColors()
 colors.nsColors()
 
@@ -69,7 +75,7 @@ firstColor.rgba.hsl.hsla.hsb.hueComponent
 firstColor.rgba.hsl.hsla.hsb.saturationComponent
 firstColor.rgba.hsl.hsla.hsb.brightnessComponent
 
-firstColor.rgba.hsl.hsla.hsb.hsba.hueComponent
+firstColor.rgba.hsl.hsla.hsb.hsba
 firstColor.rgba.hsl.hsla.hsb.hsba.saturationComponent
 firstColor.rgba.hsl.hsla.hsb.hsba.brightnessComponent
 firstColor.rgba.hsl.hsla.hsb.hsba.alphaComponent

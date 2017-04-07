@@ -13,7 +13,7 @@ import UIKit
 import AppKit
 #endif
 
-public struct RGBA: Color, Alpha {
+public struct RGBA: Color, Alpha, CustomPlaygroundQuickLookable {
 
     public var rgb:  RGB  { return Colors.rgb(from: self)  }
     public var rgba: RGBA { return self }
@@ -66,8 +66,12 @@ public struct RGBA: Color, Alpha {
     public init(_ red: Double, _ green: Double, _ blue: Double, _ alpha: Double) {
         self.init(red, green, blue, alpha)
     }
-
-    fileprivate func toRGB() -> RGB {
-        return RGB(self.redComponent, self.blueComponent, self.greenComponent)
+    public var customPlaygroundQuickLook: PlaygroundQuickLook {
+        #if os(iOS) || os(tvOS) || os(watchOS)
+            return .color(self.osColor.uiColor)
+        #elseif os(macOS)
+            return .color(self.osColor.nsColor)
+        #endif
     }
+
 }

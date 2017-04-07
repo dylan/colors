@@ -99,3 +99,7 @@ public func clamp(_ x: NumericValue, to m: NumericValue) -> NumericValue {
     return min(max(x.value, 0.value), m.value)
 }
 
+public func clip(_ x: NumericValue, between minVal: NumericValue, and maxVal: NumericValue) -> NumericValue {
+    return max(min(x.value, minVal.value), maxVal.value)
+}
+

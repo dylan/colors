@@ -13,7 +13,7 @@ import UIKit
 import AppKit
 #endif
 
-public struct HSLA: Color, Alpha {
+public struct HSLA: Color, Alpha, CustomPlaygroundQuickLookable {
     public var rgb:  RGB  { return Colors.rgb(from: self)  }
     public var rgba: RGBA { return Colors.rgba(from: self) }
     public var hsl:  HSL  { return Colors.hsl(from: self)  }
@@ -56,4 +56,12 @@ public struct HSLA: Color, Alpha {
         self.lightnessComponent  = clamp(lightness, to: 1.0).cgFloat
         self.alphaComponent      = clamp(alpha, to: 1.0).cgFloat
     }
+    public var customPlaygroundQuickLook: PlaygroundQuickLook {
+        #if os(iOS) || os(tvOS) || os(watchOS)
+            return .color(self.osColor.uiColor)
+        #elseif os(macOS)
+            return .color(self.osColor.nsColor)
+        #endif
+    }
+
 }

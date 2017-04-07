@@ -3,6 +3,7 @@
 import UIKit
 import Colors
 
+
 let firstColor = RGB.X11.lightGoldenrodYellow
 let hsl        = HSL(firstColor)
 let hsla       = HSLA(hsl)
@@ -12,6 +13,7 @@ let hsba       = HSBA(hsb)
 let white = RGB.CGA.white
 dump(white)
 
+UIColor.green
 
 let colors: [RGB] = [RGB.W3C.green, hsl.rgb, hsla.rgb, hsb.rgb, hsba.rgb]
 colors.osColors()

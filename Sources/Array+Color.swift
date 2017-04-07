@@ -28,11 +28,7 @@ extension Array where Element: Color {
     }
     #endif
 
-    typealias Size = Int
-    
-    func ramp(from a: Color, through b: Color, of: Size) -> [Color] {
-        var aRGB = a.rgba
-        var bRGB = b.rgba
-        return [aRGB]
+    public func gradient(count size: Int) -> [Element] {
+        return Element.gradient(from: self, steps: size)
     }
 }
