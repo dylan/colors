@@ -45,9 +45,9 @@ public struct RGB: Color {
     }
 
     public init(_ red: Int, _ green: Int, _ blue: Int) {
-        self.redComponent   = clamp(red, to: 255).cgFloat   / 255.0
+        self.redComponent   = clamp(red,   to: 255).cgFloat / 255.0
         self.greenComponent = clamp(green, to: 255).cgFloat / 255.0
-        self.blueComponent  = clamp(blue, to: 255).cgFloat  / 255.0
+        self.blueComponent  = clamp(blue,  to: 255).cgFloat / 255.0
     }
 
     public init(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat) {
@@ -59,12 +59,13 @@ public struct RGB: Color {
     fileprivate func toHSL() -> HSL {
         let maxComponent = max(redComponent, blueComponent, greenComponent)
         let minComponent = min(redComponent, blueComponent, greenComponent)
-        let halfRange    = (maxComponent + minComponent) / 2
-        let delta        = maxComponent - minComponent
+        
+        let halfRange = (maxComponent + minComponent) / 2
+        let delta = maxComponent - minComponent
 
-        var hue         = halfRange
-        var saturation  = halfRange
-        let lightness   = halfRange
+        var hue        = halfRange
+        var saturation = halfRange
+        let lightness  = halfRange
 
         if maxComponent == minComponent {
             hue = 0

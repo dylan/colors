@@ -102,12 +102,13 @@ internal func hsl(from rgb: RGB) -> HSL {
 
     let maxComponent = max(red, green, blue)
     let minComponent = min(red, green, blue)
-    let halfRange    = (maxComponent + minComponent) / 2
-    let delta        = maxComponent - minComponent
+    
+    let halfRange = (maxComponent + minComponent) / 2
+    let delta     = maxComponent - minComponent
 
-    var hue         = halfRange
-    var saturation  = halfRange
-    let lightness   = halfRange
+    var hue        = halfRange
+    var saturation = halfRange
+    let lightness  = halfRange
 
     if maxComponent == minComponent {
         hue = 0
