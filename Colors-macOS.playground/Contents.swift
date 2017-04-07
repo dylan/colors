@@ -10,8 +10,12 @@ let hsb        = HSB(hsla)
 let hsba       = HSBA(hsb)
 
 let white = RGB.CGA.white
-dump(white)
+//dump(white)
 
+
+let gradientColors: [RGB] = [RGB.X11.black, RGB.X11.white]
+
+dump(RGB.lerpedColor(from: RGB.X11.black, through: RGB.X11.white.hsb, at: 0.5))
 
 let colors: [RGB] = [RGB.W3C.green, hsl.rgb, hsla.rgb, hsb.rgb, hsba.rgb]
 colors.osColors()

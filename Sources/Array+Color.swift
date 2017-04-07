@@ -17,6 +17,7 @@ extension Array where Element: Color {
     public func osColors() -> [OSColor] {
         return self.map( { $0.osColor })
     }
+
     #if os(iOS) || os(tvOS) || os(watchOS)
     public func uiColors() -> [UIColor] {
         return self.map( { $0.osColor.uiColor })
@@ -26,4 +27,12 @@ extension Array where Element: Color {
         return self.map( { $0.osColor.nsColor })
     }
     #endif
+
+    typealias Size = Int
+    
+    func ramp(from a: Color, through b: Color, of: Size) -> [Color] {
+        var aRGB = a.rgba
+        var bRGB = b.rgba
+        return [aRGB]
+    }
 }
