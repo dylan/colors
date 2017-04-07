@@ -11,7 +11,7 @@ let hsba       = HSBA(hsb)
 
 let white = RGB.CGA.white
 
-
+RGB.CGA.white == RGB.white
 
 //dump(RGB.sample(from: RGB.X11.black, through: RGB.X11.red, at: 0.33))
 //dump(HSL.sample(from: RGB.X11.black, through: RGB.X11.red, at: 0.33))
@@ -23,6 +23,15 @@ let white = RGB.CGA.white
 let colors: [RGB] = [RGB.W3C.green, hsl.rgb, hsla.rgb, hsb.rgb, hsba.rgb]
 
 //dump(RGB.gradient(from: [RGB.CGA.black, RGB.X11.white, RGB.CGA.black], steps: 5))
+//(Int(1.0 * 255) << 16) + (Int(1.0 * 255) << 8) + (Int(1.0 * 255)) + (Int(1.0 * 255) << 24)
+
+//RGB.white.toHex()
+
+let v1 = 0xffffff
+RGB.X11.white.rgbHex() == RGB(v1).rgbHex()
+
+let v = 0xff00ffff
+RGBA(0, 255, 255, 255).argbHex() == RGBA.init(v).argbHex()
 
 colors.osColors()
 colors.nsColors()

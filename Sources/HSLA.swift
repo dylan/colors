@@ -56,6 +56,7 @@ public struct HSLA: Color, Alpha, CustomPlaygroundQuickLookable {
         self.lightnessComponent  = clamp(lightness, to: 1.0).cgFloat
         self.alphaComponent      = clamp(alpha, to: 1.0).cgFloat
     }
+    
     public var customPlaygroundQuickLook: PlaygroundQuickLook {
         #if os(iOS) || os(tvOS) || os(watchOS)
             return .color(self.osColor.uiColor)

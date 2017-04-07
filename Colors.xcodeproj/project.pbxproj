@@ -97,6 +97,13 @@
 		FCB435F81E96BE7200B4D000 /* RGB+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB435F31E96BE7200B4D000 /* RGB+Colors.swift */; };
 		FCB435F91E96BE7200B4D000 /* RGB+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB435F31E96BE7200B4D000 /* RGB+Colors.swift */; };
 		FCB435FA1E96BE7200B4D000 /* RGB+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB435F31E96BE7200B4D000 /* RGB+Colors.swift */; };
+		FCC9740B1E97FE8800621F2C /* Color+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9740A1E97FE8800621F2C /* Color+Operators.swift */; };
+		FCC9740C1E97FE8800621F2C /* Color+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9740A1E97FE8800621F2C /* Color+Operators.swift */; };
+		FCC9740D1E97FE8800621F2C /* Color+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9740A1E97FE8800621F2C /* Color+Operators.swift */; };
+		FCC9740E1E97FE8800621F2C /* Color+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9740A1E97FE8800621F2C /* Color+Operators.swift */; };
+		FCC9740F1E97FE8800621F2C /* Color+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9740A1E97FE8800621F2C /* Color+Operators.swift */; };
+		FCC974101E97FE8800621F2C /* Color+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9740A1E97FE8800621F2C /* Color+Operators.swift */; };
+		FCC974111E97FE8800621F2C /* Color+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9740A1E97FE8800621F2C /* Color+Operators.swift */; };
 		FCF717781E96A107005FAC5C /* Array+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF717771E96A107005FAC5C /* Array+Color.swift */; };
 		FCF717791E96A107005FAC5C /* Array+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF717771E96A107005FAC5C /* Array+Color.swift */; };
 		FCF7177A1E96A107005FAC5C /* Array+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF717771E96A107005FAC5C /* Array+Color.swift */; };
@@ -160,6 +167,7 @@
 		FC30EE331E97954200376A82 /* Array+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		FC54314E1E9659DC00F0D291 /* Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversions.swift; sourceTree = "<group>"; };
 		FCB435F31E96BE7200B4D000 /* RGB+Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RGB+Colors.swift"; sourceTree = "<group>"; };
+		FCC9740A1E97FE8800621F2C /* Color+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Operators.swift"; sourceTree = "<group>"; };
 		FCF717771E96A107005FAC5C /* Array+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Color.swift"; sourceTree = "<group>"; };
 		FCF7177F1E96A20E005FAC5C /* OSColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -286,6 +294,7 @@
 				FCF7177F1E96A20E005FAC5C /* OSColor.swift */,
 				FCB435F31E96BE7200B4D000 /* RGB+Colors.swift */,
 				FC30EE331E97954200376A82 /* Array+.swift */,
+				FCC9740A1E97FE8800621F2C /* Color+Operators.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -580,6 +589,7 @@
 				FC12C2DF1E95210C00AC1E7F /* HSLA.swift in Sources */,
 				FC12C2E71E95212C00AC1E7F /* HSB.swift in Sources */,
 				FC0DFE231E942DCE00716946 /* Math.swift in Sources */,
+				FCC9740B1E97FE8800621F2C /* Color+Operators.swift in Sources */,
 				FCF717801E96A20E005FAC5C /* OSColor.swift in Sources */,
 				FCF717781E96A107005FAC5C /* Array+Color.swift in Sources */,
 				FC12C2CF1E9520B600AC1E7F /* RGBA.swift in Sources */,
@@ -596,6 +606,7 @@
 				FC12C2F31E95215300AC1E7F /* HSBA.swift in Sources */,
 				FC12C2AA1E9502EC00AC1E7F /* Color.swift in Sources */,
 				FC30EE381E97954200376A82 /* Array+.swift in Sources */,
+				FCC9740F1E97FE8800621F2C /* Color+Operators.swift in Sources */,
 				FC12C2E31E95210C00AC1E7F /* HSLA.swift in Sources */,
 				52D6D99B1BEFF375002C0205 /* ColorsTests.swift in Sources */,
 				FCF717841E96A20E005FAC5C /* OSColor.swift in Sources */,
@@ -623,6 +634,7 @@
 				FC12C2E11E95210C00AC1E7F /* HSLA.swift in Sources */,
 				FC12C2E91E95212C00AC1E7F /* HSB.swift in Sources */,
 				FC0DFE251E942DCE00716946 /* Math.swift in Sources */,
+				FCC9740D1E97FE8800621F2C /* Color+Operators.swift in Sources */,
 				FCF717821E96A20E005FAC5C /* OSColor.swift in Sources */,
 				FCF7177A1E96A107005FAC5C /* Array+Color.swift in Sources */,
 				FC12C2D11E9520B600AC1E7F /* RGBA.swift in Sources */,
@@ -644,6 +656,7 @@
 				FC12C2E21E95210C00AC1E7F /* HSLA.swift in Sources */,
 				FC12C2EA1E95212C00AC1E7F /* HSB.swift in Sources */,
 				FC0DFE261E942DCE00716946 /* Math.swift in Sources */,
+				FCC9740E1E97FE8800621F2C /* Color+Operators.swift in Sources */,
 				FCF717831E96A20E005FAC5C /* OSColor.swift in Sources */,
 				FCF7177B1E96A107005FAC5C /* Array+Color.swift in Sources */,
 				FC12C2D21E9520B600AC1E7F /* RGBA.swift in Sources */,
@@ -665,6 +678,7 @@
 				FC12C2E01E95210C00AC1E7F /* HSLA.swift in Sources */,
 				FC12C2E81E95212C00AC1E7F /* HSB.swift in Sources */,
 				FC12C2A41E9500BD00AC1E7F /* Types.swift in Sources */,
+				FCC9740C1E97FE8800621F2C /* Color+Operators.swift in Sources */,
 				FCF717811E96A20E005FAC5C /* OSColor.swift in Sources */,
 				FCF717791E96A107005FAC5C /* Array+Color.swift in Sources */,
 				FC12C2D01E9520B600AC1E7F /* RGBA.swift in Sources */,
@@ -681,6 +695,7 @@
 				DD7502861C68FDDC006590AF /* ColorsTests.swift in Sources */,
 				FC12C2E41E95210C00AC1E7F /* HSLA.swift in Sources */,
 				FC30EE391E97954200376A82 /* Array+.swift in Sources */,
+				FCC974101E97FE8800621F2C /* Color+Operators.swift in Sources */,
 				FC0DFE281E942DCE00716946 /* Math.swift in Sources */,
 				FC12C2DC1E9520D600AC1E7F /* HSL.swift in Sources */,
 				FCF717851E96A20E005FAC5C /* OSColor.swift in Sources */,
@@ -703,6 +718,7 @@
 				FC12C2F51E95215300AC1E7F /* HSBA.swift in Sources */,
 				FC12C2AC1E9502EE00AC1E7F /* Color.swift in Sources */,
 				FC30EE3A1E97954200376A82 /* Array+.swift in Sources */,
+				FCC974111E97FE8800621F2C /* Color+Operators.swift in Sources */,
 				FC12C2E51E95210C00AC1E7F /* HSLA.swift in Sources */,
 				DD75029A1C690CBE006590AF /* ColorsTests.swift in Sources */,
 				FCF717861E96A20E005FAC5C /* OSColor.swift in Sources */,

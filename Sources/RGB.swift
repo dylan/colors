@@ -63,7 +63,6 @@ public struct RGB: Color, CustomPlaygroundQuickLookable {
             return .color(self.osColor.nsColor)
         #endif
     }
-
 }
 
 

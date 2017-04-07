@@ -109,6 +109,21 @@ extension Color where Self == HSBA {
 
 extension Color {
 
+    public var argbHex: Int {
+        let rgbValue = self.rgba
+        return (Int(rgbValue.alphaComponent * 255) << 24) +
+               (Int(rgbValue.redComponent * 255)   << 16) +
+               (Int(rgbValue.greenComponent * 255) << 8)  +
+               (Int(rgbValue.blueComponent * 255))
+    }
+
+    public var rgbHex: Int {
+        let rgbValue = self.rgb
+        return (Int(rgbValue.redComponent * 255)   << 16) +
+               (Int(rgbValue.greenComponent * 255) << 8)  +
+               (Int(rgbValue.blueComponent * 255))
+    }
+
     public static func sample(from a: Color, through b: Color, at position: CGFloat) -> Self {
 
         func lerp(from a: CGFloat, to b: CGFloat, percent: CGFloat) -> CGFloat {

@@ -66,6 +66,7 @@ public struct RGBA: Color, Alpha, CustomPlaygroundQuickLookable {
     public init(_ red: Double, _ green: Double, _ blue: Double, _ alpha: Double) {
         self.init(red, green, blue, alpha)
     }
+    
     public var customPlaygroundQuickLook: PlaygroundQuickLook {
         #if os(iOS) || os(tvOS) || os(watchOS)
             return .color(self.osColor.uiColor)
@@ -73,5 +74,4 @@ public struct RGBA: Color, Alpha, CustomPlaygroundQuickLookable {
             return .color(self.osColor.nsColor)
         #endif
     }
-
 }
