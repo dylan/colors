@@ -47,7 +47,7 @@ public struct HSB: Color {
 
     public init(_ hue: CGFloat, _ saturation: CGFloat, _ brightness: CGFloat) {
         self.hueComponent = hue.truncatingRemainder(dividingBy: 360) / 360
-        self.saturationComponent  = clamp(saturation, to: 1.0).cgFloat
-        self.brightnessComponent  = clamp(brightness, to: 1.0).cgFloat
+        self.saturationComponent = clamp(saturation, to: 1.0).cgFloat
+        self.brightnessComponent = clamp(brightness, to: 1.0).cgFloat
     }
 }

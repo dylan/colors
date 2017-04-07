@@ -50,9 +50,9 @@ public struct RGBA: Color, Alpha {
     }
 
     public init(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Int) {
-        self.redComponent   = clamp(red, to: 255).cgFloat   / 255.0
+        self.redComponent   = clamp(red,   to: 255).cgFloat / 255.0
         self.greenComponent = clamp(green, to: 255).cgFloat / 255.0
-        self.blueComponent  = clamp(blue, to: 255).cgFloat  / 255.0
+        self.blueComponent  = clamp(blue,  to: 255).cgFloat / 255.0
         self.alphaComponent = clamp(alpha, to: 255).cgFloat / 255.0
     }
 
@@ -60,7 +60,7 @@ public struct RGBA: Color, Alpha {
         self.redComponent   = clamp(red,   to: 1.0).cgFloat
         self.greenComponent = clamp(green, to: 1.0).cgFloat
         self.blueComponent  = clamp(blue,  to: 1.0).cgFloat
-        self.alphaComponent = clamp(alpha,  to: 1.0).cgFloat
+        self.alphaComponent = clamp(alpha, to: 1.0).cgFloat
     }
 
     public init(_ red: Double, _ green: Double, _ blue: Double, _ alpha: Double) {

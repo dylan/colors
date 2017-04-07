@@ -23,14 +23,14 @@ public struct HSLA: Color, Alpha {
 
     public var osColor: OSColor {
         #if os(iOS) || os(tvOS) || os(watchOS)
-        return UIColor(red: rgba.redComponent,
+        return UIColor(red:   rgba.redComponent,
                        green: rgba.greenComponent,
-                       blue: rgba.blueComponent,
+                       blue:  rgba.blueComponent,
                        alpha: self.alphaComponent)
         #elseif os(macOS)
-        return NSColor(red: rgba.redComponent,
+        return NSColor(red:   rgba.redComponent,
                        green: rgba.greenComponent,
-                       blue: rgba.blueComponent,
+                       blue:  rgba.blueComponent,
                        alpha: self.alphaComponent)
         #endif
     }
