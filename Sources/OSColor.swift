@@ -9,12 +9,12 @@
 import Foundation
 
 public protocol OSColor {
-    var redComponent: CGFloat { get }
-    var blueComponent: CGFloat { get }
+    var redComponent:   CGFloat { get }
+    var blueComponent:  CGFloat { get }
     var greenComponent: CGFloat { get }
     var alphaComponent: CGFloat { get }
 
-    var hueComponent: CGFloat { get }
+    var hueComponent:        CGFloat { get }
     var saturationComponent: CGFloat { get }
     var brightnessComponent: CGFloat { get }
 
