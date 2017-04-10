@@ -11,13 +11,24 @@ let hsb        = HSB(hsla)
 let hsba       = HSBA(hsb)
 
 let white = RGB.CGA.white
-dump(white)
+//dump(white)
 
 UIColor.green
 
-let colors: [RGB] = [RGB.W3C.green, hsl.rgb, hsla.rgb, hsb.rgb, hsba.rgb]
+let colors: [RGB] = [RGB.X11.lightGoldenrodYellow,
+                     RGB.X11.lightGoldenrodYellow.hsl.rgb,
+                     RGB.X11.lightGoldenrodYellow.hsla.rgb,
+                     RGB.X11.lightGoldenrodYellow.hsba.rgb,
+                     RGB.X11.lightGoldenrodYellow.hsb.rgb]
+RGB.X11.lightGoldenrodYellow
+RGB.X11.lightGoldenrodYellow.hsb
+RGB.X11.lightGoldenrodYellow.hsb.hueComponent
+RGB.X11.lightGoldenrodYellow.hsb.saturationComponent
+RGB.X11.lightGoldenrodYellow.hsb.brightnessComponent
+RGB.X11.lightGoldenrodYellow.hsb.rgb
 colors.osColors()
 colors.uiColors()
+colors.view
 
 firstColor.rgba.redComponent
 firstColor.rgba.greenComponent

@@ -28,6 +28,10 @@ extension Array where Element: Color {
     }
     #endif
 
+    public var view: ColorView {
+        return ColorView(colors: self)
+    }
+    
     public func spread(to size: Int) -> [Element] {
         return Element.spread(colors: self, to: size)
     }

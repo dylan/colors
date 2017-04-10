@@ -12,7 +12,19 @@ let hsba       = HSBA(hsb)
 let white = RGB.CGA.white
 
 RGB.CGA.white == RGB.white
+let colorsTest: [RGB] = [RGB.X11.lightGoldenrodYellow,
+                     RGB.X11.lightGoldenrodYellow.hsl.rgb,
+                     RGB.X11.lightGoldenrodYellow.hsla.rgb,
+                     RGB.X11.lightGoldenrodYellow.hsba.rgb,
+                     RGB.X11.lightGoldenrodYellow.hsb.rgb]
+RGB.X11.lightGoldenrodYellow
+RGB.X11.lightGoldenrodYellow.hsb
+RGB.X11.lightGoldenrodYellow.hsb.hueComponent
+RGB.X11.lightGoldenrodYellow.hsb.saturationComponent
+RGB.X11.lightGoldenrodYellow.hsb.brightnessComponent
+RGB.X11.lightGoldenrodYellow.hsb.rgb
 
+colorsTest.view
 //dump(RGB.sample(from: RGB.X11.black, through: RGB.X11.red, at: 0.33))
 //dump(HSL.sample(from: RGB.X11.black, through: RGB.X11.red, at: 0.33))
 //dump(HSB.sample(from: RGB.X11.black, through: RGB.X11.red, at: 0.33))
@@ -33,36 +45,15 @@ RGB.X11.white.rgbHex == RGB(v1).rgbHex
 let v = 0xff00ffff
 RGBA(0, 255, 255, 255).argbHex == RGBA(v).argbHex
 
-class PaletteView: NSView {
-    let colors: [Color]
-    init(colors: [Color]) {
-        self.colors = colors
-        let frameRect = NSRect(x: 0, y: 0, width: colors.count * 24, height: 24)
-        super.init(frame: frameRect)
-    }
-    required init?(coder: NSCoder) {
-        self.colors = [Color]()
-        super.init(coder: coder)
-    }
-    override func draw(_ dirtyRect: NSRect) {
-        for (i, color) in colors.enumerated() {
-            let rect = NSRect(x: i * 24, y: 0, width: 24, height: 24)
-            color.osColor.setFill()
-            NSRectFill(rect)
-        }
-        super.draw(dirtyRect)
-    }
-}
-
 let testValue: [Color] = [RGB.CGA.black, RGB.CGA.magenta, RGB.CGA.brown.hsla, RGB(50, 255, 0), RGB.CGA.white]
 
 let testLength = 16
 
-PaletteView(colors: RGB.spread(colors: testValue, to: testLength))
-PaletteView(colors: RGBA.spread(colors: testValue, to: testLength))
-PaletteView(colors: HSB.spread(colors: testValue, to: testLength))
-PaletteView(colors: HSBA.spread(colors: testValue, to: testLength))
-PaletteView(colors: HSL.spread(colors: testValue, to: testLength))
+RGB.spread(colors: testValue, to: testLength).view
+RGBA.spread(colors: testValue, to: testLength).view
+HSB.spread(colors: testValue, to: testLength).view
+HSBA.spread(colors: testValue, to: testLength).view
+HSL.spread(colors: testValue, to: testLength).view
 
 //
 //firstColor.rgba.redComponent

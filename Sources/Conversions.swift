@@ -8,15 +8,17 @@
 
 import Foundation
 #if os(iOS) || os(tvOS) || os(watchOS)
-    import UIKit
+import UIKit
 #elseif os(macOS)
-    import AppKit
+import AppKit
 #endif
 
 // MARK: - RGB
 
 internal func rgb(from rgba: RGBA) -> RGB {
-    return RGB(rgba.redComponent, rgba.greenComponent, rgba.blueComponent)
+    return RGB(rgba.redComponent,
+               rgba.greenComponent,
+               rgba.blueComponent)
 }
 
 internal func rgb(from hsl: HSL) -> RGB {
@@ -70,27 +72,42 @@ internal func rgb(from hsba: HSBA) -> RGB {
 // MARK: - RGBA
 
 internal func rgba(from rgb: RGB) -> RGBA {
-    return RGBA(rgb.redComponent, rgb.greenComponent, rgb.blueComponent, 1.0)
+    return RGBA(rgb.redComponent,
+                rgb.greenComponent,
+                rgb.blueComponent,
+                1.0)
 }
 
 internal func rgba(from hsl: HSL) -> RGBA {
     let result = rgb(from: hsl)
-    return RGBA(result.redComponent, result.greenComponent, result.blueComponent, 1.0)
+    return RGBA(result.redComponent,
+                result.greenComponent,
+                result.blueComponent,
+                1.0)
 }
 
 internal func rgba(from hsla: HSLA) -> RGBA {
     let result = rgb(from: hsla)
-    return RGBA(result.redComponent, result.greenComponent, result.blueComponent, hsla.alphaComponent)
+    return RGBA(result.redComponent,
+                result.greenComponent,
+                result.blueComponent,
+                hsla.alphaComponent)
 }
 
 internal func rgba(from hsb: HSB) -> RGBA {
     let result = rgb(from: hsb)
-    return RGBA(result.redComponent, result.greenComponent, result.blueComponent, 1.0)
+    return RGBA(result.redComponent,
+                result.greenComponent,
+                result.blueComponent,
+                1.0)
 }
 
 internal func rgba(from hsba: HSBA) -> RGBA {
     let result = rgb(from: hsba)
-    return RGBA(result.redComponent, result.greenComponent, result.blueComponent, hsba.alphaComponent)
+    return RGBA(result.redComponent,
+                result.greenComponent,
+                result.blueComponent,
+                hsba.alphaComponent)
 }
 
 // MARK: - HSL
@@ -162,7 +179,9 @@ internal func hsl(from hsba: HSBA) -> HSL {
 }
 
 internal func hsl(from hsla: HSLA) -> HSL {
-    var result = HSL(0, hsla.saturationComponent, hsla.lightnessComponent)
+    var result = HSL(0,
+                     hsla.saturationComponent,
+                     hsla.lightnessComponent)
     result.hueComponent = hsla.hueComponent
     return result
 }
@@ -179,7 +198,10 @@ internal func hsla(from rgba: RGBA) -> HSLA {
 }
 
 internal func hsla(from hsl: HSL) -> HSLA {
-    var result = HSLA(0, hsl.saturationComponent, hsl.lightnessComponent, 1.0)
+    var result = HSLA(0,
+                      hsl.saturationComponent,
+                      hsl.lightnessComponent,
+                      1.0)
     result.hueComponent = hsl.hueComponent
     return result
 }
