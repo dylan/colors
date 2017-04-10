@@ -163,6 +163,10 @@ extension Color {
                 result.hueComponent = tempA.hueComponent + p * delta
             }
 
+            // Hack to make sure we cross over correctly.
+            if result.hueComponent > 1.0 {
+                result.hueComponent -= 1.0
+            }
             return [result.hueComponent,
                     lerp(from: tempA.saturationComponent, to: tempB.saturationComponent, percent: p),
                     lerp(from: tempA.brightnessComponent, to: tempB.brightnessComponent, percent: p)]
@@ -173,6 +177,7 @@ extension Color {
             lerpedValues = hueLerpValues(a: a.hsb, b: b.hsb, percent: position)
             var result = HSB(0, lerpedValues[1], lerpedValues[2])
             result.hueComponent = lerpedValues[0]
+            dump(result)
             return Self(result)
         } else {
             lerpedValues = straightLerpValues(a: Self(a).components, b: Self(b).components, percent: position)
