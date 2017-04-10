@@ -177,7 +177,6 @@ extension Color {
             lerpedValues = hueLerpValues(a: a.hsb, b: b.hsb, percent: position)
             var result = HSB(0, lerpedValues[1], lerpedValues[2])
             result.hueComponent = lerpedValues[0]
-            dump(result)
             return Self(result)
         } else {
             lerpedValues = straightLerpValues(a: Self(a).components, b: Self(b).components, percent: position)
