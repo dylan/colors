@@ -28,7 +28,7 @@ extension Array where Element: Color {
     }
     #endif
 
-    public func gradient(count size: Int) -> [Element] {
-        return Element.gradient(from: self, steps: size)
+    public func spread(to size: Int) -> [Element] {
+        return Element.spread(colors: self, to: size)
     }
 }

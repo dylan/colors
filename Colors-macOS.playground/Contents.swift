@@ -33,62 +33,91 @@ RGB.X11.white.rgbHex == RGB(v1).rgbHex
 let v = 0xff00ffff
 RGBA(0, 255, 255, 255).argbHex == RGBA(v).argbHex
 
-colors.osColors()
-colors.nsColors()
+class PaletteView: NSView {
+    let colors: [Color]
+    init(colors: [Color]) {
+        self.colors = colors
+        let frameRect = NSRect(x: 0, y: 0, width: colors.count * 24, height: 24)
+        super.init(frame: frameRect)
+    }
+    required init?(coder: NSCoder) {
+        self.colors = [Color]()
+        super.init(coder: coder)
+    }
+    override func draw(_ dirtyRect: NSRect) {
+        for (i, color) in colors.enumerated() {
+            let rect = NSRect(x: i * 24, y: 0, width: 24, height: 24)
+            color.osColor.setFill()
+            NSRectFill(rect)
+        }
+        super.draw(dirtyRect)
+    }
+}
 
-firstColor.rgba.redComponent
-firstColor.rgba.greenComponent
-firstColor.rgba.blueComponent
-firstColor.rgba.alphaComponent
+let testValue: [Color] = [RGB.CGA.black, RGB.CGA.magenta, RGB.CGA.brown.hsla, RGB(50, 255, 0), RGB.CGA.white]
 
-hsl.hueComponent
-hsl.saturationComponent
-hsl.lightnessComponent
+let testLength = 16
 
-hsla.hueComponent
-hsla.saturationComponent
-hsla.lightnessComponent
-hsla.alphaComponent
+PaletteView(colors: RGB.spread(colors: testValue, to: testLength))
+PaletteView(colors: RGBA.spread(colors: testValue, to: testLength))
+PaletteView(colors: HSB.spread(colors: testValue, to: testLength))
+PaletteView(colors: HSBA.spread(colors: testValue, to: testLength))
+PaletteView(colors: HSL.spread(colors: testValue, to: testLength))
 
-hsb.hueComponent
-hsb.saturationComponent
-hsb.brightnessComponent
-
-hsba.hueComponent
-hsba.saturationComponent
-hsba.brightnessComponent
-hsba.alphaComponent
-
-firstColor.rgba.redComponent
-firstColor.rgba.greenComponent
-firstColor.rgba.blueComponent
-firstColor.rgba.alphaComponent
-
-firstColor.rgba.hsl.hueComponent
-firstColor.rgba.hsl.saturationComponent
-firstColor.rgba.hsl.lightnessComponent
-
-firstColor.rgba.hsl.hsla.hueComponent
-firstColor.rgba.hsl.hsla.saturationComponent
-firstColor.rgba.hsl.hsla.lightnessComponent
-
-firstColor.rgba.hsl.hsla.hsb.hueComponent
-firstColor.rgba.hsl.hsla.hsb.saturationComponent
-firstColor.rgba.hsl.hsla.hsb.brightnessComponent
-
-firstColor.rgba.hsl.hsla.hsb.rgb.redComponent
-firstColor.rgba.hsl.hsla.hsb.rgb.greenComponent
-firstColor.rgba.hsl.hsla.hsb.rgb.blueComponent
-
-firstColor.rgba.hsl.hsla.hsb.hueComponent
-firstColor.rgba.hsl.hsla.hsb.saturationComponent
-firstColor.rgba.hsl.hsla.hsb.brightnessComponent
-
-firstColor.rgba.hsl.hsla.hsb.hsba
-firstColor.rgba.hsl.hsla.hsb.hsba.saturationComponent
-firstColor.rgba.hsl.hsla.hsb.hsba.brightnessComponent
-firstColor.rgba.hsl.hsla.hsb.hsba.alphaComponent
-
-firstColor.rgba.hsl.hsla.hsb.hsba.rgb.redComponent
-firstColor.rgba.hsl.hsla.hsb.hsba.rgb.greenComponent
-firstColor.rgba.hsl.hsla.hsb.hsba.rgb.blueComponent
+//
+//firstColor.rgba.redComponent
+//firstColor.rgba.greenComponent
+//firstColor.rgba.blueComponent
+//firstColor.rgba.alphaComponent
+//
+//hsl.hueComponent
+//hsl.saturationComponent
+//hsl.lightnessComponent
+//
+//hsla.hueComponent
+//hsla.saturationComponent
+//hsla.lightnessComponent
+//hsla.alphaComponent
+//
+//hsb.hueComponent
+//hsb.saturationComponent
+//hsb.brightnessComponent
+//
+//hsba.hueComponent
+//hsba.saturationComponent
+//hsba.brightnessComponent
+//hsba.alphaComponent
+//
+//firstColor.rgba.redComponent
+//firstColor.rgba.greenComponent
+//firstColor.rgba.blueComponent
+//firstColor.rgba.alphaComponent
+//
+//firstColor.rgba.hsl.hueComponent
+//firstColor.rgba.hsl.saturationComponent
+//firstColor.rgba.hsl.lightnessComponent
+//
+//firstColor.rgba.hsl.hsla.hueComponent
+//firstColor.rgba.hsl.hsla.saturationComponent
+//firstColor.rgba.hsl.hsla.lightnessComponent
+//
+//firstColor.rgba.hsl.hsla.hsb.hueComponent
+//firstColor.rgba.hsl.hsla.hsb.saturationComponent
+//firstColor.rgba.hsl.hsla.hsb.brightnessComponent
+//
+//firstColor.rgba.hsl.hsla.hsb.rgb.redComponent
+//firstColor.rgba.hsl.hsla.hsb.rgb.greenComponent
+//firstColor.rgba.hsl.hsla.hsb.rgb.blueComponent
+//
+//firstColor.rgba.hsl.hsla.hsb.hueComponent
+//firstColor.rgba.hsl.hsla.hsb.saturationComponent
+//firstColor.rgba.hsl.hsla.hsb.brightnessComponent
+//
+//firstColor.rgba.hsl.hsla.hsb.hsba
+//firstColor.rgba.hsl.hsla.hsb.hsba.saturationComponent
+//firstColor.rgba.hsl.hsla.hsb.hsba.brightnessComponent
+//firstColor.rgba.hsl.hsla.hsb.hsba.alphaComponent
+//
+//firstColor.rgba.hsl.hsla.hsb.hsba.rgb.redComponent
+//firstColor.rgba.hsl.hsla.hsb.hsba.rgb.greenComponent
+//firstColor.rgba.hsl.hsla.hsb.hsba.rgb.blueComponent

@@ -130,17 +130,57 @@ extension Color {
             return (b - a) * percent + a
         }
 
-        func lerpValues(a: [CGFloat], b: [CGFloat], percent: CGFloat) -> [CGFloat] {
+        func straightLerpValues(a: [CGFloat], b: [CGFloat], percent: CGFloat) -> [CGFloat] {
             var result = [CGFloat]()
             for (index, aValue) in a.enumerated() {
                 result.append(lerp(from: aValue, to: b[index], percent: percent))
             }
             return result
         }
-        
-        let lerpedValues = lerpValues(a: Self(a).components, b: Self(b).components, percent: position)
 
-        return Self(lerpedValues)
+        func hueLerpValues(a: HSB, b: HSB, percent: CGFloat) -> [CGFloat] {
+            var tempA = a
+            var tempB = b
+            var result = HSB(0, 0, 0)
+            var delta = tempB.hueComponent - tempA.hueComponent
+            var p = percent
+
+            if tempA.hueComponent > tempB.hueComponent {
+                let temp = tempB
+                tempB = tempA
+                tempA = temp
+
+                delta = -1 * delta
+                p = 1 - percent
+            }
+
+            if delta > 0.5 {
+                tempA.hueComponent = tempA.hueComponent + 1.0
+                result.hueComponent = (tempA.hueComponent + p * (tempB.hueComponent - tempA.hueComponent))
+            }
+
+            if delta <= 0.5 {
+                result.hueComponent = tempA.hueComponent + p * delta
+            }
+
+            return [result.hueComponent,
+                    lerp(from: tempA.saturationComponent, to: tempB.saturationComponent, percent: p),
+                    lerp(from: tempA.brightnessComponent, to: tempB.brightnessComponent, percent: p)]
+        }
+
+        let lerpedValues: [CGFloat]
+        let hueBased = (Self.self as? HueBased.Type) != nil
+        if hueBased {
+            let aHSB = a.hsb
+            let bHSB = b.hsb
+            lerpedValues = hueLerpValues(a: aHSB, b: bHSB, percent: position)
+            var result = HSB(0, lerpedValues[1], lerpedValues[2])
+            result.hueComponent = lerpedValues[0]
+            return Self(result)
+        } else {
+            lerpedValues = straightLerpValues(a: Self(a).components, b: Self(b).components, percent: position)
+            return Self(lerpedValues)
+        }
     }
 
     public func sampleBetweenSelf(and color: Color, at position: CGFloat) -> Self {
@@ -150,7 +190,7 @@ extension Color {
     public static func gradient(from a: Color, through b: Color, steps: Int) -> [Self] {
         var result = [Self]()
         for i in 0..<steps {
-            let color = a.sampleBetweenSelf(and: b, at: CGFloat(i) / CGFloat(steps - 1))
+            let color = Self.sample(from: a, through: b, at: CGFloat(i) / CGFloat(steps - 1))
             result.append(Self(color))
         }
         return result
@@ -160,15 +200,15 @@ extension Color {
         return Self.gradient(from: self, through: color, steps: steps)
     }
 
-    public static func gradient(from colors: [Color], steps: Int) -> [Self] {
+    public static func spread(colors: [Color], to size: Int) -> [Self] {
         var result = [Self]()
-        let dividingFactor = CGFloat(colors.count - 1) / CGFloat(steps - 1)
-        for i in 0..<steps {
+        let dividingFactor = CGFloat(colors.count - 1) / CGFloat(size - 1)
+        for i in 0..<size {
             let tmp = CGFloat(i) * dividingFactor
             let priorIndex = Int(floor(tmp))
             let nextIndex = Int(ceil(tmp))
             let percent = tmp - CGFloat(priorIndex)
-            let color = Self(colors[priorIndex].sampleBetweenSelf(and: colors[nextIndex], at: percent))
+            let color = Self(Self.sample(from: colors[priorIndex], through: colors[nextIndex], at: percent))
             result.append(color)
         }
         return result
@@ -178,3 +218,13 @@ extension Color {
 public protocol Alpha {
     var alphaComponent: CGFloat { get }
 }
+
+public protocol HueBased {
+    var hueComponent: CGFloat { get }
+    var saturationComponent: CGFloat { get }
+}
+
+extension HSL: HueBased {}
+extension HSLA: HueBased {}
+extension HSB: HueBased {}
+extension HSBA: HueBased {}
