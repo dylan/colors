@@ -169,11 +169,8 @@ extension Color {
         }
 
         let lerpedValues: [CGFloat]
-        let hueBased = (Self.self as? HueBased.Type) != nil
-        if hueBased {
-            let aHSB = a.hsb
-            let bHSB = b.hsb
-            lerpedValues = hueLerpValues(a: aHSB, b: bHSB, percent: position)
+        if (Self.self as? HueBased.Type) != nil {
+            lerpedValues = hueLerpValues(a: a.hsb, b: b.hsb, percent: position)
             var result = HSB(0, lerpedValues[1], lerpedValues[2])
             result.hueComponent = lerpedValues[0]
             return Self(result)
@@ -191,7 +188,7 @@ extension Color {
         var result = [Self]()
         for i in 0..<steps {
             let color = Self.sample(from: a, through: b, at: CGFloat(i) / CGFloat(steps - 1))
-            result.append(Self(color))
+            result.append(color)
         }
         return result
     }
@@ -204,11 +201,11 @@ extension Color {
         var result = [Self]()
         let dividingFactor = CGFloat(colors.count - 1) / CGFloat(size - 1)
         for i in 0..<size {
-            let tmp = CGFloat(i) * dividingFactor
-            let priorIndex = Int(floor(tmp))
-            let nextIndex = Int(ceil(tmp))
-            let percent = tmp - CGFloat(priorIndex)
-            let color = Self(Self.sample(from: colors[priorIndex], through: colors[nextIndex], at: percent))
+            let tmp         = CGFloat(i) * dividingFactor
+            let priorIndex  = Int(floor(tmp))
+            let nextIndex   = Int(ceil(tmp))
+            let percent     = tmp - CGFloat(priorIndex)
+            let color       = Self.sample(from: colors[priorIndex], through: colors[nextIndex], at: percent)
             result.append(color)
         }
         return result
