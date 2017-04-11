@@ -85,29 +85,29 @@ extension Color {
         }
         set {
             let value = limitToDegreeRange(newValue)
-            set(from: rgb(from: (h: value / 360, s: saturation, l: lightness)))
+            set(from: rgb(from: (h: value / 360, s: hslSaturation, l: hslLightness)))
         }
     }
 
     /// Returns a saturation percentage value ranging from ```0``` to ```1.0```.
-    public var saturation: Percent {
+    public var hslSaturation: Percent {
         get {
             return hsl(from: (r: red, g: green, b: blue)).s
         }
         set {
             let value = limitToPercentRange(newValue)
-            set(from: rgb(from: (h: hue / 360, s: value, l: lightness)))
+            set(from: rgb(from: (h: hue / 360, s: value, l: hslLightness)))
         }
     }
 
     /// Returns a lightness percentage value ranging from ```0``` to ```1.0```.
-    public var lightness: Percent {
+    public var hslLightness: Percent {
         get {
             return hsl(from: (r: red, g: green, b: blue)).l
         }
         set {
             let value = limitToPercentRange(newValue)
-            set(from: rgb(from: (h: hue / 360, s: saturation, l: value)))
+            set(from: rgb(from: (h: hue / 360, s: hslSaturation, l: value)))
         }
     }
 

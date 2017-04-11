@@ -13,3 +13,4 @@ public typealias Degree        = Float
 
 typealias HSLTuple = (h: Percent, s: Percent, l: Percent)
 typealias RGBTuple = (r: Percent, g: Percent, b: Percent)
+typealias HSBTuple = (h: Percent, s: Percent, b: Percent)

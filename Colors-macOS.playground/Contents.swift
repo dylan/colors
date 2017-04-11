@@ -17,8 +17,8 @@ color3 == color4
 var dinerGreen = Color(rgb: 0x37ecbd)
 
 dinerGreen.hue
-dinerGreen.saturation
-dinerGreen.lightness
+dinerGreen.hslSaturation
+dinerGreen.hslLightness
 
 dinerGreen.red
 dinerGreen.green

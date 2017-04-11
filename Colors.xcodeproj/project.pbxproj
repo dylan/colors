@@ -90,6 +90,13 @@
 		FC81F4D91E9D236600199604 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC81F4D41E9D236600199604 /* Types.swift */; };
 		FC81F4DA1E9D236600199604 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC81F4D41E9D236600199604 /* Types.swift */; };
 		FC81F4DB1E9D236600199604 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC81F4D41E9D236600199604 /* Types.swift */; };
+		FC9687451E9D7FBF0002A34E /* Color+HSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9687441E9D7FBF0002A34E /* Color+HSB.swift */; };
+		FC9687461E9D7FBF0002A34E /* Color+HSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9687441E9D7FBF0002A34E /* Color+HSB.swift */; };
+		FC9687471E9D7FBF0002A34E /* Color+HSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9687441E9D7FBF0002A34E /* Color+HSB.swift */; };
+		FC9687481E9D7FBF0002A34E /* Color+HSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9687441E9D7FBF0002A34E /* Color+HSB.swift */; };
+		FC9687491E9D7FBF0002A34E /* Color+HSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9687441E9D7FBF0002A34E /* Color+HSB.swift */; };
+		FC96874A1E9D7FBF0002A34E /* Color+HSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9687441E9D7FBF0002A34E /* Color+HSB.swift */; };
+		FC96874B1E9D7FBF0002A34E /* Color+HSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9687441E9D7FBF0002A34E /* Color+HSB.swift */; };
 		FCBB686E1E9D095B000F4E94 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB686D1E9D095B000F4E94 /* Math.swift */; };
 		FCBB686F1E9D095B000F4E94 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB686D1E9D095B000F4E94 /* Math.swift */; };
 		FCBB68701E9D095B000F4E94 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB686D1E9D095B000F4E94 /* Math.swift */; };
@@ -145,6 +152,7 @@
 		FC81F4C41E9D14A400199604 /* Color+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Operators.swift"; sourceTree = "<group>"; };
 		FC81F4CC1E9D1B6E00199604 /* Color+HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+HSL.swift"; sourceTree = "<group>"; };
 		FC81F4D41E9D236600199604 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		FC9687441E9D7FBF0002A34E /* Color+HSB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+HSB.swift"; sourceTree = "<group>"; };
 		FCBB686D1E9D095B000F4E94 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,8 +266,9 @@
 			children = (
 				FC1D354F1E9D36B0007D31CE /* Array+Color.swift */,
 				52D6D9961BEFF375002C0205 /* Color.swift */,
-				FC1D356F1E9D391E007D31CE /* Color+Gradient.swift */,
 				FC1D353F1E9D3624007D31CE /* Color+Adjustment.swift */,
+				FC1D356F1E9D391E007D31CE /* Color+Gradient.swift */,
+				FC9687441E9D7FBF0002A34E /* Color+HSB.swift */,
 				FC81F4CC1E9D1B6E00199604 /* Color+HSL.swift */,
 				FC1D35671E9D3737007D31CE /* Color+NSColor.swift */,
 				FC81F4C41E9D14A400199604 /* Color+Operators.swift */,
@@ -563,6 +572,7 @@
 				FC1D35681E9D3737007D31CE /* Color+NSColor.swift in Sources */,
 				FC81F4CD1E9D1B6E00199604 /* Color+HSL.swift in Sources */,
 				FC1D35481E9D369D007D31CE /* Color+View.swift in Sources */,
+				FC9687451E9D7FBF0002A34E /* Color+HSB.swift in Sources */,
 				FC1D35701E9D391E007D31CE /* Color+Gradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,6 +594,7 @@
 				FCBB68721E9D095B000F4E94 /* Math.swift in Sources */,
 				FC1D35741E9D391E007D31CE /* Color+Gradient.swift in Sources */,
 				FC1D35641E9D372A007D31CE /* Color+UIColor.swift in Sources */,
+				FC9687491E9D7FBF0002A34E /* Color+HSB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +613,7 @@
 				FC1D356A1E9D3737007D31CE /* Color+NSColor.swift in Sources */,
 				FC81F4CF1E9D1B6E00199604 /* Color+HSL.swift in Sources */,
 				FC1D354A1E9D369D007D31CE /* Color+View.swift in Sources */,
+				FC9687471E9D7FBF0002A34E /* Color+HSB.swift in Sources */,
 				FC1D35721E9D391E007D31CE /* Color+Gradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -621,6 +633,7 @@
 				FC1D356B1E9D3737007D31CE /* Color+NSColor.swift in Sources */,
 				FC81F4D01E9D1B6E00199604 /* Color+HSL.swift in Sources */,
 				FC1D354B1E9D369D007D31CE /* Color+View.swift in Sources */,
+				FC9687481E9D7FBF0002A34E /* Color+HSB.swift in Sources */,
 				FC1D35731E9D391E007D31CE /* Color+Gradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -640,6 +653,7 @@
 				FC1D35691E9D3737007D31CE /* Color+NSColor.swift in Sources */,
 				FC81F4CE1E9D1B6E00199604 /* Color+HSL.swift in Sources */,
 				FC1D35491E9D369D007D31CE /* Color+View.swift in Sources */,
+				FC9687461E9D7FBF0002A34E /* Color+HSB.swift in Sources */,
 				FC1D35711E9D391E007D31CE /* Color+Gradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -661,6 +675,7 @@
 				FCBB68731E9D095B000F4E94 /* Math.swift in Sources */,
 				FC1D35751E9D391E007D31CE /* Color+Gradient.swift in Sources */,
 				FC1D35651E9D372A007D31CE /* Color+UIColor.swift in Sources */,
+				FC96874A1E9D7FBF0002A34E /* Color+HSB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,6 +696,7 @@
 				FCBB68741E9D095B000F4E94 /* Math.swift in Sources */,
 				FC1D35761E9D391E007D31CE /* Color+Gradient.swift in Sources */,
 				FC1D35661E9D372A007D31CE /* Color+UIColor.swift in Sources */,
+				FC96874B1E9D7FBF0002A34E /* Color+HSB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

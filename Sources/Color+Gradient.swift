@@ -52,8 +52,8 @@ extension Color {
             }
 
             return (h: result.h / 360,
-                    s: lerp(from: tempA.saturation, to: tempB.saturation, percent: p),
-                    l: lerp(from: tempA.lightness, to: tempB.lightness, percent: p))
+                    s: lerp(from: tempA.hslSaturation, to: tempB.hslSaturation, percent: p),
+                    l: lerp(from: tempA.hslLightness, to: tempB.hslLightness, percent: p))
         }
 
         switch interpolation {
