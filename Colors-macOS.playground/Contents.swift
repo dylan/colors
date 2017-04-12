@@ -56,5 +56,12 @@ sexyRamp.spread(to: 16, using: .rgb).view
 
 sexyRamp.spread(to: 16, using: .hue).view
 
+let x11ColorRamp: [Color] = [X11.green, X11.lightBlue, X11.beige, X11.chartreuse, X11.darkOliveGreen, X11.purple]
+x11ColorRamp.view
 
+let w3cColorRamp: [Color] = [W3C.green, W3C.lightblue, W3C.beige, W3C.chartreuse, W3C.darkolivegreen, W3C.purple]
+w3cColorRamp.view
+
+let namedColorRamp: [Color] = [.black, .white, .brown, .cyan, .green]
+namedColorRamp.view
 
