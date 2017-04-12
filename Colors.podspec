@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
   s.name         = "Colors"
-  s.version      = "0.1"
-  s.summary      = ""
+  s.version      = "1.0"
+  s.summary      = "A color library for Swift."
   s.description  = <<-DESC
-    Your description here.
+    A color library for Swift.
   DESC
   s.homepage     = "https://github.com/dylan/Colors.git"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Dylan Wreggelsworth" => "dylan@bvr.io" }
-  s.social_media_url   = ""
+  s.social_media_url   = "http://twitter.com/dylanrw"
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.9"
   s.watchos.deployment_target = "2.0"
