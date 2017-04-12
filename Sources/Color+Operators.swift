@@ -6,8 +6,6 @@
 //  Copyright © 2017 Colors. All rights reserved.
 //
 
-import Foundation
-
 extension Color {
     public static func ==(lhs: Color, rhs: Color) -> Bool {
         return lhs.red   == rhs.red   &&
