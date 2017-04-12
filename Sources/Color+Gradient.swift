@@ -10,11 +10,24 @@ import Foundation
 
 extension Color {
 
+    /// Represents the type of interpolation used when sampling colors.
+    /// 
+    /// - note:
+    ///     - `.rgb` represent lerping across the RGB values of a color.
+    ///     - `.hue` represents only lerping on the hue component.
     public enum Interpolation {
         case rgb
         case hue
     }
 
+    /// Samples a color across an `interpolation` type at a given position.
+    ///
+    /// - Parameters:
+    ///     - a: The starting color of the interpolation.
+    ///     - b: The ending color of the interpolation.
+    ///     - position: At what point in the interpolation the `Color` is sampled.
+    ///     - interpolation: What interpolation method to use.
+    /// - Returns: The sampled `Color`.
     public static func sample(from a: Color, through b: Color, at position: Float, using interpolation: Interpolation = .hue) -> Color {
 
         func lerp(from a: Float, to b: Float, percent: Float) -> Float {
@@ -71,6 +84,13 @@ extension Color {
         }
     }
 
+    /// Given an array of `Color`s, sample across an interpolation until we have a spread or gradient.
+    ///
+    /// - Parameters:
+    ///     - colors: The array of `Colors` to interpolate through.
+    ///     - size: The desired size of the final spread or gradient.
+    ///     - interpolation: What interpolation method to use.
+    /// - Returns: The sampled `Color`s.
     public static func spread(colors: [Color], to size: Int, using interpolation: Interpolation = .hue) -> [Color] {
         var result = [Color]()
         let dividingFactor = Float(colors.count - 1) / Float(size - 1)
