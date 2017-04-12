@@ -8,10 +8,10 @@
 
 ### Carthage
 ```Ruby
-github "dylan/Colors"
+github "dylan/colors"
 ```
 
 ### Cocoapods
 ```Ruby
-pod 'Colors', '~> 1.0'
+pod "colors', '~> 0.9a'
 ```
