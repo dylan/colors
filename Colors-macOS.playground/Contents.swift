@@ -25,13 +25,12 @@ dinerGreen.green
 dinerGreen.blue
 dinerGreen.alpha
 
-shiftHue(of: dinerGreen, degrees: 45).view
-lighten(dinerGreen, percent: 0.3).view
-darken(dinerGreen, percent: 0.3).view
-saturate(dinerGreen, percent: 1.0).view
-desaturate(dinerGreen, percent: 1.0).view
-mix(dinerGreen, with: .red, percent: 0.5).view
-
+dinerGreen.hueShifted(45).view
+dinerGreen.lightened(0.3).view
+dinerGreen.darkened(0.3).view
+dinerGreen.saturated(1.0).view
+dinerGreen.desaturated(1.0).view
+dinerGreen.mixed(with: .red, percent: 0.5).view
 let ramp = [Color(rgb: 0x000000),
             Color(rgb: 0xff0000),
             Color(rgb: 0x00ff00),
