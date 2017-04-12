@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Colors"
-  s.version      = "1.0"
+  s.version      = "1.1"
   s.summary      = "A color library for Swift."
   s.description  = <<-DESC
     A color library for Swift.
