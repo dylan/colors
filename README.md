@@ -12,6 +12,4 @@ github "dylan/colors"
 ```
 
 ### Cocoapods
-```Ruby
-pod "colors', '~> 0.9.1'
-```
+Not supported. It's too convoluted.
