@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Colors"
-  s.version      = "1.13"
+  s.version      = "0.9"
   s.summary      = "A color library for Swift."
   s.description  = <<-DESC
     A color library for Swift. Use it to create, manipulate, and generally have fun with colors in swift.
