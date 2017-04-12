@@ -2,7 +2,7 @@
 //  Array+Color.swift
 //  Colors
 //
-//  Created by Dylan Wreggelsworth on 4/6/17.
+//  Created by Dylan Wreggelsworth on 4/11/17.
 //  Copyright © 2017 Colors. All rights reserved.
 //
 
@@ -13,26 +13,23 @@ import UIKit
 import AppKit
 #endif
 
-extension Array where Element: Color {
-    public func osColors() -> [OSColor] {
-        return self.map( { $0.osColor })
-    }
+extension Array where Element == Color {
 
     #if os(iOS) || os(tvOS) || os(watchOS)
     public func uiColors() -> [UIColor] {
-        return self.map( { $0.osColor.uiColor })
+        return self.map({ $0.UIColor })
     }
     #elseif os(macOS)
     public func nsColors() -> [NSColor] {
-        return self.map( { $0.osColor.nsColor })
+        return self.map({ $0.NSColor })
     }
     #endif
 
     public var view: ColorView {
         return ColorView(colors: self)
     }
-    
-    public func spread(to size: Int) -> [Element] {
-        return Element.spread(colors: self, to: size)
+
+    public func spread(to size: Int, using interpolation: Color.Interpolation = .hue) -> [Element] {
+        return Element.spread(colors: self, to: size, using: interpolation)
     }
 }

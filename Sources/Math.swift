@@ -2,104 +2,33 @@
 //  Math.swift
 //  Colors
 //
-//  Created by Dylan Wreggelsworth on 4/4/17.
+//  Created by Dylan Wreggelsworth on 4/11/17.
 //  Copyright © 2017 Colors. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS) || os(watchOS)
-    import UIKit
-#elseif os(macOS)
-    import AppKit
-#endif
+import Foundation
 
-public protocol Numeric {
-    var value: Double { get }
+func limitToDegreeRange(_ value: Degree) -> Degree {
+    let adjustedValue = value.remainder(dividingBy: 360)
+    return adjustedValue < 0 ? 360 + adjustedValue : adjustedValue
 }
 
-public protocol NumericValue: Numeric {
-    var double: Double { get }
-    var float: Float { get }
-    var cgFloat: CGFloat { get }
-    var int: Int { get }
+func limitToPercentRange(_ value: Percent) -> Percent {
+    return clamp(value, between: 0, and: 1.0)
 }
 
-extension NumericValue {
-    public var float: Float {
-        return Float(value)
-    }
-    public var double: Double {
-        return Double(value)
-    }
-    public var cgFloat: CGFloat {
-        return CGFloat(value)
-    }
-    public var int: Int {
-        return Int(value)
-    }
+func limitTo8BitRange(_ value: Percent) -> EightBitValue {
+    return clamp(UInt8(value), between: 0, and: 255)
 }
 
-public func / (lhs: NumericValue, rhs: NumericValue) -> NumericValue {
-    return lhs.value / rhs.value
+func clamp<T: Comparable>(_ value: T, between a: T, and b: T) -> T {
+    return min(max(value, a), b)
 }
 
-public func * (lhs: NumericValue, rhs: NumericValue) -> NumericValue {
-    return lhs.value * rhs.value
+public func convert(from value: Percent) -> EightBitValue {
+    return limitTo8BitRange(round(value * 255.0))
 }
 
-public func + (lhs: NumericValue, rhs: NumericValue) -> NumericValue {
-    return lhs.value + rhs.value
+public func convert(from value: EightBitValue) -> Percent {
+    return limitToPercentRange(Float(value) / 255.0)
 }
-
-public func - (lhs: NumericValue, rhs: NumericValue) -> NumericValue {
-    return lhs.value - rhs.value
-}
-
-
-extension Int: NumericValue {
-    public init(_ v: NumericValue) {
-        self = v.int
-    }
-    public var value: Double {
-        return Double(self)
-    }
-}
-
-extension CGFloat: NumericValue {
-    public init(_ v: NumericValue) {
-        self = v.cgFloat
-    }
-    public var value: Double {
-        return Double(self)
-    }
-}
-
-extension Float: NumericValue {
-    public init(_ v: NumericValue) {
-        self = v.float
-    }
-    public var value: Double {
-        return Double(self)
-    }
-}
-
-extension Double: NumericValue {
-    public init(_ v: NumericValue) {
-        self = v.double
-    }
-    public var value: Double {
-        return Double(self)
-    }
-}
-
-public func mod(_ x: NumericValue, to y: NumericValue) -> Int {
-    return ((x.int % y.int) + y.int) % y.int
-}
-
-public func clamp(_ x: NumericValue, to m: NumericValue) -> NumericValue {
-    return min(max(x.value, 0.value), m.value)
-}
-
-public func clip(_ x: NumericValue, between minVal: NumericValue, and maxVal: NumericValue) -> NumericValue {
-    return max(min(x.value, minVal.value), maxVal.value)
-}
-

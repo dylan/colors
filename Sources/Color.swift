@@ -8,224 +8,98 @@
 
 import Foundation
 #if os(iOS) || os(tvOS) || os(watchOS)
-    import UIKit
+import UIKit
 #elseif os(macOS)
-    import AppKit
+import AppKit
 #endif
 
-public protocol Color {
-    var rgb:  RGB  { get }
-    var rgba: RGBA { get }
-    var hsl:  HSL  { get }
-    var hsla: HSLA { get }
-    var hsb:  HSB  { get }
-    var hsba: HSBA { get }
+/// Represents a 24-bit color with an 8-bit alpha value.
+public struct Color {
 
-    var osColor: OSColor { get }
+    private var _redComponent: Float   = 0
+    private var _greenComponent: Float = 0
+    private var _blueComponent: Float  = 0
+    private var _alphaComponent: Float = 1.0
 
-    var components: [CGFloat] { get }
+    /// Represents the red component of this color in the RGB color model, values range from ```0``` to ```1.0```.
+    public var red: Percent {
+        get {
+            return _redComponent
+        }
+        set {
+            _redComponent = limitToPercentRange(newValue)
+        }
+    }
 
-    init(_ color: Color)
-    init(_ components: [CGFloat])
+    /// Represents the green component of this color in the RGB color model, values range from ```0``` to ```1.0```.
+    public var green: Percent {
+        get {
+            return _greenComponent
+        }
+        set {
+            _greenComponent = limitToPercentRange(newValue)
+        }
+    }
+
+    /// Represents the blue component of this color in the RGB color model, values range from ```0``` to ```1.0```.
+    public var blue: Percent {
+        get {
+            return _blueComponent
+        }
+        set {
+            _blueComponent = limitToPercentRange(newValue)
+        }
+    }
+
+    /// Represents the alpha component of this color in the RGB color model, values range from ```0``` to ```1.0```.
+    public var alpha: Percent {
+        get {
+            return _alphaComponent
+        }
+        set {
+            _alphaComponent = limitToPercentRange(newValue)
+        }
+    }
+
+    mutating func set(from tuple: RGBTuple) {
+        red   = tuple.red
+        green = tuple.green
+        blue  = tuple.blue
+    }
+
+    /// Initialize a ```Color``` using ```0``` to ```1.0``` values.
+    public init(red: Percent, green: Percent, blue: Percent, alpha: Percent = 1.0) {
+        self.red = red
+        self.green = green
+        self.blue = blue
+        self.alpha = alpha
+    }
+
+    /// Initialize a ```Color``` using ```0``` to ```255``` 8-bit values.
+    public init(redUInt: EightBitValue, greenUInt: EightBitValue, blueUInt: EightBitValue, alphaUInt: EightBitValue = 255) {
+        self.init(red:   convert(from: redUInt),
+                  green: convert(from: greenUInt),
+                  blue:  convert(from: blueUInt),
+                  alpha: convert(from: alphaUInt))
+    }
+
+    public init(rgb: Hex) {
+        self.init(
+            redUInt:   EightBitValue((rgb >> 16) & 0xff),
+            greenUInt: EightBitValue((rgb >> 8) & 0xff),
+            blueUInt:  EightBitValue(rgb & 0xff)
+        )
+    }
+
+    public init(argb: Hex) {
+        self.init(
+            redUInt:    EightBitValue((argb >> 16) & 0xff),
+            greenUInt:  EightBitValue((argb >> 8) & 0xff),
+            blueUInt:   EightBitValue(argb & 0xff),
+            alphaUInt:  EightBitValue((argb >> 24) & 0xff)
+        )
+    }
+
+
+
 }
-
-extension Color where Self == RGB {
-    public var components: [CGFloat] {
-        return [redComponent, greenComponent, blueComponent]
-    }
-
-    public init(_ components: [CGFloat]) {
-        guard components.count == 3 else {
-            fatalError("RGB requires 3 components to be initialized!")
-        }
-        self.init(components[0], components[1], components[2])
-    }
-}
-
-extension Color where Self == RGBA {
-    public var components: [CGFloat] {
-        return [redComponent, greenComponent, blueComponent, alphaComponent]
-    }
-
-    public init(_ components: [CGFloat]) {
-        guard components.count == 4 else {
-            fatalError("RGBA requires 4 components to be initialized!")
-        }
-        self.init(components[0], components[1], components[2], components[3])
-    }
-}
-
-extension Color where Self == HSL {
-    public var components: [CGFloat] {
-        return [hueComponent, saturationComponent, lightnessComponent]
-    }
-
-    public init(_ components: [CGFloat]) {
-        guard components.count == 3 else {
-            fatalError("HSL requires 3 components to be initialized!")
-        }
-        self.init(components[0], components[1], components[2])
-    }
-}
-
-extension Color where Self == HSLA {
-    public var components: [CGFloat] {
-        return [hueComponent, saturationComponent, lightnessComponent, alphaComponent]
-    }
-
-    public init(_ components: [CGFloat]) {
-        guard components.count == 4 else {
-            fatalError("HSLA requires 4 components to be initialized!")
-        }
-        self.init(components[0], components[1], components[2], components[3])
-    }
-}
-
-extension Color where Self == HSB {
-    public var components: [CGFloat] {
-        return [hueComponent, saturationComponent, brightnessComponent]
-    }
-
-    public init(_ components: [CGFloat]) {
-        guard components.count == 3 else {
-            fatalError("HSB requires 3 components to be initialized!")
-        }
-        self.init(components[0], components[1], components[2])
-    }
-}
-
-extension Color where Self == HSBA {
-    public var components: [CGFloat] {
-        return [hueComponent, saturationComponent, brightnessComponent, alphaComponent]
-    }
-
-    public init(_ components: [CGFloat]) {
-        guard components.count == 4 else {
-            fatalError("HSBA requires 4 components to be initialized!")
-        }
-        self.init(components[0], components[1], components[2], components[3])
-    }
-}
-
-extension Color {
-
-    public var argbHex: Int {
-        let rgbValue = self.rgba
-        return (Int(rgbValue.alphaComponent * 255) << 24) +
-               (Int(rgbValue.redComponent * 255)   << 16) +
-               (Int(rgbValue.greenComponent * 255) << 8)  +
-               (Int(rgbValue.blueComponent * 255))
-    }
-
-    public var rgbHex: Int {
-        let rgbValue = self.rgb
-        return (Int(rgbValue.redComponent * 255)   << 16) +
-               (Int(rgbValue.greenComponent * 255) << 8)  +
-               (Int(rgbValue.blueComponent * 255))
-    }
-
-    public static func sample(from a: Color, through b: Color, at position: CGFloat) -> Self {
-
-        func lerp(from a: CGFloat, to b: CGFloat, percent: CGFloat) -> CGFloat {
-            return (b - a) * percent + a
-        }
-
-        func straightLerpValues(a: [CGFloat], b: [CGFloat], percent: CGFloat) -> [CGFloat] {
-            var result = [CGFloat]()
-            for (index, aValue) in a.enumerated() {
-                result.append(lerp(from: aValue, to: b[index], percent: percent))
-            }
-            return result
-        }
-
-        func hueLerpValues(a: HSB, b: HSB, percent: CGFloat) -> [CGFloat] {
-            var tempA = a
-            var tempB = b
-            var result = HSB(0, 0, 0)
-            var delta = tempB.hueComponent - tempA.hueComponent
-            var p = percent
-
-            if tempA.hueComponent > tempB.hueComponent {
-                let temp = tempB
-                tempB = tempA
-                tempA = temp
-
-                delta = -1 * delta
-                p = 1 - percent
-            }
-
-            if delta > 0.5 {
-                tempA.hueComponent = tempA.hueComponent + 1.0
-                result.hueComponent = (tempA.hueComponent + p * (tempB.hueComponent - tempA.hueComponent))
-            }
-
-            if delta <= 0.5 {
-                result.hueComponent = tempA.hueComponent + p * delta
-            }
-
-            // Hack to make sure we cross over correctly.
-            if result.hueComponent > 1.0 {
-                result.hueComponent -= 1.0
-            }
-            return [result.hueComponent,
-                    lerp(from: tempA.saturationComponent, to: tempB.saturationComponent, percent: p),
-                    lerp(from: tempA.brightnessComponent, to: tempB.brightnessComponent, percent: p)]
-        }
-
-        let lerpedValues: [CGFloat]
-        if (Self.self as? HueBased.Type) != nil {
-            lerpedValues = hueLerpValues(a: a.hsb, b: b.hsb, percent: position)
-            var result = HSB(0, lerpedValues[1], lerpedValues[2])
-            result.hueComponent = lerpedValues[0]
-            return Self(result)
-        } else {
-            lerpedValues = straightLerpValues(a: Self(a).components, b: Self(b).components, percent: position)
-            return Self(lerpedValues)
-        }
-    }
-
-    public func sampleBetweenSelf(and color: Color, at position: CGFloat) -> Self {
-        return Self.sample(from: self, through: color, at: position)
-    }
-
-    public static func gradient(from a: Color, through b: Color, steps: Int) -> [Self] {
-        var result = [Self]()
-        for i in 0..<steps {
-            let color = Self.sample(from: a, through: b, at: CGFloat(i) / CGFloat(steps - 1))
-            result.append(color)
-        }
-        return result
-    }
-
-    public func gradient(to color: Color, steps: Int) -> [Self] {
-        return Self.gradient(from: self, through: color, steps: steps)
-    }
-
-    public static func spread(colors: [Color], to size: Int) -> [Self] {
-        var result = [Self]()
-        let dividingFactor = CGFloat(colors.count - 1) / CGFloat(size - 1)
-        for i in 0..<size {
-            let tmp         = CGFloat(i) * dividingFactor
-            let priorIndex  = Int(floor(tmp))
-            let nextIndex   = Int(ceil(tmp))
-            let percent     = tmp - CGFloat(priorIndex)
-            let color       = Self.sample(from: colors[priorIndex], through: colors[nextIndex], at: percent)
-            result.append(color)
-        }
-        return result
-    }
-}
-
-public protocol Alpha {
-    var alphaComponent: CGFloat { get }
-}
-
-public protocol HueBased {
-    var hueComponent: CGFloat { get }
-    var saturationComponent: CGFloat { get }
-}
-
-extension HSL: HueBased {}
-extension HSLA: HueBased {}
-extension HSB: HueBased {}
-extension HSBA: HueBased {}

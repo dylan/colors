@@ -2,31 +2,20 @@
 //  Types.swift
 //  Colors
 //
-//  Created by Dylan Wreggelsworth on 4/5/17.
+//  Created by Dylan Wreggelsworth on 4/11/17.
 //  Copyright © 2017 Colors. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS) || os(watchOS)
-    import UIKit
-#elseif os(macOS)
-    import AppKit
-#endif
+public typealias Hex           = UInt
+public typealias EightBitValue = UInt8
+public typealias Percent       = Float
+public typealias Degree        = Float
 
-public typealias HSLATuple = (h: CGFloat, s: CGFloat, l: CGFloat, a: CGFloat)
-public typealias HSLTuple  = (h: CGFloat, s: CGFloat, l: CGFloat)
+typealias RGBTuple = (red: Percent, green: Percent, blue: Percent)
+typealias RGBATuple = (red: Percent, green: Percent, blue: Percent, alpha: Percent)
 
-public typealias HSBATuple = (h: CGFloat, s: CGFloat, b: CGFloat, a: CGFloat)
-public typealias HSBTuple  = (h: CGFloat, s: CGFloat, b: CGFloat)
+typealias HSLTuple = (hue: Degree, saturation: Percent, lightness: Percent)
+typealias HSLATuple = (hue: Degree, saturation: Percent, lightness: Percent, alpha: Percent)
 
-public typealias RGBATuple = (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat)
-public typealias RGBTuple  = (r: CGFloat, g: CGFloat, b: CGFloat)
-
-
-public let HSLATupleBlack: HSLATuple = (h: 0.0, s: 0.0, l: 0.0, a: 1.0)
-public let HSLTupleBlack:  HSLTuple  = (h: 0.0, s: 0.0, l: 0.0)
-
-public let HSBATupleBlack: HSBATuple = (h: 0.0, s: 0.0, b: 0.0, a: 1.0)
-public let HSBTupleBlack:  HSBTuple  = (h: 0.0, s: 0.0, b: 0.0)
-
-public let RGBATupleBlack: RGBATuple = (r: 0.0, g: 0.0, b: 0.0, a: 1.0)
-public let RGBTupleBlack:  RGBTuple  = (r: 0.0, g: 0.0, b: 0.0)
+typealias HSBTuple = (hue: Degree, saturation: Percent, brightness: Percent)
+typealias HSBATuple = (hue: Degree, saturation: Percent, brightness: Percent, alpha: Percent)
