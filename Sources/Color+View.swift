@@ -10,7 +10,7 @@ import Foundation
 
 extension Color {
 
-#if os(iOS) || os(tvOS) || os(watchOS) || os(macOS)
+#if os(iOS) || os(macOS)
 
     /// Returns a `ColorView` that consists of a single 24x24 square of this `Color`.
     public var view: ColorView {
