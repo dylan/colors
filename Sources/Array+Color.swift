@@ -7,7 +7,7 @@
 //
 
 import Foundation
-#if os(iOS) || os(tvOS) || os(watchOS)
+#if os(iOS)
 import UIKit
 #elseif os(macOS)
 import AppKit
@@ -25,9 +25,11 @@ extension Array where Element == Color {
     }
     #endif
 
+    #if os(iOS) || os(macOS)
     public var view: ColorView {
         return ColorView(colors: self)
     }
+    #endif
 
     public func spread(to size: Int, using interpolation: Color.Interpolation = .hue) -> [Element] {
         return Element.spread(colors: self, to: size, using: interpolation)
