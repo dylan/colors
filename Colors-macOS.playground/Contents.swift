@@ -1,114 +1,60 @@
 //: Playground - noun: a place where people can play
 
-import AppKit
 import Colors
 
-let firstColor = RGB.X11.lightGoldenrodYellow
-let hsl        = HSL(firstColor)
-let hsla       = HSLA(hsl)
-let hsb        = HSB(hsla)
-let hsba       = HSBA(hsb)
+let color1 = Color(red: 1.0, green: 1.0, blue: 1.0)
 
-let white = RGB.CGA.white
+let color2 = Color(redUInt: 255, greenUInt: 255, blueUInt: 255)
 
-RGB.CGA.white == RGB.white
-let colorsTest: [RGB] = [RGB.X11.lightGoldenrodYellow,
-                     RGB.X11.lightGoldenrodYellow.hsl.rgb,
-                     RGB.X11.lightGoldenrodYellow.hsla.rgb,
-                     RGB.X11.lightGoldenrodYellow.hsba.rgb,
-                     RGB.X11.lightGoldenrodYellow.hsb.rgb]
-RGB.X11.lightGoldenrodYellow
-RGB.X11.lightGoldenrodYellow.hsb
-RGB.X11.lightGoldenrodYellow.hsb.hueComponent
-RGB.X11.lightGoldenrodYellow.hsb.saturationComponent
-RGB.X11.lightGoldenrodYellow.hsb.brightnessComponent
-RGB.X11.lightGoldenrodYellow.hsb.rgb
+let color3 = Color(rgb: 0xffffff)
 
-colorsTest.view
-//dump(RGB.sample(from: RGB.X11.black, through: RGB.X11.red, at: 0.33))
-//dump(HSL.sample(from: RGB.X11.black, through: RGB.X11.red, at: 0.33))
-//dump(HSB.sample(from: RGB.X11.black, through: RGB.X11.red, at: 0.33))
-//
-//dump(RGB.CGA.cyan.sampleBetweenSelf(and: RGB.W3C.red, at: 0.5))
-//dump(RGB.gradient(from: RGB.X11.red, through: RGB.X11.black, steps: 4))
+let color4 = Color(argb: 0xffffffff)
 
-let colors: [RGB] = [RGB.W3C.green, hsl.rgb, hsla.rgb, hsb.rgb, hsba.rgb]
+color1 == color2
+color2 == color3
+color3 == color4
 
-//dump(RGB.gradient(from: [RGB.CGA.black, RGB.X11.white, RGB.CGA.black], steps: 5))
-//(Int(1.0 * 255) << 16) + (Int(1.0 * 255) << 8) + (Int(1.0 * 255)) + (Int(1.0 * 255) << 24)
+var dinerGreen = Color(rgb: 0x37ecbd)
 
-//RGB.white.toHex()
+dinerGreen.hue
+dinerGreen.hslSaturation
+dinerGreen.hslLightness
 
-let v1 = 0xffffff
-RGB.X11.white.rgbHex == RGB(v1).rgbHex
+dinerGreen.red
+dinerGreen.green
+dinerGreen.blue
+dinerGreen.alpha
 
-let v = 0xff00ffff
-RGBA(0, 255, 255, 255).argbHex == RGBA(v).argbHex
+func spin(_ color: Color, amount: Degree) -> Color {
+    var result = color
+    result.hue += amount
+    return result
+}
 
-let testValue: [Color] = [RGB.CGA.black, RGB.CGA.magenta, RGB.CGA.brown.hsla, RGB(50, 255, 0), RGB.CGA.white]
+let spunValue = spin(dinerGreen, amount: 15)
+spunValue.hue
 
-let testLength = 16
+spunValue.red
+spunValue.green
+spunValue.blue
 
-RGB.spread(colors: testValue, to: testLength).view
-RGBA.spread(colors: testValue, to: testLength).view
-HSB.spread(colors: testValue, to: testLength).view
-HSBA.spread(colors: testValue, to: testLength).view
-HSL.spread(colors: testValue, to: testLength).view
+let ramp = [Color(rgb: 0x000000),
+            Color(rgb: 0xff0000),
+            Color(rgb: 0x00ff00),
+            Color(rgb: 0x0000ff),
+            Color(rgb: 0x000000),
+            Color(rgb: 0xffffff)]
 
-//
-//firstColor.rgba.redComponent
-//firstColor.rgba.greenComponent
-//firstColor.rgba.blueComponent
-//firstColor.rgba.alphaComponent
-//
-//hsl.hueComponent
-//hsl.saturationComponent
-//hsl.lightnessComponent
-//
-//hsla.hueComponent
-//hsla.saturationComponent
-//hsla.lightnessComponent
-//hsla.alphaComponent
-//
-//hsb.hueComponent
-//hsb.saturationComponent
-//hsb.brightnessComponent
-//
-//hsba.hueComponent
-//hsba.saturationComponent
-//hsba.brightnessComponent
-//hsba.alphaComponent
-//
-//firstColor.rgba.redComponent
-//firstColor.rgba.greenComponent
-//firstColor.rgba.blueComponent
-//firstColor.rgba.alphaComponent
-//
-//firstColor.rgba.hsl.hueComponent
-//firstColor.rgba.hsl.saturationComponent
-//firstColor.rgba.hsl.lightnessComponent
-//
-//firstColor.rgba.hsl.hsla.hueComponent
-//firstColor.rgba.hsl.hsla.saturationComponent
-//firstColor.rgba.hsl.hsla.lightnessComponent
-//
-//firstColor.rgba.hsl.hsla.hsb.hueComponent
-//firstColor.rgba.hsl.hsla.hsb.saturationComponent
-//firstColor.rgba.hsl.hsla.hsb.brightnessComponent
-//
-//firstColor.rgba.hsl.hsla.hsb.rgb.redComponent
-//firstColor.rgba.hsl.hsla.hsb.rgb.greenComponent
-//firstColor.rgba.hsl.hsla.hsb.rgb.blueComponent
-//
-//firstColor.rgba.hsl.hsla.hsb.hueComponent
-//firstColor.rgba.hsl.hsla.hsb.saturationComponent
-//firstColor.rgba.hsl.hsla.hsb.brightnessComponent
-//
-//firstColor.rgba.hsl.hsla.hsb.hsba
-//firstColor.rgba.hsl.hsla.hsb.hsba.saturationComponent
-//firstColor.rgba.hsl.hsla.hsb.hsba.brightnessComponent
-//firstColor.rgba.hsl.hsla.hsb.hsba.alphaComponent
-//
-//firstColor.rgba.hsl.hsla.hsb.hsba.rgb.redComponent
-//firstColor.rgba.hsl.hsla.hsb.hsba.rgb.greenComponent
-//firstColor.rgba.hsl.hsla.hsb.hsba.rgb.blueComponent
+ramp.spread(to: 32, using: .hue).view
+
+ramp.spread(to: 32, using: .rgb).view
+
+let sexyRamp = [Color(rgb: 0xde6161),
+                Color(rgb: 0x2657eb)]
+
+sexyRamp.spread(to: 16, using: .rgb).view
+
+sexyRamp.spread(to: 16, using: .hue).view
+
+
+
