@@ -35,7 +35,7 @@ public class ColorView: NSView {
 }
 #endif
 
-#if os(iOS)
+#if os(iOS) || os(tvOS) || os(watchOS)
 import UIKit
 
 public class ColorView: UIView {
