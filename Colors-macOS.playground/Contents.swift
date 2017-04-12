@@ -25,6 +25,19 @@ dinerGreen.green
 dinerGreen.blue
 dinerGreen.alpha
 
+dinerGreen.argbValue
+dinerGreen.argbString
+
+dinerGreen.rgbValue
+dinerGreen.rgbString
+
+Color.white.argbString
+Color.white.rgbString
+
+0xffffff == Color.white.rgbValue
+
+Color(rgb: 0xffffff).argbString
+
 dinerGreen.hueShifted(45).view
 dinerGreen.lightened(0.3).view
 dinerGreen.darkened(0.3).view
