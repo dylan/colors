@@ -13,5 +13,5 @@ github "dylan/colors"
 
 ### Cocoapods
 ```Ruby
-pod "colors', '~> 0.9a'
+pod "colors', '~> 0.9.1'
 ```
