@@ -14,6 +14,13 @@ github "dylan/colors"
 ### Cocoapods
 Not supported. It's too convoluted.
 
+## Coming Soon...
+- Luminosity - How bright is this color?
+- Perceptual functions - What colors can work when viewed with other's and in certain situations?
+- Contrast - How do these colors work together?
+- Harmonic functions - Inverse, Triadic, Analogous, etc.
+
+
 ## Usage
 
 ```Swift
