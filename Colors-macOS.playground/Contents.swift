@@ -25,18 +25,12 @@ dinerGreen.green
 dinerGreen.blue
 dinerGreen.alpha
 
-func spin(_ color: Color, amount: Degree) -> Color {
-    var result = color
-    result.hue += amount
-    return result
-}
-
-let spunValue = spin(dinerGreen, amount: 15)
-spunValue.hue
-
-spunValue.red
-spunValue.green
-spunValue.blue
+shiftHue(of: dinerGreen, degrees: 45).view
+lighten(dinerGreen, percent: 0.3).view
+darken(dinerGreen, percent: 0.3).view
+saturate(dinerGreen, percent: 1.0).view
+desaturate(dinerGreen, percent: 1.0).view
+mix(dinerGreen, with: .red, percent: 0.5).view
 
 let ramp = [Color(rgb: 0x000000),
             Color(rgb: 0xff0000),
