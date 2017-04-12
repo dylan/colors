@@ -11,6 +11,11 @@ public typealias EightBitValue = UInt8
 public typealias Percent       = Float
 public typealias Degree        = Float
 
-typealias HSLTuple = (h: Percent, s: Percent, l: Percent)
-typealias RGBTuple = (r: Percent, g: Percent, b: Percent)
-typealias HSBTuple = (h: Percent, s: Percent, b: Percent)
+typealias RGBTuple = (red: Percent, green: Percent, blue: Percent)
+typealias RGBATuple = (red: Percent, green: Percent, blue: Percent, alpha: Percent)
+
+typealias HSLTuple = (hue: Degree, saturation: Percent, lightness: Percent)
+typealias HSLATuple = (hue: Degree, saturation: Percent, lightness: Percent, alpha: Percent)
+
+typealias HSBTuple = (hue: Degree, saturation: Percent, brightness: Percent)
+typealias HSBATuple = (hue: Degree, saturation: Percent, brightness: Percent, alpha: Percent)

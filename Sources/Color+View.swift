@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+extension Color {
+    public var view: ColorView {
+        return [self].view
+    }
+}

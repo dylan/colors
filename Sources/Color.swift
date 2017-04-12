@@ -61,6 +61,12 @@ public struct Color {
         }
     }
 
+    mutating func set(from tuple: RGBTuple) {
+        red   = tuple.red
+        green = tuple.green
+        blue  = tuple.blue
+    }
+
     /// Initialize a ```Color``` using ```0``` to ```1.0``` values.
     public init(red: Percent, green: Percent, blue: Percent, alpha: Percent = 1.0) {
         self.red = red

@@ -24,7 +24,7 @@ extension Color {
         func hueLerpValues(a: Color, b: Color, percent: Percent) -> HSLTuple {
             var tempA = a
             var tempB = b
-            var result = HSLTuple(h: 0, s: 0, l: 0)
+            var result = HSLTuple(hue: 0, saturation: 0, lightness: 0)
             var delta = tempB.hue - tempA.hue
             var p = percent
 
@@ -39,29 +39,29 @@ extension Color {
 
             if delta > 0.5 {
                 tempA.hue = tempA.hue + 1.0
-                result.h = (tempA.hue + p * (tempB.hue - tempA.hue))
+                result.hue = (tempA.hue + p * (tempB.hue - tempA.hue))
             }
 
             if delta <= 0.5 {
-                result.h = tempA.hue + p * delta
+                result.hue = tempA.hue + p * delta
             }
 
             // Hack to make sure we cross over correctly.
-            if result.h > 1.0 {
-                result.h -= 1.0
+            if result.hue > 1.0 {
+                result.hue -= 1.0
             }
 
-            return (h: result.h / 360,
-                    s: lerp(from: tempA.hslSaturation, to: tempB.hslSaturation, percent: p),
-                    l: lerp(from: tempA.hslLightness, to: tempB.hslLightness, percent: p))
+            return (hue: result.hue / 360,
+                    saturation: lerp(from: tempA.hslSaturation, to: tempB.hslSaturation, percent: p),
+                    lightness: lerp(from: tempA.hslLightness, to: tempB.hslLightness, percent: p))
         }
 
         switch interpolation {
         case .hue:
             let rgbValues = rgb(from: hueLerpValues(a: a, b: b, percent: position))
-            return Color(red:   rgbValues.r,
-                         green: rgbValues.g,
-                         blue:  rgbValues.b,
+            return Color(red:   rgbValues.red,
+                         green: rgbValues.green,
+                         blue:  rgbValues.blue,
                          alpha: lerp(from: a.alpha, to: b.alpha, percent: position))
         case .rgb:
             return Color(red:   lerp(from: a.red,   to: b.red,   percent: position),

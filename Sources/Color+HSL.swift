@@ -9,9 +9,9 @@
 import Foundation
 
 func rgb(from hsl: HSLTuple) -> RGBTuple {
-    var hue        = hsl.h
-    var saturation = hsl.s
-    var lightness  = hsl.l
+    var hue        = hsl.hue
+    var saturation = hsl.saturation
+    var lightness  = hsl.lightness
 
     var m1: Float = 0.0
     var m2: Float = 0.0
@@ -37,13 +37,13 @@ func rgb(from hsl: HSLTuple) -> RGBTuple {
     let r = hueToRgb(m1: m1, m2: m2, hue: hue + 1 / 3)
     let g = hueToRgb(m1: m1, m2: m2, hue: hue)
     let b = hueToRgb(m1: m1, m2: m2, hue: hue - 1 / 3)
-    return RGBTuple(r: r, g: g, b: b)
+    return RGBTuple(red: r, green: g, blue: b)
 }
 
 func hsl(from rgb: RGBTuple) -> HSLTuple {
-    let red   = rgb.r
-    let green = rgb.g
-    let blue  = rgb.b
+    let red   = rgb.red
+    let green = rgb.green
+    let blue  = rgb.blue
 
     let maxComponent = max(red, green, blue)
     let minComponent = min(red, green, blue)
@@ -73,7 +73,7 @@ func hsl(from rgb: RGBTuple) -> HSLTuple {
         hue /= 6
     }
 
-    return HSLTuple(h: hue, s: saturation, l: lightness)
+    return HSLTuple(hue: hue, saturation: saturation, lightness: lightness)
 }
 
 extension Color {
@@ -81,39 +81,33 @@ extension Color {
     /// Returns a hue value in degrees ranging from ```0``` to ```360```.
     public var hue: Degree {
         get {
-            return hsl(from: (r: red, g: green, b: blue)).h * 360
+            return hsl(from: (red: red, green: green, blue: blue)).hue * 360
         }
         set {
             let value = limitToDegreeRange(newValue)
-            set(from: rgb(from: (h: value / 360, s: hslSaturation, l: hslLightness)))
+            set(from: rgb(from: (hue: value / 360, saturation: hslSaturation, lightness: hslLightness)))
         }
     }
 
     /// Returns a saturation percentage value ranging from ```0``` to ```1.0```.
     public var hslSaturation: Percent {
         get {
-            return hsl(from: (r: red, g: green, b: blue)).s
+            return hsl(from: (red: red, green: green, blue: blue)).saturation
         }
         set {
             let value = limitToPercentRange(newValue)
-            set(from: rgb(from: (h: hue / 360, s: value, l: hslLightness)))
+            set(from: rgb(from: (hue: hue / 360, saturation: value, lightness: hslLightness)))
         }
     }
 
     /// Returns a lightness percentage value ranging from ```0``` to ```1.0```.
     public var hslLightness: Percent {
         get {
-            return hsl(from: (r: red, g: green, b: blue)).l
+            return hsl(from: (red: red, green: green, blue: blue)).lightness
         }
         set {
             let value = limitToPercentRange(newValue)
-            set(from: rgb(from: (h: hue / 360, s: hslSaturation, l: value)))
+            set(from: rgb(from: (hue: hue / 360, saturation: hslSaturation, lightness: value)))
         }
-    }
-
-    fileprivate mutating func set(from tuple: RGBTuple) {
-        red   = tuple.r
-        green = tuple.g
-        blue  = tuple.b
     }
 }

@@ -16,9 +16,15 @@ color3 == color4
 
 let dinerGreen = Color(rgb: 0x37ecbd)
 
+dinerGreen.view
+
 dinerGreen.hue
-dinerGreen.saturation
-dinerGreen.lightness
+dinerGreen.hslSaturation
+dinerGreen.hslLightness
+
+dinerGreen.hue
+dinerGreen.hsbSaturation
+dinerGreen.hsbBrightness
 
 dinerGreen.red
 dinerGreen.green
