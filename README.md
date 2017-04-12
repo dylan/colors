@@ -17,6 +17,8 @@ Not supported. It's too convoluted.
 ## Usage
 
 ```Swift
+import Colors
+
 let color1 = Color(red: 1.0, green: 1.0, blue: 1.0)
 
 let color2 = Color(redUInt: 255, greenUInt: 255, blueUInt: 255)
