@@ -66,6 +66,10 @@ public struct Color {
         }
     }
 
+    public var luminance: Percent {
+        return Color.luminance(of: self)
+    }
+
     mutating func set(from tuple: RGBTuple) {
         red   = tuple.red
         green = tuple.green

@@ -1,5 +1,6 @@
 //: Playground - noun: a place where people can play
 
+import Darwin
 import Colors
 
 let color1 = Color(red: 1.0, green: 1.0, blue: 1.0)
@@ -33,6 +34,9 @@ dinerGreen.rgbString
 
 Color.white.argbString
 Color.white.rgbString
+
+Color.red.luminance
+dinerGreen.luminance
 
 0xffffff == Color.white.rgbValue
 
