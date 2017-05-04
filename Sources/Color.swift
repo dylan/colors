@@ -76,6 +76,26 @@ public struct Color {
         blue  = tuple.blue
     }
 
+    public init(_ color: Color) {
+        self = color
+    }
+
+    public init(hue: Degree, saturation: Percent, brightness: Percent) {
+        var value = Color.white
+        value.hsbBrightness = brightness
+        value.hsbSaturation = saturation
+        value.hue = hue
+        self = value
+    }
+
+    public init(hue: Degree, saturation: Percent, lightness: Percent) {
+        var value = Color.white
+        value.hslLightness = lightness
+        value.hslSaturation = saturation
+        value.hue = hue
+        self = value
+    }
+
     /// Initialize a `Color` using ```0``` to ```1.0``` values.
     ///
     public init(red: Percent, green: Percent, blue: Percent, alpha: Percent = 1.0) {

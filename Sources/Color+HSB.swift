@@ -8,10 +8,10 @@
 
 import Foundation
 
-func hsb(from tuple: RGBTuple) -> HSBTuple {
-    let red   = tuple.red
-    let green = tuple.green
-    let blue  = tuple.blue
+func hsb(from rgb: RGBTuple) -> HSBTuple {
+    let red   = rgb.red
+    let green = rgb.green
+    let blue  = rgb.blue
 
     let maxComponent = max(red, green, blue)
     let minComponent = min(red, green, blue)
@@ -19,13 +19,10 @@ func hsb(from tuple: RGBTuple) -> HSBTuple {
     let delta     = maxComponent - minComponent
 
     var hue        = maxComponent
-    var saturation = maxComponent == 0 ? 0 : delta / maxComponent
+    let saturation = maxComponent == 0 ? 0 : delta / maxComponent
     let brightness = maxComponent
 
-    if maxComponent == minComponent {
-        hue = 0
-        saturation = 0
-    } else {
+    if maxComponent != minComponent {
         if maxComponent == red {
             hue = (green - blue) / delta + (green < blue ? 6 : 0)
         }
@@ -36,6 +33,10 @@ func hsb(from tuple: RGBTuple) -> HSBTuple {
             hue = (red - green) / delta + 4
         }
         hue /= 6
+    } else {
+//        noop
+//        hue = 0
+//        saturation = 0
     }
 
     return HSBTuple(hue: hue, saturation: saturation, brightness: brightness)
