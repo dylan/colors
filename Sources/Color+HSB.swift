@@ -22,22 +22,16 @@ func hsb(from rgb: RGBTuple) -> HSBTuple {
     let saturation = maxComponent == 0 ? 0 : delta / maxComponent
     let brightness = maxComponent
 
-    if maxComponent != minComponent {
-        if maxComponent == red {
-            hue = (green - blue) / delta + (green < blue ? 6 : 0)
-        }
-        if maxComponent == green {
-            hue = (blue - red) / delta + 2
-        }
-        if maxComponent == blue {
-            hue = (red - green) / delta + 4
-        }
-        hue /= 6
-    } else {
-//        noop
-//        hue = 0
-//        saturation = 0
+    if maxComponent == red {
+        hue = (green - blue) / delta + (green < blue ? 6 : 0)
     }
+    if maxComponent == green {
+        hue = (blue - red) / delta + 2
+    }
+    if maxComponent == blue {
+        hue = (red - green) / delta + 4
+    }
+    hue /= 6
 
     return HSBTuple(hue: hue, saturation: saturation, brightness: brightness)
 }
