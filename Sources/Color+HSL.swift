@@ -57,19 +57,20 @@ func hsl(from rgb: RGBTuple) -> HSLTuple {
     var saturation = halfRange
     let lightness  = halfRange
 
+    if maxComponent != minComponent {
+        saturation = lightness > 0.5 ? delta / (2 - maxComponent - minComponent) : delta / (maxComponent + minComponent)
 
-    saturation = lightness > 0.5 ? delta / (2 - maxComponent - minComponent) : delta / (maxComponent + minComponent)
-
-    if maxComponent == red {
-        hue = (green - blue) / delta + (green < blue ? 6 : 0)
+        if maxComponent == red {
+            hue = (green - blue) / delta + (green < blue ? 6 : 0)
+        }
+        if maxComponent == green {
+            hue = (blue - red) / delta + 2
+        }
+        if maxComponent == blue {
+            hue = (red - green) / delta + 4
+        }
+        hue /= 6
     }
-    if maxComponent == green {
-        hue = (blue - red) / delta + 2
-    }
-    if maxComponent == blue {
-        hue = (red - green) / delta + 4
-    }
-    hue /= 6
 
 
     return HSLTuple(hue: hue, saturation: saturation, lightness: lightness)
