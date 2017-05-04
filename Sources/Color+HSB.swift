@@ -42,17 +42,19 @@ func hsb(from rgb: RGBTuple) -> HSBTuple {
     return HSBTuple(hue: hue, saturation: saturation, brightness: brightness)
 }
 
-func rgb(from tuple: HSBTuple) -> RGBTuple {
-    let hue = tuple.hue
-    let saturation = tuple.saturation
-    let brightness = tuple.brightness
+func rgb(from hsb: HSBTuple) -> RGBTuple {
+    let hue = hsb.hue
+    let saturation = hsb.saturation
+    let brightness = hsb.brightness
 
     let i = floor(hue)
     let f = hue - i
     let p = brightness * (1 - saturation)
     let q = brightness * (1 - f * saturation)
     let t = brightness * (1 - (1 - f) * saturation)
-    let mod = Int(i.remainder(dividingBy: 6))
+    var mod = Int(i.remainder(dividingBy: 6))
+
+    mod = mod >= 0 ? mod : 0
 
     // Table lookup
     let red =   [brightness, q, p, p, t, brightness][mod]
