@@ -35,6 +35,8 @@ func hsb(from rgb: RGBTuple) -> HSBTuple {
         hue /= 6
     }
 
+    hue = hue == 1.0 ? 0 : hue
+
     return HSBTuple(hue: hue, saturation: saturation, brightness: brightness)
 }
 
