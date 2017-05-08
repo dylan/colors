@@ -50,4 +50,13 @@ dinerGreen.hex       // 4281855165
 dinerGreen.hexString // "#37ecbd"
 
 dinerGreen.hueShifted(45).view  // On iOS/Mac a View with a soft blue square.
+
+
+/// Colors also has a few color lists available...
+
+Resene.copperFire // #915345
+
+XKCD.acidgreen    // #8ffe09
+
+X11.all.count     // 140
 ```
