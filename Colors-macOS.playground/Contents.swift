@@ -71,10 +71,10 @@ w3cColorRamp.view
 let namedColorRamp: [Color] = [.black, .white, .brown, .cyan, .green]
 namedColorRamp.view
 
-Resene.copperFire.view
-XKCD.acidgreen.view
+Resene.copperFire.hexString
+XKCD.acidgreen.hexString
 XKCD.almostblack.view
-
+X11.all.count
 
 //
 //import AppKit
