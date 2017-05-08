@@ -37,4 +37,22 @@ public enum CGA {
     public static let lightYellow  = Color(hex: 0xffff55)
     
     public static let white        = Color(hex: 0xffffff)
+
+    public static let all: [Color] = [
+        CGA.black,
+        CGA.blue,
+        CGA.green,
+        CGA.cyan,
+        CGA.magenta,
+        CGA.brown,
+        CGA.lightGray,
+        CGA.gray,
+        CGA.lightBlue,
+        CGA.lightGreen,
+        CGA.lightCyan,
+        CGA.lightRed,
+        CGA.lightMagenta,
+        CGA.lightYellow,
+        CGA.white
+    ]
 }

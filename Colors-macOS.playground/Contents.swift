@@ -48,7 +48,8 @@ let ramp = [Color(hex: 0x000000), // Black
             Color(hex: 0x000000), // Black
             Color(hex: 0xffffff)] // White
 
-[Color.black, Color.green, Color.red].spread(to: 32).view
+[Color.red, Color.blue].spread(to: 8).view
+[Color.red, Color.blue].spread(to: 8, using: .rgb).view
 
 ramp.spread(to: 32, using: .hue).view
 
@@ -69,6 +70,18 @@ w3cColorRamp.view
 
 let namedColorRamp: [Color] = [.black, .white, .brown, .cyan, .green]
 namedColorRamp.view
+
+let lastThirtyTwo = (Resene.all.count - 32)
+Array(Resene.all.dropLast(lastThirtyTwo)).view
+
+let view = Array(Resene.all
+    .sorted(by:{ (a, b) -> Bool in
+        return a.hsl.hue < b.hsl.hue && a.hsl.saturation < b.hsl.saturation && a.hsl.luminosity < b.hsl.luminosity
+    })
+    .dropLast(lastThirtyTwo - 32))
+    .view
+
+view
 
 //
 //import AppKit
