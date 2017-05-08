@@ -34,14 +34,14 @@ extension Color {
             return (b - a) * percent + a
         }
 
-        func hueLerpValues(a: Color, b: Color, percent: Percent) -> HSLTuple {
+        func hueLerpValues(a: Color, b: Color, percent: Percent) -> HSLComponents {
             var tempA = a
             var tempB = b
-            var result = HSLTuple(hue: 0, saturation: 0, lightness: 0)
-            var delta = tempB.hue - tempA.hue
+            var result = HSLComponents(hue: 0, saturation: 0, luminosity: 0)
+            var delta = tempB.hsl.hue - tempA.hsl.hue
             var p = percent
 
-            if tempA.hue > tempB.hue {
+            if tempA.hsl.hue > tempB.hsl.hue {
                 let temp = tempB
                 tempB = tempA
                 tempA = temp
@@ -51,12 +51,12 @@ extension Color {
             }
 
             if delta > 0.5 {
-                tempA.hue = tempA.hue + 1.0
-                result.hue = (tempA.hue + p * (tempB.hue - tempA.hue))
+                tempA.hsl.hue = tempA.hsl.hue + 1.0
+                result.hue = (tempA.hsl.hue + p * (tempB.hsl.hue - tempA.hsl.hue))
             }
 
             if delta <= 0.5 {
-                result.hue = tempA.hue + p * delta
+                result.hue = tempA.hsl.hue + p * delta
             }
 
             // Hack to make sure we cross over correctly.
@@ -64,22 +64,20 @@ extension Color {
                 result.hue -= 1.0
             }
 
-            return (hue: result.hue / 360,
-                    saturation: lerp(from: tempA.hslSaturation, to: tempB.hslSaturation, percent: p),
-                    lightness: lerp(from: tempA.hslLightness, to: tempB.hslLightness, percent: p))
+            return (hue: result.hue,
+                    saturation: lerp(from: tempA.hsl.saturation, to: tempB.hsl.saturation, percent: p),
+                    luminosity: lerp(from: tempA.hsl.luminosity, to: tempB.hsl.luminosity, percent: p))
         }
 
         switch interpolation {
         case .hue:
-            let rgbValues = rgb(from: hueLerpValues(a: a, b: b, percent: position))
-            return Color(red:   rgbValues.red,
-                         green: rgbValues.green,
-                         blue:  rgbValues.blue,
-                         alpha: lerp(from: a.alpha, to: b.alpha, percent: position))
+            var result = Color(hueLerpValues(a: a, b: b, percent: position))
+            result.alpha = lerp(from: a.alpha, to: b.alpha, percent: position)
+            return result
         case .rgb:
-            return Color(red:   lerp(from: a.red,   to: b.red,   percent: position),
-                         green: lerp(from: a.green, to: b.green, percent: position),
-                         blue:  lerp(from: a.blue,  to: b.blue,  percent: position),
+            return Color(red:   lerp(from: a.rgb.red,   to: b.rgb.red,   percent: position),
+                         green: lerp(from: a.rgb.green, to: b.rgb.green, percent: position),
+                         blue:  lerp(from: a.rgb.blue,  to: b.rgb.blue,  percent: position),
                          alpha: lerp(from: a.alpha, to: b.alpha, percent: position))
         }
     }

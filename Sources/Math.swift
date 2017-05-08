@@ -8,6 +8,15 @@
 
 import Foundation
 
+public let EPSILON: Float = 1e-4
+
+func round<x: FloatingPoint>(_ value: x, toNearest: x) -> x {
+    guard value != 0 else {
+        return 0
+    }
+    return round(value / toNearest) * toNearest
+}
+
 func limitToDegreeRange(_ value: Degree) -> Degree {
     let adjustedValue = value.remainder(dividingBy: 360)
     return adjustedValue < 0 ? 360 + adjustedValue : adjustedValue
