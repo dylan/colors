@@ -75,20 +75,3 @@ Resene.copperFire.hexString
 XKCD.acidgreen.hexString
 XKCD.almostblack.view
 X11.all.count
-
-//
-//import AppKit
-//
-//extension Array where Element == Color {
-//    var nsColorList: NSColorList {
-//        let nsColors = self.map({ return $0.NSColor })
-//        var list = NSColorList(name: "")
-//        for (i, color) in self.enumerated() {
-//            list.insertColor(color.NSColor, key: color.hexString, at: i)
-//        }
-//        return list
-//    }
-//}
-//
-//namedColorRamp.nsColorList
-
