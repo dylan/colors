@@ -52,4 +52,22 @@ extension Color {
 
     // 0.0 white, 0.0 alpha
     public static let clear     = Color(red: 0, green: 0, blue: 0, alpha:0)
+
+    public static let all: [Color] = [
+        .black,
+        .darkGray,
+        .lightGray,
+        .white,
+        .gray,
+        .red,
+        .green,
+        .blue,
+        .cyan,
+        .yellow,
+        .magenta,
+        .orange,
+        .purple,
+        .brown,
+        .clear
+    ]
 }
