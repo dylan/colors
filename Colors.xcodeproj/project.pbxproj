@@ -312,20 +312,20 @@
 		FC0DFE1D1E94284E00716946 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				FC6B95E91EC0DC1000E0B30B /* Named */,
 				FC1D354F1E9D36B0007D31CE /* Array+Color.swift */,
 				52D6D9961BEFF375002C0205 /* Color.swift */,
 				FC1D353F1E9D3624007D31CE /* Color+Adjustment.swift */,
+				FC6B95D71EC07AE600E0B30B /* Color+Conversion.swift */,
 				FC1D356F1E9D391E007D31CE /* Color+Gradient.swift */,
 				FC1D35671E9D3737007D31CE /* Color+NSColor.swift */,
 				FC81F4C41E9D14A400199604 /* Color+Operators.swift */,
 				FC1D355F1E9D372A007D31CE /* Color+UIColor.swift */,
 				FC1D35471E9D369D007D31CE /* Color+View.swift */,
+				FC6B95CF1EC0791600E0B30B /* ColorSpace.swift */,
 				FC1D35571E9D3701007D31CE /* ColorView.swift */,
 				FCBB686D1E9D095B000F4E94 /* Math.swift */,
 				FC81F4D41E9D236600199604 /* Types.swift */,
-				FC6B95CF1EC0791600E0B30B /* ColorSpace.swift */,
-				FC6B95D71EC07AE600E0B30B /* Color+Conversion.swift */,
+				FC6B95E91EC0DC1000E0B30B /* Named */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
