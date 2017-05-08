@@ -15,7 +15,6 @@ github "dylan/colors"
 Not supported. It's too convoluted.
 
 ## Coming Soon...
-- Luminosity - How bright is this color?
 - Perceptual functions - What colors can work when viewed with other's and in certain situations?
 - Contrast - How do these colors work together?
 - Harmonic functions - Inverse, Triadic, Analogous, etc.
@@ -28,37 +27,27 @@ import Colors
 
 let color1 = Color(red: 1.0, green: 1.0, blue: 1.0)
 
-let color2 = Color(redUInt: 255, greenUInt: 255, blueUInt: 255)
+let color2 = Color(redInt: 255, greenInt: 255, blueInt: 255)
 
-let color3 = Color(rgb: 0xffffff)
+let color3 = Color(hex: 0xffffff)
 
-let color4 = Color(argb: 0xffffffff)
 
 color1 == color2 // true
 color2 == color3 // true
-color3 == color4 // true
 
-var dinerGreen = Color(rgb: 0x37ecbd)
 
-dinerGreen.hue           // 164.4199
-dinerGreen.hslSaturation // 0.826484
-dinerGreen.hslLightness  // 0.5705882
+var dinerGreen = Color(hex: 0x37ecbd)
 
-dinerGreen.red   // 0.2156863
-dinerGreen.green // 0.9254902
-dinerGreen.blue  // 0.7411765
-dinerGreen.alpha // 1
+dinerGreen.hsl.hue        // 164.4199
+dinerGreen.hsl.saturation // 0.826484
+dinerGreen.hsl.lightness  // 0.5705882
 
-dinerGreen.argbValue  // 4281855165
-dinerGreen.argbString // "#ff37ecbd"
+dinerGreen.rgb.red   // 0.2156863
+dinerGreen.rgb.green // 0.9254902
+dinerGreen.rgb.blue  // 0.7411765
 
-dinerGreen.rgbValue  // 36650585
-dinerGreen.rgbString // "#37ecbd"
+dinerGreen.hex       // 4281855165
+dinerGreen.hexString // "#37ecbd"
 
-Color.white.argbString // "#ffffffff"
-Color.white.rgbString  // "#ffffff"
-
-0xffffff == Color.white.rgbValue // true
-
-dinerGreen.hueShifted(45).view  // On iOS a UIView with a soft blue square.
+dinerGreen.hueShifted(45).view  // On iOS/Mac a View with a soft blue square.
 ```
