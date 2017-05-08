@@ -10,9 +10,9 @@ import Foundation
 
 extension Color {
     public static func ==(lhs: Color, rhs: Color) -> Bool {
-        return lhs.red   == rhs.red   &&
-               lhs.green == rhs.green &&
-               lhs.blue  == rhs.blue  &&
+        return lhs.rgb.red   == rhs.rgb.red   &&
+               lhs.rgb.green == rhs.rgb.green &&
+               lhs.rgb.blue  == rhs.rgb.blue  &&
                lhs.alpha == rhs.alpha
     }
 
@@ -21,8 +21,8 @@ extension Color {
             return value <= 0.03928 ? value / 12.92 : pow((value + 0.055) / 1.055, 2.4)
         }
 
-        return (0.2126 * lum(of: color.red))   +
-               (0.7152 * lum(of: color.green)) +
-               (0.0722 * lum(of: color.blue))
+        return (0.2126 * lum(of: color.rgb.red))   +
+               (0.7152 * lum(of: color.rgb.green)) +
+               (0.0722 * lum(of: color.rgb.blue))
     }
 }

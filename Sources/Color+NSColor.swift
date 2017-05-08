@@ -15,7 +15,7 @@ extension Color {
 
     /// An `NSColor` representation of `Self`.
     public var NSColor: AppKit.NSColor {
-        return AppKit.NSColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: CGFloat(alpha))
+        return AppKit.NSColor(red: CGFloat(rgb.red), green: CGFloat(rgb.green), blue: CGFloat(rgb.blue), alpha: CGFloat(alpha))
     }
 }
 #endif
