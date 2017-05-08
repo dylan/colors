@@ -11,11 +11,10 @@ public typealias EightBitValue = UInt8
 public typealias Percent       = Float
 public typealias Degree        = Float
 
-typealias RGBTuple = (red: Percent, green: Percent, blue: Percent)
-typealias RGBATuple = (red: Percent, green: Percent, blue: Percent, alpha: Percent)
+/// Represents an array of float values used by `Color` to represent the components present. Must be compared to the `ColorSpace` to determine length.
+public typealias ColorComponents = [Float]
 
-typealias HSLTuple = (hue: Degree, saturation: Percent, lightness: Percent)
-typealias HSLATuple = (hue: Degree, saturation: Percent, lightness: Percent, alpha: Percent)
-
-typealias HSBTuple = (hue: Degree, saturation: Percent, brightness: Percent)
-typealias HSBATuple = (hue: Degree, saturation: Percent, brightness: Percent, alpha: Percent)
+public typealias RGBComponents   = (red: Float, green: Float, blue: Float)
+public typealias HSLComponents   = (hue: Float, saturation: Float, luminosity: Float)
+public typealias HSVComponents   = (hue: Float, saturation: Float, value: Float)
+public typealias CMYKComponents  = (cyan: Float, magenta: Float, yellow: Float, key: Float)

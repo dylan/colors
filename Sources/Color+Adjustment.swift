@@ -20,7 +20,7 @@ extension Color {
         }
 
         var result = color
-        result.hue += degrees
+        result.hsl.hue += degrees / 360
         return result
     }
 
@@ -36,7 +36,7 @@ extension Color {
         }
 
         var result = color
-        result.hslLightness -= percent
+        result.hsl.luminosity -= percent
         return result
     }
 
@@ -52,7 +52,7 @@ extension Color {
         }
 
         var result = color
-        result.hslLightness += percent
+        result.hsl.luminosity += percent
         return result
     }
 
@@ -68,7 +68,7 @@ extension Color {
         }
 
         var result = color
-        result.hslSaturation += percent
+        result.hsl.saturation += percent
         return result
     }
 
@@ -84,7 +84,7 @@ extension Color {
         }
 
         var result = color
-        result.hslSaturation -= percent
+        result.hsl.saturation -= percent
         return result
     }
 
@@ -107,10 +107,10 @@ extension Color {
             return ((b - a) * percent) + a
         }
 
-        return Color(red:   mix(a: a.red, b: b.red, percent: percent),
-                     green: mix(a: a.green, b: b.green, percent: percent),
-                     blue:  mix(a: a.blue, b: b.blue, percent: percent),
-                     alpha: mix(a: a.alpha, b: b.alpha, percent: percent))
+        return Color(red:   mix(a: a.rgb.red,   b: b.rgb.red,   percent: percent),
+                     green: mix(a: a.rgb.green, b: b.rgb.green, percent: percent),
+                     blue:  mix(a: a.rgb.blue,  b: b.rgb.blue,  percent: percent),
+                     alpha: mix(a: a.alpha,     b: b.alpha,  percent: percent))
 
     }
 

@@ -16,130 +16,97 @@ import AppKit
 /// Represents a 24-bit color with an 8-bit alpha value.
 ///
 public struct Color {
-
-    private var _redComponent: Float   = 0
-    private var _greenComponent: Float = 0
-    private var _blueComponent: Float  = 0
-    private var _alphaComponent: Float = 1.0
-
-    /// Represents the red component of this color in the RGB color model, values range from ```0``` to ```1.0```.
-    ///
-    public var red: Percent {
-        get {
-            return _redComponent
-        }
-        set {
-            _redComponent = limitToPercentRange(newValue)
-        }
-    }
-
-    /// Represents the green component of this color in the RGB color model, values range from ```0``` to ```1.0```.
-    ///
-    public var green: Percent {
-        get {
-            return _greenComponent
-        }
-        set {
-            _greenComponent = limitToPercentRange(newValue)
-        }
-    }
-
-    /// Represents the blue component of this color in the RGB color model, values range from ```0``` to ```1.0```.
-    ///
-    public var blue: Percent {
-        get {
-            return _blueComponent
-        }
-        set {
-            _blueComponent = limitToPercentRange(newValue)
-        }
-    }
-
-    /// Represents the alpha component of this color in the RGB color model, values range from ```0``` to ```1.0```.
-    ///
-    public var alpha: Percent {
-        get {
-            return _alphaComponent
-        }
-        set {
-            _alphaComponent = limitToPercentRange(newValue)
-        }
-    }
+    var components: ColorComponents
+    public var alpha: Float
+    public var space: ColorSpace
 
     public var luminance: Percent {
         return Color.luminance(of: self)
     }
 
-    mutating func set(from tuple: RGBTuple) {
-        red   = tuple.red
-        green = tuple.green
-        blue  = tuple.blue
-    }
 
-    public init(_ color: Color) {
-        self = color
-    }
-
-    public init(hue: Degree, saturation: Percent, brightness: Percent) {
-        var value = Color.white
-        value.hsbBrightness = brightness
-        value.hsbSaturation = saturation
-        value.hue = hue
-        self = value
-    }
-
-    public init(hue: Degree, saturation: Percent, lightness: Percent) {
-        var value = Color.white
-        value.hslLightness = lightness
-        value.hslSaturation = saturation
-        value.hue = hue
-        self = value
-    }
-
-    /// Initialize a `Color` using ```0``` to ```1.0``` values.
+    /// Initialize a `Color` using ```0``` to ```1.0``` `ColorComponents` values.
     ///
-    public init(red: Percent, green: Percent, blue: Percent, alpha: Percent = 1.0) {
-        self.red = red
-        self.green = green
-        self.blue = blue
+    public init(_ components: ColorComponents, space: ColorSpace) {
+        guard space.componentCount == components.count else {
+            fatalError("Incorrect number of components passed for Color. Should be \(space.componentCount)")
+        }
+        self.components = components.map({ round($0, toNearest: EPSILON) })
+
+        self.space = space
+        self.alpha = 1
+    }
+
+    /// Initialize a `Color` in the RGB `ColorSpace` using ```0``` to ```1.0``` values.
+    ///
+    public init(red: Float, green: Float, blue: Float) {
+        self = Color([red, green, blue], space: .rgb)
+    }
+
+    /// Initialize a `Color` in the RGB `ColorSpace` using ```0``` to ```1.0``` values.
+    ///
+    public init(red: Float, green: Float, blue: Float, alpha: Float) {
+        self = Color([red, green, blue], space: .rgb)
         self.alpha = alpha
     }
 
-    /// Initialize a `Color` using ```0``` to ```255``` 8-bit values.
+    /// Initialize a `Color` in the RGB `ColorSpace` using ```0``` to ```255``` `Int` values.
     ///
-    public init(redUInt: EightBitValue, greenUInt: EightBitValue, blueUInt: EightBitValue, alphaUInt: EightBitValue = 255) {
-        self.init(red:   convert(from: redUInt),
-                  green: convert(from: greenUInt),
-                  blue:  convert(from: blueUInt),
-                  alpha: convert(from: alphaUInt))
+    public init(redInt: Int, greenInt: Int, blueInt: Int) {
+        self = Color(red: Float(redInt) / 255, green: Float(greenInt) / 255, blue: Float(blueInt) / 255)
     }
 
-    /// Initialize a `Color` using an RGB 24-bit hex value (or ```Int```).
+    /// Initialize a `Color` in the HSL `ColorSpace` using ```0``` to ```1.0``` values.
+    ///
+    public init(hue: Float, saturation: Float, luminosity: Float) {
+        self = Color([hue, saturation, luminosity], space: .hsl)
+    }
+
+    /// Initialize a `Color` in the HSV `ColorSpace` using ```0``` to ```1.0``` values.
+    ///
+    public init(hue: Float, saturation: Float, value: Float) {
+        self = Color([hue, saturation, value], space: .hsv)
+    }
+
+    /// Initialize a `Color` in the CMYK `ColorSpace` using ```0``` to ```1.0``` values.
+    ///
+    public init(cyan: Float, magenta: Float, yellow: Float, key: Float) {
+        self = Color([cyan, magenta, yellow, key], space: .cmyk)
+    }
+
+    /// Initialize a `Color` using an RGB 24-bit hex (`Int`) value.
     ///
     /// For example:
     ///
-    ///     let red = Color(rgb: 0xff0000)
+    ///     let red = Color(hex: 0xff0000)
     ///
-    public init(rgb: Hex) {
-        self.init(
-            redUInt:   EightBitValue((rgb >> 16) & 0xff),
-            greenUInt: EightBitValue((rgb >> 8) & 0xff),
-            blueUInt:  EightBitValue(rgb & 0xff)
-        )
+    public init(hex: Int) {
+        self = Color.hex2rgb(hex)
     }
 
-    /// Initialize a `Color` using an ARGB 32-bit hex value (or ```Int```).
+    /// Initialize a `Color` using an RGB 24-bit hex `String` value.
     ///
     /// For example:
     ///
-    ///    let red = Color(rgb: 0xffff0000)
+    ///     let red = Color(hex: "0xff0000")
     ///
-    public init(argb: Hex) {
-        self.init(
-            redUInt:    EightBitValue((argb >> 16) & 0xff),
-            greenUInt:  EightBitValue((argb >> 8) & 0xff),
-            blueUInt:   EightBitValue(argb & 0xff),
-            alphaUInt:  EightBitValue((argb >> 24) & 0xff)
-        )
+    public init(hex: String) {
+        self = Color.hexString2rgb(hex)
+    }
+
+    init(_ components: RGBComponents) {
+        self = Color([components.red, components.green, components.blue], space: .rgb)
+    }
+
+    init(_ components: HSLComponents) {
+        self = Color([components.hue, components.saturation, components.luminosity], space: .hsl)
+    }
+
+    init(_ components: HSVComponents) {
+        self = Color([components.hue, components.saturation, components.value], space: .hsv)
+    }
+
+    init(_ components: CMYKComponents) {
+        self = Color([components.cyan, components.magenta, components.yellow, components.key], space: .cmyk)
     }
 }
