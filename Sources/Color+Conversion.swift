@@ -36,6 +36,8 @@ extension Color {
             return hsv2hsl()
         case (.cmyk, .rgb):
             return cmyk2rgb()
+        case (.rgb, .xyz):
+            return rgb2xyz()
         default:
             switch space {
             // If we cannot convert directly, convert to rgb, then convert to final.
@@ -49,9 +51,7 @@ extension Color {
 
     private
     func rgb2hsl() -> Color {
-        let r = components[0]
-        let g = components[1]
-        let b = components[2]
+        let (r, g, b) = self.rgb
 
         let min = Swift.min(r, g, b)
         let max = Swift.max(r, g, b)
@@ -87,14 +87,12 @@ extension Color {
             s = delta / (2 - max - min)
         }
 
-        return Color([h / 360, s, l], space: .hsl)
+        return Color([h, s * 100, l * 100], space: .hsl)
     }
 
     private
     func rgb2hsv() -> Color {
-        let r = components[0]
-        let g = components[1]
-        let b = components[2]
+        let (r, g, b) = self.rgb
 
         let min = Swift.min(r, g, b)
         let max = Swift.max(r, g, b)
@@ -128,14 +126,12 @@ extension Color {
 
         v = max
 
-        return Color([h / 360, s, v], space: .hsv)
+        return Color([h, s * 100, v * 100], space: .hsv)
     }
 
     private
     func rgb2cmyk() -> Color {
-        let r = components[0]
-        let g = components[1]
-        let b = components[2]
+        let (r, g, b) = self.rgb
 
         var c, m, y, k: Float
 
@@ -145,17 +141,62 @@ extension Color {
         y = (1 - b - k) / (1 - k)
 
         c = c.isNaN ? 0 : c
-        m = m.isNaN ? 0 : c
-        y = y.isNaN ? 0 : c
+        m = m.isNaN ? 0 : m
+        y = y.isNaN ? 0 : y
 
         return Color(cyan: c, magenta: m, yellow: y, key: k)
     }
 
     private
+    func rgb2xyz() -> Color {
+        var (r, g, b) = self.rgb
+
+        func sRGB(_ x: Float) -> Float {
+            return x > 0.04045 ? pow(((x + 0.055) / 1.055), 2.4) : (x / 12.92)
+        }
+
+        r = sRGB(r)
+        g = sRGB(g)
+        b = sRGB(b)
+
+        let x = (r * 0.4124) + (g * 0.3576) + (b * 0.1805)
+        let y = (r * 0.2126) + (g * 0.7152) + (b * 0.0722)
+        let z = (r * 0.0193) + (g * 0.1192) + (b * 0.9505)
+
+        return Color(x: x * 100, y: y * 100, z: z * 100)
+    }
+
+    private
+    func rgb2lab() -> Color {
+        var (x, y, z) = self.xyz
+
+        var l, a, b: Float
+
+        x /= 95.047
+        y /= 100
+        z /= 108.883
+
+        func xyzClamp(_ x: Float) -> Float {
+            return x > 0.008856 ? pow(x, 1 / 3) : (7.787 * x) + (16 / 116)
+        }
+
+        x = xyzClamp(x)
+        y = xyzClamp(y)
+        z = xyzClamp(z)
+
+        l = (116 * y) - 16
+        a = 500 * (x - y)
+        b = 200 * (y - z)
+
+        return Color(l: l, a: a, b: b)
+    }
+
+    private
     func hsl2rgb() -> Color {
-        let h = components[0]
-        let s = components[1]
-        let l = components[2]
+        var (h, s, l) = self.hsl
+        h /= 360
+        s /= 100
+        l /= 100
 
         var rgb: ColorComponents = [0,0,0]
 
@@ -180,9 +221,11 @@ extension Color {
 
     private
     func hsl2hsv() -> Color {
-        let h = components[0] * 360
-        var s = components[1]
-        var l = components[2]
+        var (h, s, l) = self.hsl
+        s /= 100
+        l /= 100
+
+
         var smin = s
         let lmin = max(l, 0.01)
         var sv, v: Float
@@ -193,14 +236,15 @@ extension Color {
         v = (l + s) / 2
         sv = l == 0 ? (2 * smin) / (lmin + smin) : (2 * s) / (l + s)
 
-        return Color(hue: h / 360, saturation: sv, value: v)
+        return Color(hue: h, saturation: sv * 100, value: v * 100)
     }
 
     private
     func hsv2rgb() -> Color {
-        let h = (components[0] * 360 ) / 60
-        let s = components[1]
-        let v = components[2]
+        var (h, s, v) = self.hsv
+        h /= 60
+        s /= 100
+        v /= 100
 
         let index = Int(h) % 6
 
@@ -223,9 +267,10 @@ extension Color {
 
     private
     func hsv2hsl() -> Color {
-        let h = components[0] * 360
-        let s = components[1]
-        let v = components[2]
+        var (h, s, v) = self.hsv
+        s /= 100
+        v /= 100
+
         let vmin = max(v, 0.01)
         var l = (2 - s) * v
         let lmin = (2 - s) * vmin
@@ -234,15 +279,12 @@ extension Color {
         sl = sl < 0 ? 0 : sl
         l /= 2
 
-        return Color(hue: h / 360, saturation: sl, luminosity: l)
+        return Color(hue: h, saturation: sl * 100, luminosity: l * 100)
     }
 
     private
     func cmyk2rgb() -> Color {
-        let c = components[0]
-        let m = components[1]
-        let y = components[2]
-        let k = components[3]
+        let (c, m, y, k) = self.cmyk
 
         var r, g, b: Float
 
@@ -311,6 +353,26 @@ extension Color {
         get {
             let values = self.converted(to: .cmyk).components
             return (cyan: values[0], magenta: values[1], yellow: values[2], key: values[3])
+        }
+        set {
+            self = Color(newValue)
+        }
+    }
+
+    public var xyz: XYZComponents {
+        get {
+            let values = self.converted(to: .xyz).components
+            return (x: values[0], y: values[1], z: values[2])
+        }
+        set {
+            self = Color(newValue)
+        }
+    }
+
+    public var lab: LABComponents {
+        get {
+            let values = self.converted(to: .lab).components
+            return (l: values[0], a: values[1], b: values[2])
         }
         set {
             self = Color(newValue)

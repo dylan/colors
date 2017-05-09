@@ -74,6 +74,14 @@ public struct Color {
         self = Color([cyan, magenta, yellow, key], space: .cmyk)
     }
 
+    public init(x: Float, y: Float, z: Float) {
+        self = Color([x, y, z], space: .xyz)
+    }
+
+    public init(l: Float, a: Float, b: Float) {
+        self = Color([l, a, b], space: .lab)
+    }
+
     /// Initialize a `Color` using an RGB 24-bit hex (`Int`) value.
     ///
     /// For example:
@@ -96,6 +104,14 @@ public struct Color {
 
     init(_ components: RGBComponents) {
         self = Color([components.red, components.green, components.blue], space: .rgb)
+    }
+
+    init(_ components: XYZComponents) {
+        self = Color([components.x, components.y, components.z], space: .xyz)
+    }
+
+    init(_ components: LABComponents) {
+        self = Color([components.l, components.a, components.b], space: .lab)
     }
 
     init(_ components: HSLComponents) {
