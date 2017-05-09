@@ -8,11 +8,17 @@ let color1 = Color(red: 1.0, green: 1.0, blue: 1.0)
 let color2 = Color(redInt: 255, greenInt: 255, blueInt: 255)
 
 let color3 = Color(hex: 0xffffff)
+color3.rgb
+color3.lab
+color3.xyz
+color3.hsl
+color3.hsv
+color3.cmyk
 
 color1 == color2
 color2 == color3
 
-var dinerGreen = Color(hex: 0x36ecbd)
+var dinerGreen = Color(hex: 0x37ecbd)
 
 dinerGreen.rgb
 dinerGreen.hsl

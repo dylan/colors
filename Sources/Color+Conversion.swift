@@ -38,6 +38,8 @@ extension Color {
             return cmyk2rgb()
         case (.rgb, .xyz):
             return rgb2xyz()
+        case (.rgb, .lab):
+            return rgb2lab()
         default:
             switch space {
             // If we cannot convert directly, convert to rgb, then convert to final.
@@ -73,6 +75,9 @@ extension Color {
 
         h = Swift.min(h * 60, 360)
 
+        if h > 360 {
+            h -= 360
+        }
         if h < 0 {
             h += 360
         }
@@ -151,17 +156,17 @@ extension Color {
     func rgb2xyz() -> Color {
         var (r, g, b) = self.rgb
 
-        func sRGB(_ x: Float) -> Float {
-            return x > 0.04045 ? pow(((x + 0.055) / 1.055), 2.4) : (x / 12.92)
+        func pivot(_ x: Float) -> Float {
+            return x >= 0.04045 ? pow(((x + 0.055) / 1.055), 2.4) : (x / 12.92)
         }
 
-        r = sRGB(r)
-        g = sRGB(g)
-        b = sRGB(b)
+        r = pivot(r)
+        g = pivot(g)
+        b = pivot(b)
 
-        let x = (r * 0.4124) + (g * 0.3576) + (b * 0.1805)
-        let y = (r * 0.2126) + (g * 0.7152) + (b * 0.0722)
-        let z = (r * 0.0193) + (g * 0.1192) + (b * 0.9505)
+        let x = (r * 0.4124564 + g * 0.3575761 + b * 0.1804375)
+        let y = (r * 0.2126729 + g * 0.7151522 + b * 0.0721750)
+        let z = (r * 0.0193339 + g * 0.1191920 + b * 0.9503041)
 
         return Color(x: x * 100, y: y * 100, z: z * 100)
     }
@@ -172,22 +177,23 @@ extension Color {
 
         var l, a, b: Float
 
+        func pivot(_ value: Float) -> Float {
+            return value > 0.008856 ? pow(value, 1 / 3) : (7.787 * value) + (16 / 116)
+        }
+
         x /= 95.047
         y /= 100
         z /= 108.883
+        
+        x = pivot(x)
+        y = pivot(y)
+        z = pivot(z)
 
-        func xyzClamp(_ x: Float) -> Float {
-            return x > 0.008856 ? pow(x, 1 / 3) : (7.787 * x) + (16 / 116)
-        }
 
-        x = xyzClamp(x)
-        y = xyzClamp(y)
-        z = xyzClamp(z)
-
-        l = (116 * y) - 16
+        l = 116 * y - 16
         a = 500 * (x - y)
         b = 200 * (y - z)
-
+        
         return Color(l: l, a: a, b: b)
     }
 
