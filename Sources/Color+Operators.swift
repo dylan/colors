@@ -25,4 +25,9 @@ extension Color {
                (0.7152 * lum(of: color.rgb.green)) +
                (0.0722 * lum(of: color.rgb.blue))
     }
+
+    public static func contrastRatio(of a: Color, and b: Color) -> Percent {
+        let result = (luminance(of: a)) / (luminance(of: b))
+        return result.isInfinite ? 1 : result
+    }
 }
