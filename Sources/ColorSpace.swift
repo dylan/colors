@@ -12,10 +12,12 @@ public enum ColorSpace {
     case hsl
     case hsv
     case cmyk
+    case xyz
+    case lab
 
     var componentCount: Int {
         switch self {
-        case .rgb, .hsl, .hsv:
+        case .rgb, .hsl, .hsv, .xyz, .lab:
             return 3
         case .cmyk:
             return 4

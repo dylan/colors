@@ -17,13 +17,17 @@ func round<x: FloatingPoint>(_ value: x, toNearest: x) -> x {
     return round(value / toNearest) * toNearest
 }
 
+func limit<x: FloatingPoint>(_ value: x, to limit: x) -> x {
+    let adjustedValue = value.remainder(dividingBy: limit)
+    return adjustedValue < 0 ? limit + adjustedValue : adjustedValue
+}
+
 func limitToDegreeRange(_ value: Degree) -> Degree {
-    let adjustedValue = value.remainder(dividingBy: 360)
-    return adjustedValue < 0 ? 360 + adjustedValue : adjustedValue
+    return limit(value, to: 360)
 }
 
 func limitToPercentRange(_ value: Percent) -> Percent {
-    return clamp(value, between: 0, and: 1.0)
+    return limit(value, to: 100)
 }
 
 func limitTo8BitRange(_ value: Percent) -> EightBitValue {
