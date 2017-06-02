@@ -309,9 +309,10 @@ extension Color {
     
     static func hexString2rgb(_ hex: String) -> Color {
         let scanner = Scanner(string: hex)
-        var value = 0
-        scanner.scanInt(&value)
-        return Color(hex: value)
+        scanner.charactersToBeSkipped = CharacterSet(charactersIn: "#")
+        var value: UInt32 = 0
+        scanner.scanHexInt32(&value)
+        return Color(hex: Int(value))
     }
 }
 

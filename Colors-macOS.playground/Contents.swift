@@ -23,6 +23,9 @@ color1 == color2
 color2 == color3
 
 var dinerGreen = Color(hex: 0x37ecbd)
+var dinerGreen2 = Color(hex: "0x37ecbd")
+
+dinerGreen2.rgb
 
 dinerGreen.rgb
 dinerGreen.hsl
