@@ -214,6 +214,7 @@
 		FC6B95EE1EC0DC1000E0B30B /* Colors+X11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Colors+X11.swift"; sourceTree = "<group>"; };
 		FC6B96121EC0E96800E0B30B /* Color+XKCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+XKCD.swift"; sourceTree = "<group>"; };
 		FC6B961A1EC1F18300E0B30B /* FloatingPoint+Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Units.swift"; sourceTree = "<group>"; };
+		FC78A9121EEC7E7D0095DF8C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FC81F4C41E9D14A400199604 /* Color+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Operators.swift"; sourceTree = "<group>"; };
 		FC81F4D41E9D236600199604 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		FCBB686D1E9D095B000F4E94 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
@@ -283,6 +284,7 @@
 				52D6D97D1BEFF229002C0205 /* Products */,
 				FC0DFE1D1E94284E00716946 /* Sources */,
 				52D6D9971BEFF375002C0205 /* ColorsTests.swift */,
+				FC78A9121EEC7E7D0095DF8C /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
