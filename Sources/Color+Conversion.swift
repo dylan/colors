@@ -390,9 +390,10 @@ extension Color {
     ///
     public var hex: Int {
         get {
-            return (Int(self.rgb.red   * 255)) << 16 +
-                   (Int(self.rgb.green * 255)) << 8  +
-                   (Int(self.rgb.blue  * 255))
+            let red   = Int(self.rgb.red   * 255) << 16
+            let green = Int(self.rgb.green * 255) << 8
+            let blue  = Int(self.rgb.blue  * 255)
+            return red + green + blue
         }
         set {
             self = Color(hex: newValue)

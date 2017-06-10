@@ -3,279 +3,329 @@
    version = "3.0">
    <TimelineItems>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=2123&amp;EndingColumnNumber=66&amp;EndingLineNumber=3&amp;StartingColumnNumber=1&amp;StartingLineNumber=3&amp;Timestamp=518122316.642993"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=2155&amp;EndingColumnNumber=13&amp;EndingLineNumber=92&amp;StartingColumnNumber=13&amp;StartingLineNumber=92&amp;Timestamp=518728284.294744"
          lockedSize = "{651.5, 130}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=2123&amp;EndingColumnNumber=93&amp;EndingLineNumber=3&amp;StartingColumnNumber=1&amp;StartingLineNumber=3&amp;Timestamp=518122316.643113"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=2155&amp;EndingColumnNumber=13&amp;EndingLineNumber=92&amp;StartingColumnNumber=13&amp;StartingLineNumber=92&amp;Timestamp=518728284.294877"
          lockedSize = "{653, 73}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=2123&amp;EndingColumnNumber=96&amp;EndingLineNumber=3&amp;StartingColumnNumber=1&amp;StartingLineNumber=3&amp;Timestamp=518122316.643204"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=2155&amp;EndingColumnNumber=13&amp;EndingLineNumber=92&amp;StartingColumnNumber=13&amp;StartingLineNumber=92&amp;Timestamp=518728284.294952"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=2123&amp;EndingColumnNumber=71&amp;EndingLineNumber=3&amp;StartingColumnNumber=1&amp;StartingLineNumber=3&amp;Timestamp=518122316.643287"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=2155&amp;EndingColumnNumber=13&amp;EndingLineNumber=92&amp;StartingColumnNumber=13&amp;StartingLineNumber=92&amp;Timestamp=518728284.295017"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=2123&amp;EndingColumnNumber=68&amp;EndingLineNumber=3&amp;StartingColumnNumber=1&amp;StartingLineNumber=3&amp;Timestamp=518122316.643366"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=2155&amp;EndingColumnNumber=13&amp;EndingLineNumber=92&amp;StartingColumnNumber=13&amp;StartingLineNumber=92&amp;Timestamp=518728284.29508"
          lockedSize = "{650, 59}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=2123&amp;EndingColumnNumber=67&amp;EndingLineNumber=3&amp;StartingColumnNumber=1&amp;StartingLineNumber=3&amp;Timestamp=518122316.643447"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=2155&amp;EndingColumnNumber=13&amp;EndingLineNumber=92&amp;StartingColumnNumber=13&amp;StartingLineNumber=92&amp;Timestamp=518728284.295147"
          lockedSize = "{655, 80}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=2123&amp;EndingColumnNumber=68&amp;EndingLineNumber=3&amp;StartingColumnNumber=1&amp;StartingLineNumber=3&amp;Timestamp=518122316.643542"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=2155&amp;EndingColumnNumber=13&amp;EndingLineNumber=92&amp;StartingColumnNumber=13&amp;StartingLineNumber=92&amp;Timestamp=518728284.295213"
          lockedSize = "{652, 63}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=2123&amp;EndingColumnNumber=51&amp;EndingLineNumber=3&amp;StartingColumnNumber=1&amp;StartingLineNumber=3&amp;Timestamp=518122316.643625"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=2155&amp;EndingColumnNumber=13&amp;EndingLineNumber=92&amp;StartingColumnNumber=13&amp;StartingLineNumber=92&amp;Timestamp=518728284.29528"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=2123&amp;EndingColumnNumber=52&amp;EndingLineNumber=3&amp;StartingColumnNumber=1&amp;StartingLineNumber=3&amp;Timestamp=518122316.643705"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=2155&amp;EndingColumnNumber=13&amp;EndingLineNumber=92&amp;StartingColumnNumber=13&amp;StartingLineNumber=92&amp;Timestamp=518728284.295343"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=2123&amp;EndingColumnNumber=51&amp;EndingLineNumber=3&amp;StartingColumnNumber=1&amp;StartingLineNumber=3&amp;Timestamp=518122316.643783"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=2155&amp;EndingColumnNumber=13&amp;EndingLineNumber=92&amp;StartingColumnNumber=13&amp;StartingLineNumber=92&amp;Timestamp=518728284.295405"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=2123&amp;EndingColumnNumber=52&amp;EndingLineNumber=3&amp;StartingColumnNumber=1&amp;StartingLineNumber=3&amp;Timestamp=518122316.643876"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=2155&amp;EndingColumnNumber=13&amp;EndingLineNumber=92&amp;StartingColumnNumber=13&amp;StartingLineNumber=92&amp;Timestamp=518728284.29547"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=2123&amp;EndingColumnNumber=51&amp;EndingLineNumber=3&amp;StartingColumnNumber=1&amp;StartingLineNumber=3&amp;Timestamp=518122316.643961"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=2155&amp;EndingColumnNumber=13&amp;EndingLineNumber=92&amp;StartingColumnNumber=13&amp;StartingLineNumber=92&amp;Timestamp=518728284.295533"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=2123&amp;EndingColumnNumber=16&amp;EndingLineNumber=3&amp;StartingColumnNumber=1&amp;StartingLineNumber=3&amp;Timestamp=518122316.64404"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=2155&amp;EndingColumnNumber=13&amp;EndingLineNumber=92&amp;StartingColumnNumber=13&amp;StartingLineNumber=92&amp;Timestamp=518728284.295597"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=1333&amp;EndingColumnNumber=18&amp;EndingLineNumber=67&amp;StartingColumnNumber=12&amp;StartingLineNumber=67&amp;Timestamp=518122316.644121"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=1406&amp;EndingColumnNumber=0&amp;EndingLineNumber=72&amp;StartingColumnNumber=0&amp;StartingLineNumber=72&amp;Timestamp=518728284.29566"
          lockedSize = "{400, 114}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=73&amp;CharacterRangeLoc=1261&amp;EndingColumnNumber=6&amp;EndingLineNumber=67&amp;StartingColumnNumber=1&amp;StartingLineNumber=67&amp;Timestamp=518122316.644203"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=73&amp;CharacterRangeLoc=1334&amp;EndingColumnNumber=1&amp;EndingLineNumber=72&amp;StartingColumnNumber=5&amp;StartingLineNumber=69&amp;Timestamp=518728284.295725"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=37&amp;CharacterRangeLoc=1258&amp;EndingColumnNumber=41&amp;EndingLineNumber=66&amp;StartingColumnNumber=1&amp;StartingLineNumber=66&amp;Timestamp=518122316.644284"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=37&amp;CharacterRangeLoc=1331&amp;EndingColumnNumber=0&amp;EndingLineNumber=71&amp;StartingColumnNumber=2&amp;StartingLineNumber=69&amp;Timestamp=518728284.295789"
          lockedSize = "{1029, 50}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=41&amp;CharacterRangeLoc=1413&amp;EndingColumnNumber=42&amp;EndingLineNumber=73&amp;StartingColumnNumber=1&amp;StartingLineNumber=73&amp;Timestamp=518122316.644366"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=41&amp;CharacterRangeLoc=1486&amp;EndingColumnNumber=39&amp;EndingLineNumber=76&amp;StartingColumnNumber=41&amp;StartingLineNumber=74&amp;Timestamp=518728284.295855"
          lockedSize = "{1029, 59}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=41&amp;CharacterRangeLoc=1456&amp;EndingColumnNumber=42&amp;EndingLineNumber=75&amp;StartingColumnNumber=1&amp;StartingLineNumber=75&amp;Timestamp=518122316.644455"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=41&amp;CharacterRangeLoc=1529&amp;EndingColumnNumber=40&amp;EndingLineNumber=77&amp;StartingColumnNumber=41&amp;StartingLineNumber=76&amp;Timestamp=518728284.295923"
          lockedSize = "{1029, 50}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=148&amp;CharacterRangeLoc=1714&amp;EndingColumnNumber=20&amp;EndingLineNumber=81&amp;StartingColumnNumber=1&amp;StartingLineNumber=81&amp;Timestamp=518122316.644537"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=148&amp;CharacterRangeLoc=1787&amp;EndingColumnNumber=39&amp;EndingLineNumber=86&amp;StartingColumnNumber=24&amp;StartingLineNumber=83&amp;Timestamp=518728284.295988"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=17&amp;CharacterRangeLoc=1712&amp;EndingColumnNumber=18&amp;EndingLineNumber=80&amp;StartingColumnNumber=1&amp;StartingLineNumber=80&amp;Timestamp=518122316.644617"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=12&amp;CharacterRangeLoc=1785&amp;EndingColumnNumber=34&amp;EndingLineNumber=83&amp;StartingColumnNumber=22&amp;StartingLineNumber=83&amp;Timestamp=518728284.296053"
          lockedSize = "{1029, 50}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=17&amp;CharacterRangeLoc=1845&amp;EndingColumnNumber=18&amp;EndingLineNumber=83&amp;StartingColumnNumber=1&amp;StartingLineNumber=83&amp;Timestamp=518122316.644714"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=14&amp;CharacterRangeLoc=1918&amp;EndingColumnNumber=36&amp;EndingLineNumber=86&amp;StartingColumnNumber=22&amp;StartingLineNumber=86&amp;Timestamp=518728284.296119"
          lockedSize = "{1029, 50}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=19&amp;CharacterRangeLoc=2014&amp;EndingColumnNumber=20&amp;EndingLineNumber=86&amp;StartingColumnNumber=1&amp;StartingLineNumber=86&amp;Timestamp=518122316.644796"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=19&amp;CharacterRangeLoc=2087&amp;EndingColumnNumber=11&amp;EndingLineNumber=90&amp;StartingColumnNumber=20&amp;StartingLineNumber=89&amp;Timestamp=518728284.296185"
          lockedSize = "{1029, 50}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "YES">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=999&amp;EndingColumnNumber=14&amp;EndingLineNumber=47&amp;StartingColumnNumber=1&amp;StartingLineNumber=47&amp;Timestamp=518122316.644879"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=1072&amp;EndingColumnNumber=38&amp;EndingLineNumber=60&amp;StartingColumnNumber=38&amp;StartingLineNumber=60&amp;Timestamp=518728284.29625"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=999&amp;EndingColumnNumber=38&amp;EndingLineNumber=47&amp;StartingColumnNumber=1&amp;StartingLineNumber=47&amp;Timestamp=518122316.644959"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=1072&amp;EndingColumnNumber=38&amp;EndingLineNumber=60&amp;StartingColumnNumber=38&amp;StartingLineNumber=60&amp;Timestamp=518728284.296313"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/dylan/Github/Colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=999&amp;EndingLineNumber=47&amp;StartingLineNumber=47&amp;Timestamp=518122316.645038"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=1072&amp;EndingColumnNumber=38&amp;EndingLineNumber=60&amp;StartingColumnNumber=38&amp;StartingLineNumber=60&amp;Timestamp=518728284.296376"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=999&amp;EndingColumnNumber=37&amp;EndingLineNumber=47&amp;StartingColumnNumber=1&amp;StartingLineNumber=47&amp;Timestamp=518122316.645112"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=1072&amp;EndingColumnNumber=38&amp;EndingLineNumber=60&amp;StartingColumnNumber=38&amp;StartingLineNumber=60&amp;Timestamp=518728284.296438"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=999&amp;EndingColumnNumber=39&amp;EndingLineNumber=47&amp;StartingColumnNumber=1&amp;StartingLineNumber=47&amp;Timestamp=518122316.645199"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=1072&amp;EndingColumnNumber=38&amp;EndingLineNumber=60&amp;StartingColumnNumber=38&amp;StartingLineNumber=60&amp;Timestamp=518728284.296499"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=999&amp;EndingColumnNumber=44&amp;EndingLineNumber=47&amp;StartingColumnNumber=1&amp;StartingLineNumber=47&amp;Timestamp=518122316.645281"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=1072&amp;EndingColumnNumber=38&amp;EndingLineNumber=60&amp;StartingColumnNumber=38&amp;StartingLineNumber=60&amp;Timestamp=518728284.296561"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=999&amp;EndingColumnNumber=42&amp;EndingLineNumber=47&amp;StartingColumnNumber=1&amp;StartingLineNumber=47&amp;Timestamp=518122316.645359"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=1072&amp;EndingColumnNumber=38&amp;EndingLineNumber=60&amp;StartingColumnNumber=38&amp;StartingLineNumber=60&amp;Timestamp=518728284.296626"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=999&amp;EndingColumnNumber=40&amp;EndingLineNumber=47&amp;StartingColumnNumber=1&amp;StartingLineNumber=47&amp;Timestamp=518122316.645436"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=1072&amp;EndingColumnNumber=38&amp;EndingLineNumber=60&amp;StartingColumnNumber=38&amp;StartingLineNumber=60&amp;Timestamp=518728284.296688"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=999&amp;EndingColumnNumber=48&amp;EndingLineNumber=47&amp;StartingColumnNumber=1&amp;StartingLineNumber=47&amp;Timestamp=518122316.645543"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=1072&amp;EndingColumnNumber=38&amp;EndingLineNumber=60&amp;StartingColumnNumber=38&amp;StartingLineNumber=60&amp;Timestamp=518728284.29675"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=31&amp;CharacterRangeLoc=731&amp;EndingColumnNumber=31&amp;EndingLineNumber=46&amp;StartingColumnNumber=1&amp;StartingLineNumber=46&amp;Timestamp=518122316.645696"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=31&amp;CharacterRangeLoc=804&amp;EndingColumnNumber=9&amp;EndingLineNumber=49&amp;StartingColumnNumber=9&amp;StartingLineNumber=48&amp;Timestamp=518728284.296812"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=30&amp;CharacterRangeLoc=763&amp;EndingColumnNumber=31&amp;EndingLineNumber=47&amp;StartingColumnNumber=1&amp;StartingLineNumber=47&amp;Timestamp=518122316.645776"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=30&amp;CharacterRangeLoc=836&amp;EndingColumnNumber=10&amp;EndingLineNumber=50&amp;StartingColumnNumber=10&amp;StartingLineNumber=49&amp;Timestamp=518728284.296875"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=29&amp;CharacterRangeLoc=794&amp;EndingColumnNumber=30&amp;EndingLineNumber=48&amp;StartingColumnNumber=1&amp;StartingLineNumber=48&amp;Timestamp=518122316.645856"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=29&amp;CharacterRangeLoc=867&amp;EndingColumnNumber=9&amp;EndingLineNumber=51&amp;StartingColumnNumber=11&amp;StartingLineNumber=50&amp;Timestamp=518728284.296937"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=30&amp;CharacterRangeLoc=824&amp;EndingColumnNumber=31&amp;EndingLineNumber=49&amp;StartingColumnNumber=1&amp;StartingLineNumber=49&amp;Timestamp=518122316.645938"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=30&amp;CharacterRangeLoc=897&amp;EndingColumnNumber=6&amp;EndingLineNumber=53&amp;StartingColumnNumber=10&amp;StartingLineNumber=51&amp;Timestamp=518728284.296999"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=32&amp;CharacterRangeLoc=855&amp;EndingColumnNumber=33&amp;EndingLineNumber=50&amp;StartingColumnNumber=1&amp;StartingLineNumber=50&amp;Timestamp=518122316.646015"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=32&amp;CharacterRangeLoc=928&amp;EndingColumnNumber=23&amp;EndingLineNumber=54&amp;StartingColumnNumber=7&amp;StartingLineNumber=53&amp;Timestamp=518728284.297061"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=38&amp;CharacterRangeLoc=962&amp;EndingColumnNumber=48&amp;EndingLineNumber=57&amp;StartingColumnNumber=1&amp;StartingLineNumber=57&amp;Timestamp=518122316.646093"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=38&amp;CharacterRangeLoc=1035&amp;EndingColumnNumber=39&amp;EndingLineNumber=60&amp;StartingColumnNumber=1&amp;StartingLineNumber=60&amp;Timestamp=518728284.297123"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=15&amp;CharacterRangeLoc=936&amp;EndingColumnNumber=16&amp;EndingLineNumber=55&amp;StartingColumnNumber=1&amp;StartingLineNumber=55&amp;Timestamp=518122316.646174"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=15&amp;CharacterRangeLoc=1009&amp;EndingColumnNumber=39&amp;EndingLineNumber=58&amp;StartingColumnNumber=24&amp;StartingLineNumber=58&amp;Timestamp=518728284.297185"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=15&amp;CharacterRangeLoc=889&amp;EndingColumnNumber=16&amp;EndingLineNumber=52&amp;StartingColumnNumber=1&amp;StartingLineNumber=52&amp;Timestamp=518122316.646254"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=15&amp;CharacterRangeLoc=962&amp;EndingColumnNumber=9&amp;EndingLineNumber=56&amp;StartingColumnNumber=25&amp;StartingLineNumber=54&amp;Timestamp=518728284.297248"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=1000&amp;EndingColumnNumber=16&amp;EndingLineNumber=58&amp;StartingColumnNumber=1&amp;StartingLineNumber=58&amp;Timestamp=518122316.646335"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=1073&amp;EndingColumnNumber=39&amp;EndingLineNumber=60&amp;StartingColumnNumber=39&amp;StartingLineNumber=60&amp;Timestamp=518728284.297314"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=1000&amp;EndingColumnNumber=11&amp;EndingLineNumber=58&amp;StartingColumnNumber=1&amp;StartingLineNumber=58&amp;Timestamp=518122316.646414"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=1073&amp;EndingColumnNumber=39&amp;EndingLineNumber=60&amp;StartingColumnNumber=39&amp;StartingLineNumber=60&amp;Timestamp=518728284.297377"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=1000&amp;EndingColumnNumber=11&amp;EndingLineNumber=58&amp;StartingColumnNumber=1&amp;StartingLineNumber=58&amp;Timestamp=518122316.646493"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=1073&amp;EndingColumnNumber=39&amp;EndingLineNumber=60&amp;StartingColumnNumber=39&amp;StartingLineNumber=60&amp;Timestamp=518728284.297444"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=1000&amp;EndingColumnNumber=16&amp;EndingLineNumber=58&amp;StartingColumnNumber=1&amp;StartingLineNumber=58&amp;Timestamp=518122316.646574"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=1073&amp;EndingColumnNumber=39&amp;EndingLineNumber=60&amp;StartingColumnNumber=39&amp;StartingLineNumber=60&amp;Timestamp=518728284.297507"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=37&amp;CharacterRangeLoc=1297&amp;EndingColumnNumber=38&amp;EndingLineNumber=68&amp;StartingColumnNumber=1&amp;StartingLineNumber=68&amp;Timestamp=518122316.646654"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=37&amp;CharacterRangeLoc=1370&amp;EndingColumnNumber=1&amp;EndingLineNumber=72&amp;StartingColumnNumber=2&amp;StartingLineNumber=71&amp;Timestamp=518728284.29757"
          lockedSize = "{1029, 50}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=1255&amp;EndingColumnNumber=58&amp;EndingLineNumber=64&amp;StartingColumnNumber=1&amp;StartingLineNumber=64&amp;Timestamp=518122316.646737"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=1328&amp;EndingColumnNumber=0&amp;EndingLineNumber=68&amp;StartingColumnNumber=0&amp;StartingLineNumber=68&amp;Timestamp=518728284.297636"
          lockedSize = "{1029, 50}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=1&amp;CharacterRangeLoc=2108&amp;EndingColumnNumber=64&amp;EndingLineNumber=89&amp;StartingColumnNumber=1&amp;StartingLineNumber=89&amp;Timestamp=518122316.646829"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=2155&amp;EndingColumnNumber=13&amp;EndingLineNumber=92&amp;StartingColumnNumber=13&amp;StartingLineNumber=92&amp;Timestamp=518728284.297702"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=1&amp;CharacterRangeLoc=2108&amp;EndingColumnNumber=38&amp;EndingLineNumber=89&amp;StartingColumnNumber=1&amp;StartingLineNumber=89&amp;Timestamp=518122316.64691"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=2155&amp;EndingColumnNumber=13&amp;EndingLineNumber=92&amp;StartingColumnNumber=13&amp;StartingLineNumber=92&amp;Timestamp=518728284.297764"
          lockedSize = "{1029, 51}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=1&amp;CharacterRangeLoc=2122&amp;EndingColumnNumber=5&amp;EndingLineNumber=91&amp;StartingColumnNumber=1&amp;StartingLineNumber=91&amp;Timestamp=518122316.646995"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=2155&amp;EndingColumnNumber=13&amp;EndingLineNumber=92&amp;StartingColumnNumber=13&amp;StartingLineNumber=92&amp;Timestamp=518728284.297829"
          lockedSize = "{1029, 50}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "YES">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=1&amp;CharacterRangeLoc=1255&amp;EndingColumnNumber=56&amp;EndingLineNumber=64&amp;StartingColumnNumber=1&amp;StartingLineNumber=64&amp;Timestamp=518122316.64708"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=1&amp;CharacterRangeLoc=1328&amp;EndingColumnNumber=0&amp;EndingLineNumber=69&amp;StartingColumnNumber=0&amp;StartingLineNumber=68&amp;Timestamp=518728284.297899"
          lockedSize = "{353, 50}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "YES">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=21&amp;CharacterRangeLoc=2088&amp;EndingColumnNumber=22&amp;EndingLineNumber=90&amp;StartingColumnNumber=1&amp;StartingLineNumber=90&amp;Timestamp=518122316.647162"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=2155&amp;EndingColumnNumber=13&amp;EndingLineNumber=92&amp;StartingColumnNumber=13&amp;StartingLineNumber=92&amp;Timestamp=518728284.297966"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=47&amp;CharacterRangeLoc=953&amp;EndingColumnNumber=49&amp;EndingLineNumber=57&amp;StartingColumnNumber=1&amp;StartingLineNumber=57&amp;Timestamp=518122316.647243"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=47&amp;CharacterRangeLoc=1026&amp;EndingColumnNumber=39&amp;EndingLineNumber=60&amp;StartingColumnNumber=41&amp;StartingLineNumber=58&amp;Timestamp=518728284.298029"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=1&amp;CharacterRangeLoc=2032&amp;EndingColumnNumber=34&amp;EndingLineNumber=86&amp;StartingColumnNumber=1&amp;StartingLineNumber=86&amp;Timestamp=518122316.647325"
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=1&amp;CharacterRangeLoc=2105&amp;EndingColumnNumber=11&amp;EndingLineNumber=90&amp;StartingColumnNumber=10&amp;StartingLineNumber=90&amp;Timestamp=518728284.298092"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=37&amp;CharacterRangeLoc=1291&amp;EndingColumnNumber=0&amp;EndingLineNumber=68&amp;StartingColumnNumber=1&amp;StartingLineNumber=67&amp;Timestamp=518728284.298155"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=37&amp;CharacterRangeLoc=1330&amp;EndingColumnNumber=0&amp;EndingLineNumber=70&amp;StartingColumnNumber=1&amp;StartingLineNumber=69&amp;Timestamp=518728284.298218"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=41&amp;CharacterRangeLoc=1446&amp;EndingColumnNumber=0&amp;EndingLineNumber=75&amp;StartingColumnNumber=1&amp;StartingLineNumber=74&amp;Timestamp=518728284.29828"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=41&amp;CharacterRangeLoc=1489&amp;EndingColumnNumber=0&amp;EndingLineNumber=77&amp;StartingColumnNumber=1&amp;StartingLineNumber=76&amp;Timestamp=518728284.298342"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=42&amp;CharacterRangeLoc=1531&amp;EndingColumnNumber=0&amp;EndingLineNumber=78&amp;StartingColumnNumber=1&amp;StartingLineNumber=77&amp;Timestamp=518728284.298403"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=55&amp;CharacterRangeLoc=1574&amp;EndingColumnNumber=0&amp;EndingLineNumber=79&amp;StartingColumnNumber=1&amp;StartingLineNumber=78&amp;Timestamp=518728284.298463"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=17&amp;CharacterRangeLoc=1745&amp;EndingColumnNumber=0&amp;EndingLineNumber=82&amp;StartingColumnNumber=1&amp;StartingLineNumber=81&amp;Timestamp=518728284.298525"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=17&amp;CharacterRangeLoc=1878&amp;EndingColumnNumber=0&amp;EndingLineNumber=85&amp;StartingColumnNumber=1&amp;StartingLineNumber=84&amp;Timestamp=518728284.298586"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=19&amp;CharacterRangeLoc=2047&amp;EndingColumnNumber=0&amp;EndingLineNumber=88&amp;StartingColumnNumber=1&amp;StartingLineNumber=87&amp;Timestamp=518728284.298651"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/dylan/github/colors/Colors-macOS.playground#CharacterRangeLen=21&amp;CharacterRangeLoc=2121&amp;EndingColumnNumber=0&amp;EndingLineNumber=92&amp;StartingColumnNumber=1&amp;StartingLineNumber=91&amp;Timestamp=518728284.298713"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
