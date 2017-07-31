@@ -63,7 +63,7 @@ let ramp = [Color(hex: 0x000000), // Black
             Color(hex: 0x00ff00), // Green
             Color(hex: 0x0000ff), // Blue
             Color(hex: 0x000000), // Black
-            Color(hex: 0xffffff)] // White
+            Color(hex: "#fff")] // White
 
 ramp.spread(to: 16, using: .hue).view
 

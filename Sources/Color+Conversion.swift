@@ -308,11 +308,22 @@ extension Color {
     }
     
     static func hexString2rgb(_ hex: String) -> Color {
-        let scanner = Scanner(string: hex)
+        let scanner = Scanner(string: format(hex))
         scanner.charactersToBeSkipped = CharacterSet(charactersIn: "#")
         var value: UInt32 = 0
         scanner.scanHexInt32(&value)
         return Color(hex: Int(value))
+    }
+
+    private static func format(_ value: String) -> String {
+        var mutableValue = value
+        if mutableValue.hasPrefix("#") {
+            mutableValue.remove(at: mutableValue.startIndex)
+        }
+        if mutableValue.count == 3 {
+            mutableValue = mutableValue.characters.map { "\($0)\($0)" }.joined()
+        }
+        return mutableValue
     }
 }
 
