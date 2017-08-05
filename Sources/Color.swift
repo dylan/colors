@@ -53,7 +53,7 @@ public struct Color {
     /// Initialize a `Color` in the RGB `ColorSpace` using ```0``` to ```255``` `Int` values.
     ///
     public init(redInt: Int, greenInt: Int, blueInt: Int) {
-        self = Color(red: Float(redInt / 255), green: Float(greenInt / 255), blue: Float(blueInt / 255))
+        self = Color(red: Float(redInt) / 255, green: Float(greenInt) / 255, blue: Float(blueInt) / 255)
     }
 
     /// Initialize a `Color` in the HSL `ColorSpace` using ```0``` to ```1.0``` values.
