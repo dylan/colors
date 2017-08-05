@@ -10,39 +10,21 @@ import Foundation
 
 #if os(macOS)
 import AppKit
-
-public class ColorView: NSView {
-    let colors: [Color]
-    public init(colors: [Color]) {
-        self.colors = colors
-        let frameRect = NSRect(x: 0, y: 0, width: colors.count * 24, height: 24)
-        super.init(frame: frameRect)
-    }
-
-    public required init?(coder: NSCoder) {
-        self.colors = [Color]()
-        super.init(coder: coder)
-    }
-
-    public override func draw(_ dirtyRect: NSRect) {
-        for (i, color) in colors.enumerated() {
-            let rect = NSRect(x: i * 24, y: 0, width: 24, height: 24)
-            color.NSColor.setFill()
-            NSRectFill(rect)
-        }
-        super.draw(dirtyRect)
-    }
-}
-#endif
-
-#if os(iOS)
+public typealias View    = NSView
+public typealias OSColor = NSColor
+public typealias Rect    = NSRect
+#else
 import UIKit
+public typealias View    = UIView
+public typealias OSColor = UIColor
+public typealias Rect    = CGRect
+#endif
 
-public class ColorView: UIView {
+public class ColorView: View {
     let colors: [Color]
     public init(colors: [Color]) {
         self.colors = colors
-        let frameRect = CGRect(x: 0, y: 0, width: colors.count * 24, height: 24)
+        let frameRect = Rect(x: 0, y: 0, width: colors.count * 24, height: 24)
         super.init(frame: frameRect)
     }
 
@@ -51,13 +33,17 @@ public class ColorView: UIView {
         super.init(coder: coder)
     }
 
-    public override func draw(_ dirtyRect: CGRect) {
+    public override func draw(_ dirtyRect: Rect) {
         for (i, color) in colors.enumerated() {
-            let rect = CGRect(x: i * 24, y: 0, width: 24, height: 24)
-            color.UIColor.setFill()
-            UIRectFill(rect)
+            let rect = Rect(x: i * 24, y: 0, width: 24, height: 24)
+            #if os(macOS)
+                color.NSColor.setFill()
+                rect.fill()
+            #else
+                color.UIColor.setFill()
+                UIRectFill(rect)
+            #endif
         }
         super.draw(dirtyRect)
     }
 }
-#endif

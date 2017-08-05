@@ -37,11 +37,3 @@ func limitTo8BitRange(_ value: Percent) -> EightBitValue {
 func clamp<T: Comparable>(_ value: T, between a: T, and b: T) -> T {
     return min(max(value, a), b)
 }
-
-public func convert(from value: Percent) -> EightBitValue {
-    return limitTo8BitRange(round(value * 255.0))
-}
-
-public func convert(from value: EightBitValue) -> Percent {
-    return limitToPercentRange(Float(value) / 255.0)
-}

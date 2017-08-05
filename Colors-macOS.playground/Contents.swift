@@ -1,11 +1,12 @@
 //: Playground - noun: a place where people can play
 
-import Darwin
 import Colors
 
 let color1 = Color(red: 1.0, green: 1.0, blue: 1.0)
 
 let color2 = Color(redInt: 255, greenInt: 255, blueInt: 255)
+
+Color(cyan: 0, magenta: 0, yellow: 0, key: 0)
 
 Color.contrastRatio(of: .white, and: .black)
 
@@ -23,6 +24,9 @@ color1 == color2
 color2 == color3
 
 var dinerGreen = Color(hex: 0x37ecbd)
+var dinerGreen2 = Color(hex: "0x37ecbd")
+
+dinerGreen2.rgb
 
 dinerGreen.rgb
 dinerGreen.hsl
@@ -59,7 +63,7 @@ let ramp = [Color(hex: 0x000000), // Black
             Color(hex: 0x00ff00), // Green
             Color(hex: 0x0000ff), // Blue
             Color(hex: 0x000000), // Black
-            Color(hex: 0xffffff)] // White
+            Color(hex: "#fff")] // White
 
 ramp.spread(to: 16, using: .hue).view
 

@@ -308,10 +308,22 @@ extension Color {
     }
     
     static func hexString2rgb(_ hex: String) -> Color {
-        let scanner = Scanner(string: hex)
-        var value = 0
-        scanner.scanInt(&value)
-        return Color(hex: value)
+        let scanner = Scanner(string: format(hex))
+        scanner.charactersToBeSkipped = CharacterSet(charactersIn: "#")
+        var value: UInt32 = 0
+        scanner.scanHexInt32(&value)
+        return Color(hex: Int(value))
+    }
+
+    private static func format(_ value: String) -> String {
+        var mutableValue = value
+        if mutableValue.hasPrefix("#") {
+            mutableValue.remove(at: mutableValue.startIndex)
+        }
+        if mutableValue.count == 3 {
+            mutableValue = mutableValue.characters.map { "\($0)\($0)" }.joined()
+        }
+        return mutableValue
     }
 }
 
@@ -389,9 +401,10 @@ extension Color {
     ///
     public var hex: Int {
         get {
-            return (Int(self.rgb.red   * 255)) << 16 +
-                   (Int(self.rgb.green * 255)) << 8  +
-                   (Int(self.rgb.blue  * 255))
+            let red   = Int(self.rgb.red   * 255) << 16
+            let green = Int(self.rgb.green * 255) << 8
+            let blue  = Int(self.rgb.blue  * 255)
+            return red + green + blue
         }
         set {
             self = Color(hex: newValue)

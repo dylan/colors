@@ -36,7 +36,7 @@ extension Color {
         }
 
         var result = color
-        result.hsl.luminosity -=  (result.hsl.luminosity * percent).percent
+        result.hsl.luminosity -= (result.hsl.luminosity * percent).percent
         return result
     }
 

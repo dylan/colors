@@ -1,6 +1,6 @@
 # Colors
 [![License](https://img.shields.io/cocoapods/l/Colors.svg?style=flat)](https://github.com/dylan/Colors/blob/master/LICENSE)
-![Swift](https://img.shields.io/badge/%20in-swift%203.0-orange.svg)
+![Swift](https://img.shields.io/badge/%20in-swift%204.0-orange.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 
@@ -16,7 +16,6 @@ Not supported. It's too convoluted.
 
 ## Coming Soon...
 - Perceptual functions - What colors can work when viewed with other's and in certain situations?
-- Contrast - How do these colors work together?
 - Harmonic functions - Inverse, Triadic, Analogous, etc.
 
 
