@@ -31,7 +31,6 @@ public struct Color {
         guard space.componentCount == components.count else {
             fatalError("Incorrect number of components passed for Color. Should be \(space.componentCount)")
         }
-//        self.components = components.map({ round($0, toNearest: EPSILON) })
         self.components = components
 
         self.space = space
