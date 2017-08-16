@@ -282,7 +282,6 @@ extension Color {
         let lmin = (2 - s) * vmin
         var sl = s * vmin
         sl /= lmin <= 1 ? lmin : 2 - lmin
-//        sl = sl < 0 ? 0 : sl
         if sl.isNaN { sl = 0.0 }
         l /= 2
 
