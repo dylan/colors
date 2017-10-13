@@ -40,6 +40,8 @@ extension Color {
             return rgb2xyz()
         case (.rgb, .lab):
             return rgb2lab()
+        case (.xyz, .rgb):
+            return xyz2rgb()
         default:
             switch space {
             // If we cannot convert directly, convert to rgb, then convert to final.
@@ -51,6 +53,24 @@ extension Color {
         }
     }
 
+    private
+    func xyz2rgb() -> Color {
+        var (x, y, z) = self.xyz
+        x /= 100
+        y /= 100
+        z /= 100
+        
+        func pivot(_ value: Float) -> Float {
+            return value > 0.0031308 ? 1.055 * powf(value, 1 / 2.4) - 0.055 : 12.92 * value
+        }
+        
+        let r = pivot(x *  3.24071 +   y * -1.53726  + z * -0.498571)
+        let g = pivot(x * -0.969258 +  y *  1.87599  + z * 0.0415557)
+        let b = pivot(x *  0.0556352 + y * -0.203996 + z * 1.05707)
+        
+        return Color((red:r, green:g, blue:b))
+    }
+    
     private
     func rgb2hsl() -> Color {
         let (r, g, b) = self.rgb
@@ -157,16 +177,16 @@ extension Color {
         var (r, g, b) = self.rgb
 
         func pivot(_ x: Float) -> Float {
-            return x >= 0.04045 ? pow(((x + 0.055) / 1.055), 2.4) : (x / 12.92)
+            return x > 0.04045 ? pow(((x + 0.055) / 1.055), 2.4) : (x / 12.92)
         }
 
         r = pivot(r)
         g = pivot(g)
         b = pivot(b)
 
-        let x = (r * 0.4124564 + g * 0.3575761 + b * 0.1804375)
-        let y = (r * 0.2126729 + g * 0.7151522 + b * 0.0721750)
-        let z = (r * 0.0193339 + g * 0.1191920 + b * 0.9503041)
+        let x = (r * 0.4124 + g * 0.3576 + b * 0.1805)
+        let y = (r * 0.2126 + g * 0.7152 + b * 0.0722)
+        let z = (r * 0.0193 + g * 0.1192 + b * 0.9505)
 
         return Color(x: x * 100, y: y * 100, z: z * 100)
     }

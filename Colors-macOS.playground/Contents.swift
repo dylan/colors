@@ -12,6 +12,20 @@ Color.contrastRatio(of: .white, and: .black)
 
 Color.luminance(of: .white)
 
+let colorXYZ = Color(x: 5.33, y: 4.8, z: 3.61)
+colorXYZ.view
+colorXYZ.rgb
+Int(colorXYZ.rgb.red)
+Int(colorXYZ.rgb.green)
+Int(colorXYZ.rgb.blue)
+colorXYZ.hexString
+
+let colorRGB = Color([colorXYZ.rgb.red, colorXYZ.rgb.green, colorXYZ.rgb.blue], space: .rgb)
+colorRGB.view
+
+colorRGB.xyz
+colorRGB.hexString
+
 let color3 = Color(hex: 0xffffff)
 color3.rgb
 color3.lab
