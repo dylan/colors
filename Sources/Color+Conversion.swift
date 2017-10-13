@@ -26,6 +26,10 @@ extension Color {
             return rgb2hsv()
         case (.rgb, .cmyk):
             return rgb2cmyk()
+        case (.rgb, .xyz):
+            return rgb2xyz()
+        case (.rgb, .lab):
+            return rgb2lab()
         case (.hsl, .rgb):
             return hsl2rgb()
         case (.hsl, .hsv):
@@ -36,21 +40,62 @@ extension Color {
             return hsv2hsl()
         case (.cmyk, .rgb):
             return cmyk2rgb()
-        case (.rgb, .xyz):
-            return rgb2xyz()
-        case (.rgb, .lab):
-            return rgb2lab()
         case (.xyz, .rgb):
             return xyz2rgb()
+        case (.xyz, .lab):
+            return xyz2lab()
+        case (.lab, .xyz):
+            return lab2xyz()
+        case (.lab, .rgb):
+            return lab2xyz().xyz2rgb()
         default:
             switch space {
             // If we cannot convert directly, convert to rgb, then convert to final.
-            case .hsl, .hsv, .cmyk:
+            case .xyz, .lab, .hsl, .hsv, .cmyk:
                 return self.converted(to: .rgb).converted(to: target)
             default:
                 return self
             }
         }
+    }
+    
+    private
+    func xyz2lab() -> Color {
+        var (x, y, z) = self.xyz
+        x = x / 0.95320571254937703
+        y = y / 1.0
+        z = z / 1.08538438164691575
+        
+        func labf(_ value: Float) -> Float {
+            if value > powf(6 / 29, 3) {
+                return powf(value, 1 / 3)
+            } else {
+                return 1 / 3 * powf(29 / 6, 2) * value + (4 / 29)
+            }
+        }
+        
+        let l = 116 * labf(y) - 16
+        let a = 500 * (labf(x) - labf(y))
+        let b = 200 * (labf(y) - labf(z))
+        return Color((l: l, a: a, b: b))
+    }
+    
+    private
+    func lab2xyz() -> Color {
+        var (l, a, b) = self.lab
+        
+        func labf_inv(_ value: Float) -> Float {
+            if value > 6 / 29 {
+                return powf(value, 3)
+            } else {
+                return 3 * powf(6/29, 2) * (value - 4 / 29)
+            }
+        }
+        
+        let x = 0.95320571254937703 * labf_inv(1 / 116 * (l + 16) + 1 / 500 * a)
+        let y = 1.0                 * labf_inv(1 / 116 * (l + 16))
+        let z = 1.08538438164691575 * labf_inv(1 / 116 * (l + 16) - 1 / 200 * b)
+        return Color((x: x * 100, y: y * 100, z: z * 100))
     }
 
     private
@@ -60,15 +105,25 @@ extension Color {
         y /= 100
         z /= 100
         
-        func pivot(_ value: Float) -> Float {
-            return value > 0.0031308 ? 1.055 * powf(value, 1 / 2.4) - 0.055 : 12.92 * value
+        func linearToSRGB(_ value: Float) -> Float {
+            let a: Float = 0.055
+            if value <= 0.0031308 {
+                return 12.92 * value
+            } else {
+                return powf(value, 1.0 / 2.4) - a
+            }
         }
         
-        let r = pivot(x *  3.24071 +   y * -1.53726  + z * -0.498571)
-        let g = pivot(x * -0.969258 +  y *  1.87599  + z * 0.0415557)
-        let b = pivot(x *  0.0556352 + y * -0.203996 + z * 1.05707)
+        var r = x *  3.206520517144463067 + y * -1.52104178377365540 + z * -0.493310848791455814
+        var g = x * -0.971982546201231923 + y *  1.88126865160848711 + z * 0.041672484599589298
+        var b = x *  0.055838338593097898 + y * -0.20474057484135894 + z * 1.060928433268858884
         
-        return Color((red:r, green:g, blue:b))
+        r = linearToSRGB(r).clamped(to: 0...1)
+        g = linearToSRGB(g).clamped(to: 0...1)
+        b = linearToSRGB(b).clamped(to: 0...1)
+
+        print(r, g, b)
+        return Color((red: r, green: g, blue: b))
     }
     
     private

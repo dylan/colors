@@ -11,13 +11,21 @@ Color(cyan: 0, magenta: 0, yellow: 0, key: 0)
 Color.contrastRatio(of: .white, and: .black)
 
 Color.luminance(of: .white)
+let colorLAB = Color(l: 69.27, a: 35.90, b: 55.72)
+colorLAB.xyz
+colorLAB.rgb
+colorLAB.lab
+colorLAB.view
 
-let colorXYZ = Color(x: 5.33, y: 4.8, z: 3.61)
+colorLAB.hexString
+
+let colorXYZ = Color(x: 55.59, y: 50.09, z: 6.93)
 colorXYZ.view
 colorXYZ.rgb
-Int(colorXYZ.rgb.red)
-Int(colorXYZ.rgb.green)
-Int(colorXYZ.rgb.blue)
+colorXYZ.rgb.red
+colorXYZ.rgb.green
+colorXYZ.rgb.blue
+colorXYZ.lab
 colorXYZ.hexString
 
 let colorRGB = Color([colorXYZ.rgb.red, colorXYZ.rgb.green, colorXYZ.rgb.blue], space: .rgb)

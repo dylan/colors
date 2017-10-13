@@ -34,6 +34,12 @@ func limitTo8BitRange(_ value: Percent) -> EightBitValue {
     return clamp(UInt8(value), between: 0, and: 255)
 }
 
-func clamp<T: Comparable>(_ value: T, between a: T, and b: T) -> T {
+public func clamp<T: Comparable>(_ value: T, between a: T, and b: T) -> T {
     return min(max(value, a), b)
+}
+
+extension Float {
+    public func clamped(to range: ClosedRange<Float>) -> Float {
+        return clamp(self, between: range.lowerBound, and: range.upperBound)
+    }
 }
