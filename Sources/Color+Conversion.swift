@@ -396,7 +396,7 @@ extension Color {
             mutableValue.remove(at: mutableValue.startIndex)
         }
         if mutableValue.count == 3 {
-            mutableValue = mutableValue.characters.map { "\($0)\($0)" }.joined()
+            mutableValue = mutableValue.map { "\($0)\($0)" }.joined()
         }
         return mutableValue
     }
