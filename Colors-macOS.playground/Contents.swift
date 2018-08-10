@@ -113,3 +113,7 @@ Resene.copperFire.hexString
 XKCD.acidgreen.hexString
 XKCD.almostblack.view
 X11.all.count
+
+// Convert one of our named color enums to a JSON string...
+
+//print("{\"colors\": \(Resene.all.map { "\($0.hexString)" })}")

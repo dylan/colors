@@ -122,7 +122,6 @@ extension Color {
         g = linearToSRGB(g).clamped(to: 0...1)
         b = linearToSRGB(b).clamped(to: 0...1)
 
-        print(r, g, b)
         return Color((red: r, green: g, blue: b))
     }
     
